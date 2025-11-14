@@ -1,0 +1,21 @@
+{% if not hideNav %}
+    {{ govukServiceNavigation({
+      navigation: [
+        { 
+          href: "/index", 
+          text: "Home", 
+          active: navId == 'Home' 
+        },
+        { 
+          href: "/tasks", 
+          text: "Tasks", 
+          active: navId == 'tasks' 
+        },
+        { 
+          href: "/cases", 
+          text: "Cases", 
+          active: navId == 'cases' 
+        }
+      ]
+    }) }}
+{% endif %}

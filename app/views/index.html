@@ -1,19 +1,38 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/overview.html" %}
 
-{% set pageName="Home" %}
+{% set navId = 'overview' %}
+{% set pageName = "Overview" %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    {% extends "layouts/main.html" %}
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <div class="app-overview-cards">
+        <a href="/case-graph" class="app-overview-card app-overview-card--green">
+          <span class="app-overview-card__count">Case Graph</span>
+          <span class="app-overview-card__status">
+            Last updated 14 November 2025
+          </span>
+        </a>
+
+        <a href="/cases/shortcut/dga" class="app-overview-card app-overview-card--yellow">
+          <span class="app-overview-card__count">{{needsDGAReviewCount}}</span>
+          <span class="app-overview-card__status">
+            DGA
+
+          </span>
+        </a> 
+      </div>
+
+
   </div>
 </div>
 

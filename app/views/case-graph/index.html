@@ -1,0 +1,1497 @@
+{% extends "layouts/main.html" %}
+{% set navId = 'cases' %}
+{% set pageName = "Case Graph" %}
+
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag"> 
+        <!-- make a diff colour-->
+      AI
+    </strong>
+    <span class="govuk-phase-banner__text">
+      Summarise a case uses AI to extract key elements of a case.  Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
+    </span>
+  </p>
+</div>
+  <div class="govuk-width-container">
+    <a href="/#" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    var $element = document.querySelector('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+  </script>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <span class="govuk-caption-l">16GH1510125 (2172489)</span>
+      <h1 class="govuk-heading-l">Summarise a case</h1>
+
+      <div class="govuk-inset-text">
+            <p>AI-generated results should be treated as statistically informed guesses, and must be tested against your own knowledge, judgement and reasoning.</p>
+            <p>By using Summarise a case you automatically accept the <a href="£">CPS AI Responsible Use Policy (opens in a new tab)</a>.</p>
+    </div>
+
+
+    {% include "_includes/case-graph/search-form.njk" %}
+
+    </div>
+
+
+<div class="govuk-grid-column-full">
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Case Background
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Factual Summary
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Two suspects, Mortimer Blorgstein and Thessaly Vexley, robbed Quibblesworth Fine Jewellers in Little Puddington on 19 August 2024. Blorgstein assaulted the proprietor with a crowbar, causing serious injuries, while Vexley acted as a lookout and threatened an employee. They stole approximately £127,000 worth of jewellery and fled in a dark blue saloon car. Witnesses provided a partial registration number and evidence suggesting the robbery was premeditated. Both victims received medical care, with the proprietor hospitalized for three days.
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            CTL
+            </dt>
+            <dd class="govuk-summary-list__value">
+            CTL is not active or the information does not exist
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Bail
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Defendant Thessaly VEXLEY police remand status: Custody Defendant Mortimer BLORGSTEIN police remand status: ConditionalBail
+            </dd>
+        </div>
+    </dl>
+  </div>
+</div>
+
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Events of the case
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+                <p>The facts are based on the witness statements.</p>
+            <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Statements used to generate this summary.
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <ul>
+                    <li>Statement of Zephyrina Plinkerton, recorded on 2025-10-15</li>
+                    <li>Statement of Meridian Snickerdoodle, recorded on 2025-10-15</li>
+                    <li>Statement of Cornelius Fizzlebottom, recorded on 2025-10-15</li>
+                    <li>Statement of Bartholomew Quibblesworth, recorded on 2025-10-15</li>
+                </ul>            
+            </div>
+            </details>
+
+        <p></p>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                2022 or 2023
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>Zephyrina Plinkerton starts working at Quibblesworth Fine Jewellers in Little Puddington.</p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+                        "I started working at Quibblesworth Fine Jewellers in either 2022 or early 2023."
+                        </span>
+                        <p class="govuk-body-s">
+                        Zephyrina Plinkerton, Para 1
+                        </p>  
+                    </div>
+                </details>
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                2024-08-05 or 2024-08-06 Evening
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+                    Meridian Snickerdoodle meets Mortimer Blorgstein at The Rusty Anchor pub in Snickerton.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+                        "Mortimer entered The Rusty Anchor with Thessaly Vexley."
+                        </span>
+                        <p class="govuk-body-s">
+                        Meridian Snickerdoodle, Para 3
+                        </p>
+
+                        <span class="govuk-body-m">
+                        "Mortimer mentioned money troubles and talked about an 'opportunity' involving robbing a jewellery shop in Little Puddington."
+                        </span>
+                        <p class="govuk-body-s">
+                        Meridian Snickerdoodle, Para 4
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                2024-08-19 18:30
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+                    Meridian Snickerdoodle finishes work and goes home to stay with their partner.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"I finished work at 6:30 PM and went straight home. I stayed in with my partner."                        </span>
+                        <p class="govuk-body-s">
+                        Meridian Snickerdoodle, Para 8
+                        </p>
+                    </div>
+                </details>
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                2024-08-19 19:30
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+Cornelius Fizzlebottom finishes work and begins walking home.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"I finished work at 7:30 PM and decided to walk home."
+                        </span>
+                        <p class="govuk-body-s">
+Cornelius Fizzlebottom, Para 1
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-19 19:35 
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+Two individuals, a man and a woman, enter Quibblesworth Fine Jewellers just as Zephyrina is preparing to lock up.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"Two people, a man and a woman, entered just as I was locking the door."
+                        </span>
+                        <p class="govuk-body-s">
+Zephyrina Plinkerton, Para 4
+                        </p>
+
+                        <span class="govuk-body-m">
+"Two individuals entered the shop as Zephyrina was about to lock the door."
+                        </span>
+                        <p class="govuk-body-s">
+Bartholomew Quibblesworth, Para 2
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-19 19:35
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+Cornelius Fizzlebottom notices Mr. Quibblesworth talking to two customers while Ms. Plinkerton is tidying up the shop.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"I passed by the jeweller's and saw Mr. Quibblesworth talking to two customers and Ms. Plinkerton tidying up."
+                        </span>
+                        <p class="govuk-body-s">
+Cornelius Fizzlebottom, Para 2
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-19 19:36
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+The man approaches Mr. Quibblesworth, asking about Rolex watches, while the woman stays near Zephyrina by the ring display, acting nervously.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"The man asked about Rolex watches, while the woman stood near me and looked at the ring display nervously."
+                        </span>
+                        <p class="govuk-body-s">
+Zephyrina Plinkerton, Para 6
+                        </p>
+
+                        <span class="govuk-body-m">
+"He asked to see Rolex watches, so I moved to unlock the case."
+                        </span>
+                        <p class="govuk-body-s">
+Bartholomew Quibblesworth, Para 3
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-19 19:37
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+he man vaults over the counter, grabs Mr. Quibblesworth by his shirt, and pushes him against the wall.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"The man jumped over the counter and grabbed Mr. Quibblesworth."
+                        </span>
+                        <p class="govuk-body-s">
+Zephyrina Plinkerton, Para 9
+                        </p>
+
+                        <span class="govuk-body-m">
+"The man vaulted the counter and pushed me against the wall." 
+                        </span>
+                        <p class="govuk-body-s">
+Bartholomew Quibblesworth, Para 5
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-19 19:37 
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+The woman pulls a hammer from her jacket, rushes at Zephyrina, and threatens her to get on the floor.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"The woman pulled out a hammer, rushed at me, and screamed at me to get on the floor." 
+                        </span>
+                        <p class="govuk-body-s">
+Zephyrina Plinkerton, Para 10
+                        </p>
+
+                        <span class="govuk-body-m">
+"The woman moved toward Zephyrina and shouted at her to stay there." 
+                        </span>
+                        <p class="govuk-body-s">
+Bartholomew Quibblesworth, Para 6
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-19 19:38
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+The woman smashes glass display cases with the hammer and begins filling a large bag with jewellery.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"The woman started smashing glass cases and putting jewellery into a bag."
+                        </span>
+                        <p class="govuk-body-s">
+Zephyrina Plinkerton, Para 14 
+                        </p>
+
+                        <span class="govuk-body-m">
+"The woman smashed cases and placed jewellery into a large bag."                         </span>
+                        <p class="govuk-body-s">
+Bartholomew Quibblesworth, Para 10
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-19 19:38
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+ The man forces Mr. Quibblesworth to open the safe and strikes him with a metal object, causing injury to his wrist and head. 
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"The man forced Mr. Quibblesworth to open the safe."
+                        </span>
+                        <p class="govuk-body-s">
+Zephyrina Plinkerton, Para 16
+                        </p>
+
+                        <span class="govuk-body-m">
+"The man struck me with a metal object, breaking my wrist and causing a concussion."
+                        </span>
+                        <p class="govuk-body-s">
+Bartholomew Quibblesworth, Para 8
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-19 19:40
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+The man and woman exit the shop carrying a large bag of stolen jewellery.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"At 7:40 PM, the man and woman ran toward the door to leave."
+                        </span>
+                        <p class="govuk-body-s">
+Zephyrina Plinkerton, Para 22
+                        </p>
+
+                        <span class="govuk-body-m">
+"I saw two people run out of the shop holding a large bag."
+                        </span>
+                        <p class="govuk-body-s">
+Cornelius Fizzlebottom, Para 5
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+        
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-19 19:41
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+Cornelius Fizzlebottom observes the suspects entering a dark blue saloon car and driving away. 
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"They got into a dark blue saloon car and drove away near Moonbeam Crescent."
+                        </span>
+                        <p class="govuk-body-s">
+Cornelius Fizzlebottom, Para 7
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-19 19:47
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+Cornelius Fizzlebottom calls 999 to report the incident and provide the partial registration number of the getaway car.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"At 7:47 PM, I called 999 and gave them the partial registration number."
+                        </span>
+                        <p class="govuk-body-s">
+Cornelius Fizzlebottom, Para 10
+                        </p>
+
+                        <span class="govuk-body-m">
+"Mr. Fizzlebottom told me he'd called the police."
+                        </span>
+                        <p class="govuk-body-s">
+Zephyrina Plinkerton, Para 25
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-19 Unknown
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+An ambulance takes Mr. Quibblesworth to the hospital with injuries requiring treatment for a fractured wrist, concussion, and head wounds.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"I was taken to the hospital and treated for a fractured wrist and head injuries."
+                        </span>
+                        <p class="govuk-body-s">
+Bartholomew Quibblesworth, Para 13
+                        </p>
+
+                        <span class="govuk-body-m">
+"I stayed with Mr. Quibblesworth until the ambulance arrived."
+                        </span>
+                        <p class="govuk-body-s">
+Zephyrina Plinkerton, Para 26
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+Post-2024-08-19
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+ The value of stolen items is determined to be approximately £127,000. 
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"I prepared an inventory and estimated the stolen items' value at £127,000."
+                        </span>
+                        <p class="govuk-body-s">
+Bartholomew Quibblesworth, Para 15
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-20
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+ Meridian Snickerdoodle sees Mortimer Blorgstein's photo in a news report and recalls his robbery plans.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"I saw his picture on the news and remembered our conversation about robbing the jewellery store."
+                        </span>
+                        <p class="govuk-body-s">
+Meridian Snickerdoodle, Para 10
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+2024-08-20
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>
+Meridian Snickerdoodle contacts the police to provide information about Mortimer Blorgstein's plans to rob the jewellery store.
+                </p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary govuk-body-m ">
+                        <span class="govuk-details__summary-text ">
+                            View source
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <span class="govuk-body-m">
+"I decided to contact the police and tell them what I knew."
+                        </span>
+                        <p class="govuk-body-s">
+Meridian Snickerdoodle, Para 11
+                        </p>
+
+                    </div>
+                </details>
+            </dd>
+        </div>
+    
+    </dl>
+  </div>
+</div>
+</div>
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Persons involved
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Mortimer BLORGSTEIN
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Defendant
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Aliases
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morti Blor
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      23 October 1990
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Age at time of offence
+    </dt>
+    <dd class="govuk-summary-list__value">
+      35
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Police Remand Status
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Conditional Bail
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Vulernable
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Mental Health Diagnosis
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not provided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reluctant to Attend Court
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not specified
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reliable Witness
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not applicable (defendant)
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Previous convictions
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Other information
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p>Religion is Sikh</p>
+      <p>Ethnicity is British</p>
+    </dd>
+  </div>
+</dl>
+</div>
+  </div>
+  
+    <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Thessaly VEXLEY
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Defendant
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Aliases
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not provided
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Age at time of offence
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not provided
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Police Remand Status
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Custody
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Vulernable
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Mental Health Diagnosis
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not provided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reluctant to Attend Court
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not specified
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reliable Witness
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not applicable (defendant)
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Previous convictions
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+</dl>
+</div>
+  </div>
+    <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Officer, TEST
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Police (Officer in Case)
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Aliases
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not provided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Vulernable
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+</dl>
+</div>
+  </div>
+    <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Meridan SNICKERDOODLE
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Witness
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Aliases
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      12 November 1990
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Age at time of offence
+    </dt>
+    <dd class="govuk-summary-list__value">
+      35
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      92 Gigglesworth Stree,<br>Snickerton-on-Thames,<br>Fakefordshire,<br>SN4 2BN
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Vulernable
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Mental Health Diagnosis
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not provided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reluctant to Attend Court
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not specified
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reliable Witness
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Undecided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Other offences
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+</dl>
+</div>
+  </div>
+    <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Marty POLICE
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Witness (Police)
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Aliases
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not provided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Vulernable
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Mental Health Diagnosis
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not provided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reluctant to Attend Court
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not specified
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reliable Witness
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Undecided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Other offences
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+</dl>
+</div>
+  </div>
+    <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Zephyrina PLINKERTON
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Witness<br>
+      Victim
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Aliases
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      7 August 1995
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Age at time of offence
+    </dt>
+    <dd class="govuk-summary-list__value">
+      30
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      334 Stardust Close, Flat 12, Snickerton-on-Thames, Fakefordshire, SN4 9WX
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Vulernable
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Mental Health Diagnosis
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not provided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reluctant to Attend Court
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not specified
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reliable Witness
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Undecided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Other offences
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+</dl>
+</div>
+  </div>
+
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Cornelius FIZZLEBOTTOM
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Witness<br>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Aliases
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      30 March 1987
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Age at time of offence
+    </dt>
+    <dd class="govuk-summary-list__value">
+      38
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      77 Drizzleton Avenue, Little Puddington, Fakefordshire,  FK12 6YT
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Vulernable
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Mental Health Diagnosis
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not provided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reluctant to Attend Court
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not specified
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reliable Witness
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Undecided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Other offences
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+</dl>
+</div>
+  </div>
+
+
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Bartholomew QUIBBLESWORTH
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Witness<br>
+      Victim
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Aliases
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      22 January 1968
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Age at time of offence
+    </dt>
+    <dd class="govuk-summary-list__value">
+      57
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      89 Moonbeam Crescent, Little Puddington, Fakefordshire, FK12 3RH
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Vulernable
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Mental Health Diagnosis
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not provided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reluctant to Attend Court
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not specified
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reliable Witness
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Undecided
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Other offences
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+</dl>
+</div>
+  </div>
+
+
+  </div>
+</div>
+</div>
+
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+       Hearsay
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+Enter details    </dl>
+  </div>
+</div>
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Proposed Charges
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+Enter details    </dl>
+  </div>
+</div>
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Potential Charges
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+    <strong class="govuk-tag">
+  Robbery
+</strong>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Consolidated supporting evidence
+    </dt>
+    <dd class="govuk-summary-list__value">
+                        <span class="govuk-body-m">
+"The man and woman forcibly took jewellery from Quibblesworth Fine Jewellers, using threats of violence and physical force."
+                        </span>
+                        <p class="govuk-body-s">
+Zephyrina Plinkerton
+                        </p>
+
+                        <span class="govuk-body-m">
+"Mortimer Blorgstein discussed planning a robbery at a jewellery shop in Little Puddington, which was later robbed on 19th August 2024."
+                        </span>
+                        <p class="govuk-body-s">
+Meridian Snickerdoodle
+                        </p>
+
+                        <span class="govuk-body-m">
+"Two suspects stole items from Quibblesworth Fine Jewellers and fled the scene in a vehicle. Mr. Quibblesworth sustained an injury during the incident, indicating the use of force or threat of force."
+                        </span>
+                        <p class="govuk-body-s">
+Cornelius Fizzlebottom
+                        </p>
+
+                        <span class="govuk-body-m">
+"The suspects used force and threats to steal jewellery and watches valued at £127,000 from the shop."
+                        </span>
+                        <p class="govuk-body-s">
+Bartholomew Quibblesworth
+                        </p>
+
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Consolidated contradictory evidence
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Consolidated neutral/unclear evidence
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+</dl>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+
+  
+{% endblock %}
