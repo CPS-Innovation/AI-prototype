@@ -3,27 +3,22 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
 
+// components
 @import "components/hidden.scss";
 @import "components/header.scss";
-
-// Filter bits
 @import "components/action-bar.scss";
 @import "components/filter-layout.scss";
 @import "components/filter-panel.scss";
 @import "components/list-filter.scss";
-
-// Identity bar
 @import "components/button-menu.scss";
 @import "components/identity-bar.scss";
-
-// Lists
 @import "components/list.scss";
-
-// Search
 @import "components/search-form.scss";
-
-// Logo
 @import "components/brand";
+
+// Page specific styles
+@import "_includes/correspondence-drafter.scss";
+
 
 h1 .govuk-tag {
   position: relative;

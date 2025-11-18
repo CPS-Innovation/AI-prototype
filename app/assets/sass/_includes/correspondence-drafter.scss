@@ -1,0 +1,139 @@
+// Correspondence Drafter Styles
+
+.letter-editor {
+  background: white;
+  padding: 40px;
+  min-height: 800px;
+  border: 2px solid #b1b4b6;
+  font-family: "GDS Transport", arial, sans-serif;
+  line-height: 1.6;
+
+  &:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 0;
+  }
+}
+
+.letter-container {
+  background: white;
+  padding: 0;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .govuk-link {
+    display: inline-flex;
+    align-items: center;
+    
+    img {
+      margin-left: 5px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.save-indicator {
+  color: #505a5f;
+  font-size: 16px;
+  margin-top: 15px;
+  text-align: right;
+  display: block;
+}
+
+.divider {
+  border-top: 1px solid #b1b4b6;
+  margin: 20px 0 30px 0;
+}
+
+.character-count {
+  margin-top: 10px;
+  color: #505a5f;
+  font-size: 14px;
+}
+
+// MOJ Sub-navigation component
+// Based on: https://design-patterns.service.justice.gov.uk/components/sub-navigation/
+
+.moj-sub-navigation {
+  margin-bottom: 10px;
+
+  &__list {
+    font-size: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #b1b4b6;
+  }
+
+  &__item {
+    display: inline-block;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-right: 20px;
+    margin-bottom: -1px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    //font-weight: 700;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: #1d70b8;
+    border-bottom: 5px solid transparent;
+
+    &:link,
+    &:visited {
+      color: #1d70b8;
+    }
+
+    &:hover {
+      color: #003078;
+      text-decoration: underline;
+      text-underline-offset: 0.1rem;
+    }
+
+    &:focus {
+      color: #0b0c0c;
+      background-color: #ffdd00;
+      box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+      text-decoration: none;
+      outline: 3px solid transparent;
+    }
+
+    &[aria-current="page"] {
+      color: #0b0c0c;
+      border-bottom-color: #1d70b8;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Tab panel styling
+.tab-panel {
+  padding-top: 20px;
+
+  h2 {
+    margin-top: 0;
+  }
+}
