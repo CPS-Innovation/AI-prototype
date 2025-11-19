@@ -1,0 +1,117 @@
+// MOJ Side Navigation Component
+// Based on: https://design-patterns.service.justice.gov.uk/components/side-navigation/
+
+.moj-side-navigation {
+  margin-bottom: 30px;
+
+  &__title {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #0b0c0c;
+
+    @media (min-width: 40.0625em) {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.3157894737;
+    }
+
+    @media print {
+      font-family: sans-serif;
+      font-size: 14pt;
+      line-height: 1.15;
+    }
+  }
+
+  &__list {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 40.0625em) {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.3157894737;
+    }
+
+    @media print {
+      font-family: sans-serif;
+      font-size: 14pt;
+      line-height: 1.15;
+    }
+  }
+
+  &__item {
+    box-sizing: border-box;
+    border-left: 5px solid transparent;
+    padding: 12px 0;
+    padding-left: 15px;
+    margin-left: -20px;
+
+    &--active {
+      border-left-color: #1d70b8;
+      font-weight: 700;
+
+      a {
+        color: #0b0c0c;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 0.1rem;
+        }
+
+        &:focus {
+          color: #0b0c0c;
+          background-color: #ffdd00;
+          box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+          text-decoration: none;
+          outline: 3px solid transparent;
+        }
+      }
+    }
+
+    a {
+      font-family: "GDS Transport", arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-decoration: underline;
+      text-underline-offset: 0.1rem;
+      color: #1d70b8;
+      display: inline-block;
+
+      &:visited {
+        color: #4c2c92;
+      }
+
+      &:hover {
+        color: #003078;
+      }
+
+      &:active {
+        color: #0b0c0c;
+      }
+
+      &:focus {
+        color: #0b0c0c;
+        background-color: #ffdd00;
+        box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+        text-decoration: none;
+        outline: 3px solid transparent;
+      }
+
+      @media print {
+        font-family: sans-serif;
+      }
+    }
+  }
+}
