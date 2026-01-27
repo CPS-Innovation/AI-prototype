@@ -1,0 +1,218 @@
+{% extends "layouts/main.html" %}
+{% set navId = 'correspondence' %}
+{% set pageName = "Compose Letter" %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Letter Dashboard</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Compose Letter
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="page-header">
+        <h1 class="govuk-heading-l">Compose Letter</h1>
+        
+        <div class="action-buttons">
+          <a href="#" class="govuk-link" id="case-link">
+            Case & Victim Info
+            <img src="/public/images/external-link.svg" alt="">
+          </a>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" id="save-btn">
+            Save
+          </button>
+          <button class="govuk-button govuk-button--warning" data-module="govuk-button" id="delete-btn">
+            Delete
+          </button>
+          <button class="govuk-button" data-module="govuk-button" id="review-btn">
+            Request review
+          </button>
+          <button class="govuk-button" data-module="govuk-button" id="cms-btn">
+            Send to CMS
+          </button>
+        </div>
+      </div>
+      
+      <p class="save-indicator" id="save-indicator"></p>
+      
+      <div class="divider"></div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="letter-container">
+        <div class="letter-editor" contenteditable="true" id="letter-content">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <img src="/public/images/cps-logo.svg" alt="CPS Logo" style="width: 80px; margin-bottom: 20px;">
+            </div>
+            <div class="govuk-grid-column-one-half" style="text-align: right; margin-bottom: 20px;">
+              Crown Prosecution Service<br>
+              Victim Services<br>
+              9 Colmore Row, 3rd Floor<br>
+              Birmingham<br>
+              B3 2BJ<br>
+              Telephone: 020 3257 7620<br>
+              <strong>Email: Victim.Services@cps.gov.uk</strong>
+            </div>
+          </div>
+          
+          <div style="margin-bottom: 20px;">
+            To be opened by the addressee only<br>
+            Paul Black<br>
+            1 Road<br>
+            SN2ij
+          </div>
+          
+          <div style="margin-bottom: 20px;">
+            30 October 2025
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <strong>Crown Prosecution Service unique reference number: 12NY1111325</strong><br>
+            Please quote this reference number in any communications
+          </div>
+
+          <p class="govuk-body-l" style="text-align:center; padding: 15px;">
+            Please tell us if you need this letter in a larger print, another language, or a different format.
+          </p>
+
+          <div style="margin-bottom: 20px;">
+            Dear Paul,
+          </div>
+          
+          <div style="margin-bottom: 20px;">
+            Thank you for contacting the Crown Prosecution Service (CPS) in relation to the above case. I am a District Crown Prosecutor with responsibility for Crown Court cases in <strong>[Insert Area]</strong> and it is my responsibility to reply to your complaint dated <strong>[Insert Date]</strong>.
+          </div>
+          
+          <div style="margin-bottom: 20px;">          
+            In your letter you have raised the following issues:
+            <ul>
+              <li>Why was my witness statement dismissed when I clearly reported feeling threatened?</li>
+              <li>How can video evidence capturing the threat "you're going to get stabbed" be insufficient?</li>
+              <li>Why can offenders escape justice simply because it cannot be determined which one acted, when they were clearly together?</li>
+              <li>Why was I not consulted before the NFA decision?</li>
+            </ul>
+          </div>
+          
+          <div style="margin-bottom: 20px;">
+            Firstly, I would like to say how sorry I am to hear about your experience and the distress you have endured as a result of this incident. I understand that this has been an incredibly upsetting time for you, and I am sorry that you feel let down by the criminal justice system. Your concerns are valid, and I want to take this opportunity to provide you with detailed responses to the issues you have raised.
+          </div>
+
+          <div style="margin-bottom: 20px;">          
+            Regarding the dismissal of your witness statement, I must explain that the evidential standard required in criminal cases is very high. A case must meet the Full Code Test, which means that there must be sufficient evidence to provide a realistic prospect of conviction. This requires that the evidence is reliable, credible, and admissible in court. All available evidence must be considered through the perspective of what can be proven in court. Upon reviewing the provided body-worn video and other materials, it appears that the evidence does not demonstrate a realistic prospect of conviction, which led to the decision of no further action. This outcome does not negate the validity of your personal experience or your perception of the events, and I deeply regret that this has left you feeling unheard.
+          </div>
+          
+          <div style="margin-bottom: 20px;"> 
+            On your second point, the video evidence you submitted was thoroughly reviewed. However, the Crown Prosecution Service (CPS) found that the footage did not provide the necessary clarity to support the charge. Specifically, the video did not appear to clearly and unequivocally demonstrate the alleged threat being made. In addition, the evidential assessment takes into account not only what is shown in the video but also other factors such as whether the victim's emotional state aligns with the context shown. The footage fell short of meeting the high legal and evidential standard that needs to be met to proceed with a prosecution.
+          </div>
+          
+          <div style="margin-bottom: 20px;"> 
+            In relation to why the offenders cannot be held accountable as a group, the legal principle of "joint enterprise" requires clear evidence to demonstrate that all those involved were equally culpable for the offence. Unfortunately, the evidence in your case did not show with sufficient clarity which individual was responsible for what specific action. Without sufficient evidence pinpointing responsibility or demonstrating their joint intent, the case could not meet the threshold required for prosecution. The law mandates that each defendant's role must be clearly established within the current legal framework, and I understand how frustrating this is for you, especially as you cooperated fully and provided evidence.
+          </div>
+          
+          <div style="margin-bottom: 20px;"> 
+            As to why you were not consulted before the decision of no further action (NFA) was made, I want to apologise sincerely. Victims of crime should be kept informed throughout the investigation and decision-making process, and I regret that this did not happen in your case. Communication is vital, and it is clear that this expectation was not met here. I will be raising this with the relevant teams to ensure that lessons are learned from your experience and that we improve our communication and consultation with victims moving forward.
+          </div>
+          
+          <div style="margin-bottom: 20px;"> 
+            Finally, I understand that you are seeking justice and wish to see the offenders held accountable. While the CPS has determined there is insufficient evidence to pursue charges, you do have the right to request a review of this decision under the Victim's Right to Review (VRR) scheme. To initiate this process, you can contact the CPS at VictimLiaison.Merseyside@cps.gsi.gov.uk or by phone at 0151 213 5680 during working hours. Further details on the review process can also be found on the CPS website.
+          </div>
+          
+          <div style="margin-bottom: 20px;"> 
+            Once again, I am truly sorry for the distress you have experienced and for the impact this incident has had on you. Please know that your concerns have been taken seriously, and we are committed to learning from this situation to ensure better communication and support for victims in the future.
+          </div>
+          
+          <div style="margin-bottom: 20px;"> 
+            I hope that what I have explained in this letter goes some way to addressing all the concerns you have raised. You have the right to escalate your complaint to stage 2 of the CPS complaints procedure if you feel that my explanation of how the case was dealt with does not answer your questions. Before you consider escalating your complaint to stage 2, and if you would like me to elaborate on anything that I have covered in this letter, please do not hesitate to contact me via the Victim Liaison Unit.
+          </div>
+          
+          <div style="margin-bottom: 20px;"> 
+            If you are not satisfied with this response, you may escalate your complaint to Stage Two in accordance with our complaints process within <strong>one calendar month</strong> from the <strong>date of this letter</strong>. If you do this, please ensure that you set out clearly the reasons why you remain dissatisfied.
+          </div>
+          
+          <div style="margin-bottom: 20px;"> 
+            You can do this directly through our website at <a href="https://contact.cps.gov.uk/">https://contact.cps.gov.uk/</a>. You can also contact our Victim Liaison Unit at the following address or via email at <strong>[Insert email address/postal address]</strong>.
+          </div>
+          
+          <div style="margin-bottom: 20px;"> 
+            Yours sincerely,
+          </div>
+          
+          <div style="margin-bottom: 20px;"> 
+            <strong>Sucheta Gupta</strong><br>
+            Victim Service Officer
+          </div>
+        </div>
+        
+        <div class="character-count">
+          <p class="govuk-body-s">
+            Characters: <span id="char-count">5107</span><br>
+            Words: <span id="word-count">997</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="#writing-assistance" data-panel="writing-assistance">
+              Writing assistance
+            </a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="#review-notes" data-panel="review-notes">
+              Review Notes
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="tab-panel" id="writing-assistance-panel" >
+        <h2 class="govuk-heading-m">Writing assistance</h2>
+        <p class="govuk-body">Content for writing assistance will appear here.</p>
+      </div>
+
+      <div class="tab-panel" id="review-notes-panel" style="display: none;">
+        <h2 class="govuk-heading-m">Review Notes</h2>
+        <p class="govuk-body-s">Add notes for reviewers or track changes made to this letter.</p>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="review-notes-textarea">
+            Notes
+          </label>
+          <textarea class="govuk-textarea" id="review-notes-textarea" name="review-notes" rows="10" placeholder="Enter review notes here..."></textarea>
+        </div>
+        
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Version history
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>v1.0 - 31/10/25 12:57 - Initial draft</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/correspondence-drafter.js"></script>
+{% endblock %}

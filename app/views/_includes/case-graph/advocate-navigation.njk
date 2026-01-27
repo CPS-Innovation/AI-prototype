@@ -1,0 +1,21 @@
+{% if not hideNav %}
+    {{ govukServiceNavigation({
+      navigation: [
+        { 
+          href: "/index", 
+          text: "Case summary", 
+          active: navId == 'Summary' 
+        },
+        { 
+          href: "/materials", 
+          text: "Materials", 
+          active: navId == 'Materials' 
+        },
+        { 
+          href: "/points-to-prove", 
+          text: "Points to prove", 
+          active: navId == 'Points' 
+        }
+      ]
+    }) }}
+{% endif %}

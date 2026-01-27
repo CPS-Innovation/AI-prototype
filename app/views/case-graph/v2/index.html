@@ -1,7 +1,7 @@
 {% extends "layouts/overview.html" %}
 
 {% set navId = 'overview' %}
-{% set pageName = "Case Summary prototypes" %}
+{% set pageName = "User groups" %}
 
 {% block pageTitle %}
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -17,11 +17,13 @@
       href: "/index"
     },
     {
-      text: "Case Summary prototypes"
+      text: "Case Summary prototypes",
+      href: "/case-graph"
     }
     ]
 }) }}
 {% endblock %}
+
 {% block content %}
 
 
@@ -38,11 +40,11 @@
       <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="case-graph/v2" aria-describedby="">
-        V2: Redesigning the art of the possible
+      <a class="govuk-link govuk-task-list__link" href="v2/advocate" aria-describedby="">
+        Advocate
       </a>
       <div id="company-details-3-hint" class="govuk-task-list__hint">
-        <p>Start from scratch with new hypotheses and a plan to design a separate thing for each user group - advocates and reviewing lawyers</p>
+        <p>As an advocate, I need XXX</p>    
       </div>
       <p class="govuk-body-s govuk-task-list__hint">Last updated 26 January 2026</p>
     </div>
@@ -54,18 +56,17 @@
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="case-graph/v1" aria-describedby="">
-        V1: Make a prototype from the case graph information available.
+      <a class="govuk-link govuk-task-list__link" href="v2/reviewing-lawyer" aria-describedby="">
+        Reviewing lawyer
       </a>
       <div id="company-details-3-hint" class="govuk-task-list__hint">
-        <p>Driven by the current constraints of this design being a one page artefact, I took the tech driven Case Summary POC and turned it into a prototype that presented the information in an easier to digest format.</p>
-        <p>This prototype did not test well, users were too caught up in the nuances of the case graph information to focus on the presentation of the data.</p>
+        <p>As a reviewing lawyer, I need XXX</p>   
       </div>
       <p class="govuk-body-s govuk-task-list__hint">Last updated 18 November 2025</p>
     </div>
     <div class="govuk-task-list__status" id="company-details-4-status">
-      <strong class="govuk-tag govuk-tag--green">
-        Completed
+      <strong class="govuk-tag govuk-tag--grey">
+        Not started
       </strong>
     </div>
   </li>

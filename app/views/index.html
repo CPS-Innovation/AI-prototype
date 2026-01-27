@@ -15,22 +15,39 @@
         {{ pageName }}
       </h1>
 
-      <div class="app-overview-cards">
-        <a href="/case-graph" class="app-overview-card app-overview-card--green">
-          <span class="app-overview-card__count">Case graph / case summary</span>
-          <span class="app-overview-card__status">
-            Last updated 14 November 2025
-          </span>
-        </a>
-
-        <a href="/correspondence-drafter" class="app-overview-card app-overview-card--yellow">
-          <span class="app-overview-card__count">Correspondence drafter</span>
-          <span class="app-overview-card__status">
-            Last updated 18 November 2025
-
-          </span>
-        </a> 
+      <ul class="govuk-task-list">
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="/case-graph" aria-describedby="company-details-3-hint company-details-3-status">
+        Case summary & legal and policy
+      </a>
+      <div id="company-details-3-hint" class="govuk-task-list__hint">
+        Built upon the case graph technology, summarise a case and provide relevant legal and policy information.
       </div>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-3-status">
+      <strong class="govuk-tag govuk-tag--blue">
+        Discovery
+      </strong>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="/correspondence-drafter" aria-describedby="company-details-4-status">
+        Correspondence drafter
+      </a>
+      <div id="company-details-3-hint" class="govuk-task-list__hint">
+        Allow users to draft correspondence based on case information and improve their writing with AI.
+      </div>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-4-status">
+      <strong class="govuk-tag govuk-tag--green">
+        Live
+      </strong>
+    </div>
+  </li>
+</ul>
+
 
 
   </div>
