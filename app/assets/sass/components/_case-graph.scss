@@ -1,0 +1,232 @@
+// Horizontal navigation bar for case overview
+.app-horizontal-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.app-horizontal-nav__item {
+  margin-bottom: 0;
+}
+.app-horizontal-nav__link {
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 2px;
+  transition: color 0.1s;
+}
+.app-horizontal-nav__link:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+  background: #fffbe2;
+  border-radius: 2px;
+}
+// Section backgrounds and spacing for case details split
+// Custom section backgrounds and spacing for case details split
+.app-section-background {
+  background-color: #f3f2f1;
+}
+.app-section-padding {
+  padding: 32px;
+}
+.app-section-margin {
+  margin-bottom: 48px;
+}
+// Ensure summary cards are not clickable (no pointer or hover effect)
+.govuk-summary-card {
+  cursor: default !important;
+}
+
+.govuk-summary-card:hover,
+.govuk-summary-card:active {
+  background: inherit;
+  box-shadow: none;
+  outline: none;
+}
+// MOJ Card focus/active state (matches MOJ Design System)
+.govuk-summary-card:focus-within,
+.govuk-summary-card--active {
+  outline: 4px solid #1d70b8;
+  outline-offset: 0;
+  box-shadow: 0 0 0 4px #1d70b8;
+  background: #f3f2f1;
+}
+// Case Graph component styles
+
+// Accent border for summary cards
+.app-summary-card--accent {
+  border-left: 8px solid govuk-colour("green");
+}
+
+// Light accent background for summary cards
+.app-summary-card--accent-light {
+  border-left: 8px solid govuk-colour("green");
+  background-color: #f3f9f8;
+}
+
+// Highlight box for key values
+.app-summary-card__highlight {
+  padding: govuk-spacing(2);
+  background-color: govuk-colour("light-grey");
+  border-radius: 4px;
+}
+
+.app-summary-card__highlight-text {
+  margin: 0;
+  color: govuk-colour("green");
+}
+
+// Evidence box styling
+.app-evidence-box {
+  padding: govuk-spacing(2);
+  border: 1px solid govuk-colour("mid-grey");
+  margin-bottom: govuk-spacing(2);
+  border-radius: 4px;
+}
+
+.app-evidence-box__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: govuk-spacing(1);
+
+  .govuk-heading-s {
+    margin: 0;
+  }
+}
+
+// Witness box styling
+.app-witness-box {
+  padding: govuk-spacing(2);
+  border: 1px solid govuk-colour("mid-grey");
+  margin-bottom: govuk-spacing(2);
+  border-radius: 4px;
+}
+
+.app-witness-box__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .govuk-body-m {
+    margin: 0;
+  }
+}
+
+// Evidence present box styling
+.app-evidence-present-box {
+  border: 2px solid govuk-colour("green");
+  padding: govuk-spacing(2);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.app-evidence-present-box__icon {
+  font-size: 32px;
+  margin: 0;
+}
+
+.app-evidence-present-box__reference {
+  color: govuk-colour("dark-grey");
+}
+
+// Utility class for hidden elements
+.app-hidden {
+  display: none;
+}
+
+// Remove width constraint from body text in notification banners
+.govuk-notification-banner__content .govuk-body {
+  max-width: none;
+}
+
+// MOJ Timeline component styles
+
+/* ==========================================================================
+   #TIMELINE (MOJ official)
+   ========================================================================== */
+
+.moj-timeline {
+  margin-bottom: govuk-spacing(4);
+  overflow: hidden;
+  position: relative;
+  list-style: none;
+  padding: 0;
+}
+
+.moj-timeline:before {
+  background-color: $govuk-brand-colour;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: govuk-spacing(2);
+  width: 5px;
+}
+
+.moj-timeline__item {
+  padding-bottom: govuk-spacing(6);
+  padding-left: govuk-spacing(4);
+  position: relative;
+
+  &:before {
+    background-color: $govuk-brand-colour;
+    content: "";
+    height: 5px;
+    left: 0;
+    position: absolute;
+    top: govuk-spacing(2);
+    width: 15px;
+  }
+}
+
+.moj-timeline__header {
+  margin-bottom: govuk-spacing(2);
+}
+.moj-timeline__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.moj-timeline__tags {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+// Remove any margin-top overrides for tags in header context
+.moj-timeline__header .govuk-tag {
+  margin-top: 0 !important;
+  vertical-align: middle;
+}
+
+.moj-timeline__title {
+  @include govuk-font(19, bold);
+  margin: 0;
+}
+
+.moj-timeline__date {
+  @include govuk-font(14);
+  color: govuk-colour("dark-grey");
+  margin: govuk-spacing(1) 0 0 0;
+}
+
+.moj-timeline__entry {
+  .govuk-body,
+  .govuk-body-m {
+    margin-bottom: govuk-spacing(2);
+  }
+
+  .govuk-body-s {
+    margin-bottom: govuk-spacing(1);
+  }
+
+  a {
+    font-weight: normal;
+  }
+}
+
+

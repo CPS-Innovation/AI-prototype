@@ -118,6 +118,7 @@ npm run serve              # Production-like server (no auto-reload)
 - **Features:** Real-time character count, "last saved" timestamp, contenteditable integration
 - **Status:** Incomplete
 
+
 ## Important Conventions
 
 1. **GOV.UK Design System First:** Always use GOV.UK components (buttons, form inputs, etc.) via `govuk-frontend` library—avoid custom HTML
@@ -125,6 +126,7 @@ npm run serve              # Production-like server (no auto-reload)
 3. **No Backend Persistence:** Session data is in-memory; use `app/data/session-data-defaults.js` for seed data, not a database
 4. **Responsive First:** Use GOV.UK media queries (`@include govuk-media-query($from: tablet)`)
 5. **Don't Modify Core Kit:** Leave `/node_modules/govuk-prototype-kit` and `/node_modules/govuk-frontend` untouched—configure via `app/config.json`
+6. **No emojis or non-standard icons:** Do not use emojis or icons in headings, navigation, or content. Follow GOV.UK Design System and content guidelines as set out in `app/assets/ai-context.md`.
 
 ## External Dependencies
 

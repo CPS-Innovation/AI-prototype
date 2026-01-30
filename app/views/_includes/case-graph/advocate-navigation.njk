@@ -1,21 +1,36 @@
 {% if not hideNav %}
-    {{ govukServiceNavigation({
-      navigation: [
-        { 
-          href: "/index", 
-          text: "Case summary", 
-          active: navId == 'Summary' 
-        },
-        { 
-          href: "/materials", 
-          text: "Materials", 
-          active: navId == 'Materials' 
-        },
-        { 
-          href: "/points-to-prove", 
-          text: "Points to prove", 
-          active: navId == 'Points' 
-        }
-      ]
-    }) }}
+  {{ govukServiceNavigation({
+    navigation: [
+      {
+        href: "overview",
+        text: "Overview",
+        active: navId == 'overview'
+      },
+      {
+        href: "people",
+        text: "People",
+        active: navId == 'people'
+      },
+      {
+        href: "details",
+        text: "Details and timeline",
+        active: navId == 'details'
+      },
+      {
+        href: "charges",
+        text: "Charges",
+        active: navId == 'charges'
+      },
+      {
+        href: "witnesses-evidence",
+        text: "Statements and evidence",
+        active: navId == 'statements'
+      },
+      {
+        href: "additional-info",
+        text: "Additional info",
+        active: navId == 'additional'
+      }
+    ]
+  }) }}
 {% endif %}

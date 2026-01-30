@@ -13,7 +13,7 @@
 {{ govukBreadcrumbs({
   items: [
     {
-      text: "AI projects overview",
+      text: "Ai projects overview",
       href: "/index"
     },
     {
@@ -37,14 +37,63 @@
         {{ pageName }}
       </h1>
 
+      <!-- SECTION 1: Context-Setting Questions -->
+      <div class="govuk-summary-card govuk-!-margin-bottom-6">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Before we start</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <fieldset class="govuk-fieldset" aria-describedby="context-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h3 class="govuk-heading-m">What is your role in this case?</h3>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="role-advocate" name="role" type="radio" value="advocate" checked>
+                <label class="govuk-label govuk-radios__label" for="role-advocate">Advocate</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="role-lawyer" name="role" type="radio" value="reviewing-lawyer">
+                <label class="govuk-label govuk-radios__label" for="role-lawyer">Reviewing Lawyer</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="govuk-fieldset govuk-!-margin-top-6" aria-describedby="timing-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h3 class="govuk-heading-m">When are you reviewing this case?</h3>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="timing-court" name="timing" type="radio" value="in-court">
+                <label class="govuk-label govuk-radios__label" for="timing-court">I'm in court now (next 2 hours)</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="timing-weeks" name="timing" type="radio" value="two-weeks" checked>
+                <label class="govuk-label govuk-radios__label" for="timing-weeks">Trial is in the next 2 weeks</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="timing-early" name="timing" type="radio" value="early-review">
+                <label class="govuk-label govuk-radios__label" for="timing-early">Just assigned / early review</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <p class="govuk-body govuk-!-margin-top-6">
+            <button class="govuk-button" onclick="continueToRole()">Continue</button>
+          </p>
+        </div>
+      </div>
+
       <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="v2/advocate" aria-describedby="">
+      <a class="govuk-link govuk-task-list__link" href="advocate/overview" aria-describedby="">
         Advocate
       </a>
       <div id="company-details-3-hint" class="govuk-task-list__hint">
-        <p>As an advocate, I need XXX</p>    
+        <p>As an advocate, I need XXX</p>   
+        <p>ou must verify this information against your own knowledge and judgement before making decisions.</p> 
       </div>
       <p class="govuk-body-s govuk-task-list__hint">Last updated 26 January 2026</p>
     </div>
@@ -56,7 +105,7 @@
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="v2/reviewing-lawyer" aria-describedby="">
+      <a class="govuk-link govuk-task-list__link" href="reviewing-lawyer/" aria-describedby="">
         Reviewing lawyer
       </a>
       <div id="company-details-3-hint" class="govuk-task-list__hint">
@@ -76,4 +125,17 @@
   </div>
 </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  function continueToRole() {
+    const role = document.querySelector('input[name="role"]:checked').value;
+    if (role === 'advocate') {
+      window.location.href = 'v2/advocate/overview';
+    } else if (role === 'reviewing-lawyer') {
+      window.location.href = 'v2/reviewing-lawyer/overview';
+    }
+  }
+</script>
 {% endblock %}

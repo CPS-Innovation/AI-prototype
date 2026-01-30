@@ -1,0 +1,173 @@
+{% extends "layouts/case-graph/main.html" %}
+{% set navId = 'people' %}
+{% set pageName = "Case Summary - Advocate View" %}
+
+{% block beforeContent %}
+<!-- AI Transparency Banner - CRITICAL: Mindful friction + transparency
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--yellow govuk-phase-banner__content__tag"> 
+      AI
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This summary was created using artificial intelligence. 
+      Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
+    </span>
+  </p>
+</div>
+
+-->
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      // Handle accordion initialization if needed
+      var elements = document.querySelectorAll('[data-module="govuk-accordion"]');
+      elements.forEach(function(el) {
+        if (window.GOVUK && window.GOVUK.Modules && window.GOVUK.Modules.Accordion) {
+          new window.GOVUK.Modules.Accordion(el).init();
+        }
+      });
+    });
+  </script>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <!-- SECTION 1: Case title (prevail across all pages)-->
+    <div>
+
+
+      <div style="display: flex; align-items: baseline; gap: 1em;">
+        <span class="govuk-caption-xl">16GH1510125 (2172489)</span>
+        <a href="#" class="govuk-link govuk-body-s" onclick="alert('Opens: Full Case File (links to CMS)')">View case in CMS</a>
+      </div>
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">QUIBBLE, T and SNODGRASS, P</h1>
+      <div style="display: flex; align-items: center; gap: 1em;">
+        <strong class="govuk-tag govuk-tag--green" style="font-size: 1rem;">Can proceed to court</strong>
+        <!-- <a href="#proceed-court" class="govuk-link govuk-body-s">Find out why</a> -->
+      </div>
+      <div class="govuk-!-margin-bottom-6"></div>
+    </div> 
+
+
+     <!-- SECTION 2: Case details -->
+    <div class="govuk-!-margin-bottom-6">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-0 govuk-summary-list--no-border" style="max-width: 400px;">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Offence date</dt>
+          <dd class="govuk-summary-list__value">15 January 2026</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Location</dt>
+          <dd class="govuk-summary-list__value">Tesco Metro, High Street</dd>
+        </div>
+      </dl>
+    </div>
+
+
+<!-- People-->
+    <h2 class="govuk-heading-l">People</h2>
+        <!-- SECTION 3: People  -->
+    <section id="people" aria-labelledby="people-heading">
+      <!--<h2 class="govuk-heading-l govuk-!-margin-bottom-6" id="people-heading">People</h2>-->
+      <div class="govuk-grid-row govuk-!-margin-bottom-6">
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;" id="defendant-quibble" tabindex="-1">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">QUIBBLE, Tabitha</h2>
+              <span class="govuk-tag govuk-tag--red" aria-label="Defendant">Defendant</span>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Age at time of offence</dt>
+                  <dd class="govuk-summary-list__value">32 years old</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Selected and concealed items; present during assault</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Proposed charges</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="charges">Theft (s.1 TA 1968)</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Police remand status</dt>
+                  <dd class="govuk-summary-list__value">Conditional bail</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;" id="defendant-snodgrass" tabindex="-1">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">SNODGRASS, Percival</h2>
+              <span class="govuk-tag govuk-tag--red" aria-label="Defendant">Defendant</span>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Age at time of offence</dt>
+                  <dd class="govuk-summary-list__value">28 years old</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Assisted with theft; assaulted security guard (<a href="case-details#victim-bumble" class="app-person-link">M. Bumble</a>) when confronted</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Proposed charges</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="charges">Theft (s.1 TA 1968)</a>,
+                    <a class="govuk-link" href="charges">Assault ABH (s.47 OAPA 1861)</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Police remand status</dt>
+                  <dd class="govuk-summary-list__value">Custody</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;" id="victim-bumble" tabindex="-1">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">BUMBLE, Millicent</h2>
+              <span class="govuk-tag govuk-tag--blue" aria-label="Victim">Victim</span>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Store security guard at Tesco Metro, High Street; assaulted by <a href="case-details#defendant-snodgrass" class="app-person-link">Percival Snodgrass</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Statement</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a href="#" onclick="alert('Opens: Security guard statement - M. Bumble')">M. Bumble statement</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">More information</dt>
+                  <dd class="govuk-summary-list__value">Arm and shoulder injury requiring medical treatment.</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "layouts/case-graph/main.html" %}
+{% set navId = 'additional' %}
+{% set pageName = "Additional Information" %}
+
+{% block beforeContent %}
+<!-- AI Transparency Banner - CRITICAL: Mindful friction + transparency -->
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--yellow govuk-phase-banner__content__tag"> 
+        <!-- make a diff colour-->
+      AI
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This summary was created using artificial intelligence. You must verify this information against your own knowledge and judgement before making decisions.
+      Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
+    </span>
+  </p>
+</div>
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Case Summary",
+      href: "overview"
+    },
+    {
+      text: "Additional Information"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    
+    <h1 class="govuk-heading-l">Additional Information - R v <a href="case-details#defendant-williams" class="app-person-link">Williams</a></h1>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Additional Case Information</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        
+        <dl class="govuk-summary-list">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Victim Attendance
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Tesco Metro (corporate victim, represented by store manager)
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Previous Convictions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Theft Act 1968 s.1 (March 2024) - Shoplifting, sentenced to 8 weeks suspended</li>
+                <li>Theft Act 1968 s.1 (September 2024) - Shoplifting, sentenced to 12 weeks custody</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Ancillary Orders
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><strong>Criminal Behaviour Order (CBO)</strong> - Recommended (breach of previous suspended sentence conditions)</li>
+                <li><strong>Victim Surcharge</strong> - £200 standard</li>
+                <li><strong>Costs</strong> - Full investigative costs to be determined</li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

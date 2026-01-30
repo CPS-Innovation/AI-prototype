@@ -1,5 +1,5 @@
 {
-  "serviceName": "AI prototype",
+  "serviceName": "Prototypes for Ai tools",
   "plugins": {
     "govuk-frontend": {
       "rebrand": true

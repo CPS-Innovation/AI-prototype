@@ -1,0 +1,17 @@
+{# GOV.UK Service navigation component (https://design-system.service.gov.uk/components/service-navigation/) #}
+<nav class="govuk-service-navigation" aria-label="Case sections">
+  <ul class="govuk-service-navigation__list">
+    <li class="govuk-service-navigation__item">
+      <a class="govuk-service-navigation__link{% if params.active == 'facts' %} govuk-service-navigation__link--active{% endif %}" href="case-details">Facts about the case</a>
+    </li>
+    <li class="govuk-service-navigation__item">
+      <a class="govuk-service-navigation__link{% if params.active == 'charges' %} govuk-service-navigation__link--active{% endif %}" href="charges">Charges</a>
+    </li>
+    <li class="govuk-service-navigation__item">
+      <a class="govuk-service-navigation__link{% if params.active == 'statements' %} govuk-service-navigation__link--active{% endif %}" href="witnesses-evidence">Statements and evidence</a>
+    </li>
+    <li class="govuk-service-navigation__item">
+      <a class="govuk-service-navigation__link{% if params.active == 'additional' %} govuk-service-navigation__link--active{% endif %}" href="additional-info">Additional info</a>
+    </li>
+  </ul>
+</nav>
