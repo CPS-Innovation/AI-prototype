@@ -13,32 +13,7 @@
   <div class="govuk-grid-column-full">
 
     <!-- SECTION 1: Case title (prevail across all pages)-->
-    <div>
-      <span class="govuk-caption-xl">16GH1510125 (2172489)</span>
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">T Quibble & P Snodgrass</h1>
-      <div style="display: flex; align-items: center; gap: 1em;">
-        <strong class="govuk-tag govuk-tag--green" style="font-size: 1rem;">Can proceed to court</strong>
-        <!-- <a href="#proceed-court" class="govuk-link govuk-body-s">Find out why</a> -->
-      </div>
-      <div class="govuk-!-margin-bottom-6"></div>
-    </div> 
-
-
-     <!-- SECTION 2: Case details -->
-    <div class="govuk-!-margin-bottom-6">
-      <dl class="govuk-summary-list govuk-!-margin-bottom-0 govuk-summary-list--no-border" style="max-width: 400px;">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Offence date</dt>
-          <dd class="govuk-summary-list__value">15 January 2026</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Location</dt>
-          <dd class="govuk-summary-list__value">Tesco Metro, High Street</dd>
-        </div>
-      </dl>
-    </div>
-
-<hr class="govuk-section-break govuk-section-break--l">
+    {% include "_includes/case-graph/case-header.njk" %}
 
 
 <div class="govuk-summary-card">
@@ -48,7 +23,7 @@
   </div>        
   
   <div class="govuk-summary-card__content">
-          <p class="govuk-body">On 15 January 2026 at approximately 14:20, <a href="people#defendant-quibble" class="app-person-link">Tabitha Quibble</a> and <a href="people#defendant-snodgrass" class="app-person-link">Percival Snodgrass</a> entered Tesco Metro on the High Street. <a href="people#defendant-quibble" class="app-person-link">Quibble</a> selected five items of clothing with a total value of £247.50 while <a href="people#defendant-snodgrass" class="app-person-link">Snodgrass</a> assisted. Both concealed the items in their personal bags.</p>
+          <p class="govuk-body">On 15 January 2026 at approximately 14:20, <a href="people#defendant-quibble" class="app-person-link">Tabitha Quibble</a> and <a href="people#defendant-snodgrass" class="app-person-link">Percival Snodgrass</a> entered Selfridges on the High Street. <a href="people#defendant-quibble" class="app-person-link">Quibble</a> selected five items of clothing with a total value of £247.50 while <a href="people#defendant-snodgrass" class="app-person-link">Snodgrass</a> assisted. Both concealed the items in their personal bags.</p>
           <p class="govuk-body">At approximately 14:28, security guard <a href="people#victim-bumble" class="app-person-link">M. Bumble</a> observed their conduct and moved to confront them as they approached the exit. <a href="people#defendant-snodgrass" class="app-person-link">Snodgrass</a> pushed <a href="people#victim-bumble" class="app-person-link">Bumble</a> forcefully, causing her to fall and sustain injury to her arm and shoulder. Both defendants fled the store but were apprehended by police within 15 minutes. </p>
           <p class="govuk-body">All stolen items were recovered in good condition.</p>
           <p class="govuk-body govuk-!-margin-bottom-1"><strong>Total value of goods stolen:</strong> £247.50</p>
@@ -79,11 +54,11 @@
                 <p class="moj-timeline__date">14:20, 15 January 2026</p>
               </div>
               <div class="moj-timeline__tags">
-                <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; vertical-align: middle;">Factual basis</span>
+                <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; vertical-align: middle;">evidence category</span>
               </div>
             </div>
               <div class="moj-timeline__entry">
-              <p class="govuk-body"><a href="people#defendant-quibble" class="app-person-link">Tabitha Quibble</a> and <a href="people#defendant-snodgrass" class="app-person-link">Percival Snodgrass</a> enter Tesco Metro on High Street.</p>
+              <p class="govuk-body"><a href="people#defendant-quibble" class="app-person-link">Tabitha Quibble</a> and <a href="people#defendant-snodgrass" class="app-person-link">Percival Snodgrass</a> enter Selfridges on High Street.</p>
               <p class="govuk-body-s"><strong>Evidence:</strong> <a href="#" onclick="alert('Opens: CCTV footage, 14:20-14:25')">CCTV footage (14:20-14:25)</a>, <a href="#" onclick="alert('Opens: Store Incident Report')">Store Incident Report</a></p>
             </div>
           </li>

@@ -3,41 +3,14 @@
 {% set pageName = "Additional Information" %}
 
 {% block beforeContent %}
-<!-- AI Transparency Banner - CRITICAL: Mindful friction + transparency -->
-
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-tag--yellow govuk-phase-banner__content__tag"> 
-        <!-- make a diff colour-->
-      AI
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This summary was created using artificial intelligence. You must verify this information against your own knowledge and judgement before making decisions.
-      Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
-    </span>
-  </p>
-</div>
-
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
-{{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Case Summary",
-      href: "overview"
-    },
-    {
-      text: "Additional Information"
-    }
-  ]
-}) }}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    
-    <h1 class="govuk-heading-l">Additional Information - R v <a href="case-details#defendant-williams" class="app-person-link">Williams</a></h1>
+     <!-- SECTION 1: Case title (prevail across all pages)-->
+    {% include "_includes/case-graph/case-header.njk" %}
+
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
@@ -52,7 +25,7 @@
               Victim Attendance
             </dt>
             <dd class="govuk-summary-list__value">
-              Tesco Metro (corporate victim, represented by store manager)
+              Selfridges (corporate victim, represented by store manager)
             </dd>
           </div>
 

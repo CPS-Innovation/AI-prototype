@@ -39,44 +39,16 @@
   <div class="govuk-grid-column-full">
 
     <!-- SECTION 1: Case title (prevail across all pages)-->
-    <div>
-
-
-      <div style="display: flex; align-items: baseline; gap: 1em;">
-        <span class="govuk-caption-xl">16GH1510125 (2172489)</span>
-        <a href="#" class="govuk-link govuk-body-s" onclick="alert('Opens: Full Case File (links to CMS)')">View case in CMS</a>
-      </div>
-
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">QUIBBLE, T and SNODGRASS, P (check capitalisation on case details)</h1>
-      <div style="display: flex; align-items: center; gap: 1em;">
-        <strong class="govuk-tag govuk-tag--green" style="font-size: 1rem;">Can proceed to court</strong>
-        <!-- <a href="#proceed-court" class="govuk-link govuk-body-s">Find out why</a> -->
-      </div>
-      <div class="govuk-!-margin-bottom-6"></div>
-    </div> 
-
-
-     <!-- SECTION 2: Case details -->
-    <div class="govuk-!-margin-bottom-6">
-      <dl class="govuk-summary-list govuk-!-margin-bottom-0 govuk-summary-list--no-border" style="max-width: 400px;">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Offence date</dt>
-          <dd class="govuk-summary-list__value">15 January 2026</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Location</dt>
-          <dd class="govuk-summary-list__value">Tesco Metro, High Street</dd>
-        </div>
-      </dl>
-    </div>
+    {% include "_includes/case-graph/case-header.njk" %}
     
     <!-- SECTION 3: Details summary -->
     <div class="govuk-summary-card govuk-!-margin-bottom-6">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Summary</h2>
-      </div>
+        <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Summary</h2>
+            <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; vertical-align: middle;">AI generated</span>
+        </div>      
       <div class="govuk-summary-card__content">
-        <p>On 15 January 2026, <a href="people#defendant-quibble" class="app-person-link">Quibble</a> and <a href="people#defendant-snodgrass" class="app-person-link">Snodgrass</a> committed retail theft (£247.50) at Tesco. Snodgrass assaulted a guard during flight. Both were apprehended within 15 minutes; all property was recovered.</p>
+        <p>On 15 January 2026, <a href="people#defendant-quibble" class="app-person-link">Quibble</a> and <a href="people#defendant-snodgrass" class="app-person-link">Snodgrass</a> committed retail theft (£247.50) at Selfridges. Snodgrass assaulted a guard during flight. Both were apprehended within 15 minutes; all property was recovered.</p>
         <p class="govuk-body govuk-!-margin-top-4"><a href="details" class="govuk-link">View full case details and timeline</a></p>
       </div>
     </div>
@@ -120,7 +92,7 @@
             <p class="govuk-body-m govuk-!-margin-bottom-2"><strong>2 charge types</strong></p>
             <p class="govuk-body-s govuk-!-margin-bottom-2">Theft (s.1 TA 1968), Assault ABH (s.47 OAPA 1861)</p>
             <p class="govuk-body-s govuk-!-margin-bottom-2"><strong>£247.50</strong> stolen goods</p>
-            <p class="govuk-body-s"><a href="case-details" class="govuk-link">View all charges</a></p>
+            <p class="govuk-body-s"><a href="charges" class="govuk-link">View all charges</a></p>
           </div>
         </div>
       </div>
@@ -132,7 +104,7 @@
             <p class="govuk-body-m govuk-!-margin-bottom-2"><strong>3 statements</strong></p>
             <p class="govuk-body-s govuk-!-margin-bottom-2"><strong>1 victim</strong>, 2 witnesses</p>
             <p class="govuk-body-s"><span class="govuk-tag govuk-tag--green">All corroborated</span></p>
-            <p class="govuk-body-s govuk-!-margin-top-3"><a href="witnesses-evidence" class="govuk-link">View connections</a></p>
+            <p class="govuk-body-s govuk-!-margin-top-3"><a href="statements-evidence" class="govuk-link">View statements and evidence</a></p>
           </div>
         </div>
       </div>
@@ -152,12 +124,14 @@
 
 
     <!-- SECTION 7: Actions -->
+     <!--
     <div class="govuk-!-margin-bottom-6">
       <h2 class="govuk-heading-m">Actions</h2>
       <p class="govuk-body">
         <a href="#" class="govuk-link" onclick="alert('Opens: Request More Evidence form')">Request More Evidence</a>
       </p>
     </div>
+-->
 
   </div>
 </div>

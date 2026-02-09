@@ -3,168 +3,17 @@
 {% set pageName = "Points to Prove" %}
 
 {% block beforeContent %}
-<!-- AI Transparency Banner - CRITICAL: Mindful friction + transparency -->
-
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-tag--yellow govuk-phase-banner__content__tag"> 
-        <!-- make a diff colour-->
-      AI
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This summary was created using artificial intelligence. You must verify this information against your own knowledge and judgement before making decisions.
-      Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
-    </span>
-  </p>
-</div>
-
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
-{{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Case Summary",
-      href: "overview"
-    },
-    {
-      text: "Points to Prove"
-    }
-  ]
-}) }}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     
-    <h1 class="govuk-heading-l">Points to Prove - R v <a href="case-details#defendant-williams" class="app-person-link">Williams</a> & <a href="case-details#defendant-morgan" class="app-person-link">Morgan</a></h1>
+     <!-- SECTION 1: Case title (prevail across all pages)-->
+    {% include "_includes/case-graph/case-header.njk" %}
 
     <!-- CHARGE 1: THEFT -->
-    <div class="govuk-summary-card govuk-!-margin-bottom-6">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Charge 1: Theft contrary to s.1 Theft Act 1968</h2>
-      </div>
-      <div class="govuk-summary-card__content">
-        <p class="govuk-body-s govuk-!-margin-bottom-4"><strong>Applies to both defendants.</strong> Statutory Definition: "A person is guilty of theft if he dishonestly appropriates property belonging to another with the intention of permanently depriving the other of it" - Theft Act 1968 s.1(1)</p>
-        
-        <!-- Point 1: Appropriates -->
-        <div class="app-evidence-box">
-          <div class="app-evidence-box__header">
-            <h4 class="govuk-heading-s">1. Appropriates property</h4>
-            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
-          </div>
-          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
-          
-          <details class="govuk-details govuk-!-margin-top-3">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">Evidence that supports this point</span>
-            </summary>
-            <div class="govuk-details__text">
-              <ul class="govuk-list govuk-list--bullet">
-                <li><strong>Williams:</strong> <a href="#" onclick="alert('Opens: CCTV Footage 14:20-14:25')">CCTV (14:20-14:25)</a> - Selects items and places directly in personal bag (assumes control)</li>
-                <li><strong>Morgan:</strong> <a href="#" onclick="alert('Opens: CCTV Footage 14:22-14:26')">CCTV (14:22-14:26)</a> - Assists Williams, stands lookout, handles items before placing in bag</li>
-                <li><strong>Both:</strong> <a href="#" onclick="alert('Opens: Physical Items Exhibit JP/01')">Recovered Items (Exhibit JP/01)</a> - All items found in defendants' possession</li>
-              </ul>
-            </div>
-          </details>
-          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> CCTV footage (Exhibit JP/02), recovered property</em></p>
-        </div>
-
-        <!-- Point 2: Property -->
-        <div class="app-evidence-box">
-          <div class="app-evidence-box__header">
-            <h4 class="govuk-heading-s">2. Property (capable of being stolen)</h4>
-            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
-          </div>
-          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
-          
-          <details class="govuk-details govuk-!-margin-top-3">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">Evidence that supports this point</span>
-            </summary>
-            <div class="govuk-details__text">
-              <ul class="govuk-list govuk-list--bullet">
-                <li><a href="#" onclick="alert('Opens: Physical Items Exhibit JP/01')">Recovered Items (Exhibit JP/01)</a> - 5 items of clothing, tangible personal property</li>
-                <li><a href="#" onclick="alert('Opens: Store Inventory')">Store Inventory</a> - Items listed with product codes</li>
-                <li><a href="#" onclick="alert('Opens: Store Records')">Store Records</a> - Items capable of possession and use</li>
-              </ul>
-            </div>
-          </details>
-          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> Physical evidence, Store inventory</em></p>
-        </div>
-
-        <!-- Point 3: Belonging to Another -->
-        <div class="app-evidence-box">
-          <div class="app-evidence-box__header">
-            <h4 class="govuk-heading-s">3. Property belonging to another</h4>
-            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
-          </div>
-          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
-          
-          <details class="govuk-details govuk-!-margin-top-3">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">Evidence that supports this point</span>
-            </summary>
-            <div class="govuk-details__text">
-              <ul class="govuk-list govuk-list--bullet">
-                <li><a href="#" onclick="alert('Opens: Store Records - Tesco ownership')">Store Records</a> - Items owned by Tesco Metro plc at time of appropriation</li>
-                <li><a href="#" onclick="alert('Opens: Item Tags')">Item Tags</a> - All items bearing Tesco branding and security tags</li>
-                <li><a href="#" onclick="alert('Opens: Business Records')">Business Records</a> - Tesco Metro property rights in inventory</li>
-              </ul>
-            </div>
-          </details>
-          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> Business ownership records, item documentation</em></p>
-        </div>
-
-        <!-- Point 4: Dishonestly -->
-        <div class="app-evidence-box">
-          <div class="app-evidence-box__header">
-            <h4 class="govuk-heading-s">4. Dishonestly</h4>
-            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
-          </div>
-          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
-          
-          <details class="govuk-details govuk-!-margin-top-3">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">Evidence that supports this point</span>
-            </summary>
-            <div class="govuk-details__text">
-              <ul class="govuk-list govuk-list--bullet">
-                <li><a href="#" onclick="alert('Opens: CCTV Footage')">CCTV (14:21-14:26)</a> - Both defendants deliberately conceal items (not placing on counter for purchase)</li>
-                <li><a href="#" onclick="alert('Opens: CCTV Exit footage')">CCTV (14:28)</a> - Both exit store avoiding checkout areas</li>
-                <li><a href="#" onclick="alert('Opens: Security Statement')">Security Statement</a> - Witnessed deliberate concealment and attempted departure</li>
-              </ul>
-            </div>
-          </details>
-          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> CCTV footage, witness observation</em></p>
-        </div>
-
-        <!-- Point 5: Intention to Permanently Deprive -->
-        <div class="app-evidence-box">
-          <div class="app-evidence-box__header">
-            <h4 class="govuk-heading-s">5. Intention to permanently deprive</h4>
-            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
-          </div>
-          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
-          
-          <details class="govuk-details govuk-!-margin-top-3">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">Evidence that supports this point</span>
-            </summary>
-            <div class="govuk-details__text">
-              <ul class="govuk-list govuk-list--bullet">
-                <li><a href="#" onclick="alert('Opens: CCTV')">CCTV (14:28)</a> - Both defendants walked directly toward exit without attempting payment or return</li>
-                <li><a href="#" onclick="alert('Opens: Security Statement')">Security Statement</a> - Made no attempt to explain mistake when confronted; instead used violence to flee</li>
-                <li><a href="#" onclick="alert('Opens: PNC - Williams')">PNC (Williams)</a> - 2 previous shoplifting convictions (March 2024, September 2024)</li>
-                <li><a href="#" onclick="alert('Opens: PNC - Morgan')">PNC (Morgan)</a> - 1 previous theft conviction (June 2024)</li>
-              </ul>
-            </div>
-          </details>
-          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> CCTV, witness observations, criminal history</em></p>
-        </div>
-
-      </div>
-    </div>
+    
 
     <!-- CHARGE 2: ASSAULT ABH -->
     <div class="govuk-summary-card">
@@ -310,7 +159,7 @@
               <ul class="govuk-list govuk-list--bullet">
                 <li><a href="#" onclick="alert('Opens: Physical Items Exhibit JP/01')">Recovered Items (Exhibit JP/01)</a> - 5 items of clothing, tangible personal property</li>
                 <li><a href="#" onclick="alert('Opens: Store Inventory')">Store Inventory</a> - Items listed with product codes and descriptions</li>
-                <li><a href="#" onclick="alert('Opens: Store Records - Tesco ownership')">Store Records</a> - Items capable of possession and use</li>
+                <li><a href="#" onclick="alert('Opens: Store Records - Selfridges ownership')">Store Records</a> - Items capable of possession and use</li>
               </ul>
             </div>
           </details>
@@ -331,9 +180,9 @@
             </summary>
             <div class="govuk-details__text">
               <ul class="govuk-list govuk-list--bullet">
-                <li><a href="#" onclick="alert('Opens: Store Records - Tesco Metro ownership')">Store Records</a> - Items owned by Tesco Metro plc at time of alleged theft</li>
-                <li><a href="#" onclick="alert('Opens: Item Tags')">Item Tags</a> - All items bearing Tesco branding and security tags at time of removal</li>
-                <li><a href="#" onclick="alert('Opens: Business Records')">Business Records</a> - Tesco Metro's property rights in inventory</li>
+                <li><a href="#" onclick="alert('Opens: Store Records - Selfridges ownership')">Store Records</a> - Items owned by Selfridges at time of alleged theft</li>
+                <li><a href="#" onclick="alert('Opens: Item Tags')">Item Tags</a> - All items bearing Selfridges branding and security tags at time of removal</li>
+                <li><a href="#" onclick="alert('Opens: Business Records')">Business Records</a> - Selfridges's property rights in inventory</li>
               </ul>
             </div>
           </details>

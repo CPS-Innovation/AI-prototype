@@ -1,3 +1,189 @@
+// Make numbers in points to prove list bold
+.app-task-list--evidence > li::marker {
+    font-family: "GDS Transport", Arial, sans-serif;
+  font-weight: bold;
+  color: #0b0c0c;
+}
+// Evidence task list layout
+.app-task-list--evidence {
+  counter-reset: evidenceitem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.app-task-list__evidence-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: govuk-spacing(1);
+}
+.app-task-list__evidence-number {
+  font-weight: bold;
+  color: #0b0c0c;
+  font-size: 19px;
+  margin-right: govuk-spacing(2);
+  flex-shrink: 0;
+  min-width: 2ch;
+  text-align: right;
+  line-height: 1.2;
+  content: counter(evidenceitem) ". ";
+  display: inline-block;
+}
+
+.app-task-list__evidence-title {
+  color: #0b0c0c;
+  font-size: 19px;
+  font-weight: bold;
+  flex: 1 1 auto;
+  word-break: break-word;
+}
+
+.app-task-list__evidence-hint {
+  color: #5a5a5f;
+  font-size: 16px;
+  margin-bottom: govuk-spacing(1);
+}
+.app-task-list__evidence-details .govuk-details__summary,
+.app-task-list__evidence-details .govuk-details__text {
+  color: #5a5a5f;
+  font-size: 16px;
+}
+.app-task-list__evidence-hint {
+  color: #5a5a5f;
+  font-size: 16px;
+  margin-bottom: govuk-spacing(1);
+}
+.app-task-list__evidence-details-summary,
+.app-task-list__evidence-details-text {
+  color: #5a5a5f !important;
+  font-size: 16px !important;
+}
+// Numbered task list for points to prove
+.app-task-list--numbered {
+  counter-reset: tasklist;
+  list-style: none;
+  padding-left: 0;
+}
+.app-task-list--numbered > .govuk-task-list__item {
+  counter-increment: tasklist;
+  position: relative;
+  margin-bottom: govuk-spacing(2);
+}
+.app-task-list--numbered > .govuk-task-list__item .app-task-list__title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: govuk-spacing(2);
+  margin-bottom: govuk-spacing(1);
+}
+.app-task-list--numbered > .govuk-task-list__item .govuk-task-list__link {
+  font-weight: bold;
+  font-size: 1.1em;
+  display: inline-block;
+  max-width: 80%;
+  word-break: break-word;
+}
+.app-task-list__proven-tag {
+  margin-left: auto;
+  white-space: nowrap;
+  font-size: 1em !important;
+  vertical-align: middle;
+  align-self: flex-start;
+}
+.app-task-list--numbered > .govuk-task-list__item .app-task-list__title-row:before {
+  content: counter(tasklist) ". ";
+  font-weight: bold;
+  margin-right: govuk-spacing(1);
+  color: $govuk-secondary-text-colour;
+  font-size: 1.1em;
+  flex-shrink: 0;
+}
+.govuk-task-list__hint,
+.govuk-details__summary,
+.govuk-details__text {
+  font-size: 1em !important;
+}
+.govuk-details--small .govuk-details__summary {
+  font-size: 1em !important;
+}
+.govuk-details--small .govuk-details__text {
+  font-size: 1em !important;
+}
+.govuk-task-list__link--static {
+  color: $govuk-text-colour;
+  text-decoration: none;
+  cursor: default;
+  pointer-events: none;
+  background: none !important;
+  &:hover, &:focus, &:active {
+    color: $govuk-text-colour;
+    text-decoration: none;
+    background: none !important;
+    outline: none;
+  }
+}
+
+.govuk-task-list__item {
+  background: none !important;
+  &:hover, &:focus, &:active {
+    background: none !important;
+    outline: none;
+  }
+}
+
+// Task list inside summary card: fix spacing
+.app-task-list-inside-summary {
+  .govuk-task-list {
+    margin: 0 0 govuk-spacing(3) 0;
+    padding: 0;
+  }
+  .govuk-task-list__item {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid govuk-colour('mid-grey');
+    padding: govuk-spacing(2) 0;
+    margin: 0;
+    gap: govuk-spacing(3);
+  }
+  .govuk-task-list__item:last-child {
+    border-bottom: 0;
+  }
+  .govuk-task-list__name-and-hint {
+    flex: 1 1 auto;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+  .govuk-task-list__status {
+    flex: 0 0 auto;
+    margin-left: govuk-spacing(2);
+    min-width: 100px;
+    text-align: right;
+    line-height: 2.2;
+  }
+  .govuk-task-list__link--static {
+    color: $govuk-text-colour;
+    text-decoration: none;
+    cursor: default;
+    pointer-events: none;
+    &:hover, &:active, &:focus {
+      color: $govuk-text-colour;
+      text-decoration: none;
+      background: none;
+      outline: none;
+    }
+  }
+  .govuk-task-list__hint {
+    margin-top: govuk-spacing(1);
+    margin-bottom: 0;
+    color: $govuk-secondary-text-colour;
+    font-size: 1rem;
+  }
+  .govuk-task-list__link {
+    display: inline-block;
+    margin-bottom: govuk-spacing(1);
+  }
+}
+
 // Horizontal navigation bar for case overview
 .app-horizontal-nav__list {
   display: flex;
@@ -22,6 +208,7 @@
   background: #fffbe2;
   border-radius: 2px;
 }
+
 // Section backgrounds and spacing for case details split
 // Custom section backgrounds and spacing for case details split
 .app-section-background {
@@ -52,6 +239,24 @@
   box-shadow: 0 0 0 4px #1d70b8;
   background: #f3f2f1;
 }
+// Prevent card background from being selected, but allow content and links to be selectable
+.govuk-summary-card {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.govuk-summary-card *,
+.govuk-summary-card a,
+.govuk-summary-card .govuk-details,
+.govuk-summary-card .govuk-details__summary,
+.govuk-summary-card .govuk-details__text {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+}
+
 // Case Graph component styles
 
 // Accent border for summary cards

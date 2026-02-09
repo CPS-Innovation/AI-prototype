@@ -39,40 +39,8 @@
   <div class="govuk-grid-column-full">
 
     <!-- SECTION 1: Case title (prevail across all pages)-->
-    <div>
+    {% include "_includes/case-graph/case-header.njk" %}
 
-
-      <div style="display: flex; align-items: baseline; gap: 1em;">
-        <span class="govuk-caption-xl">16GH1510125 (2172489)</span>
-        <a href="#" class="govuk-link govuk-body-s" onclick="alert('Opens: Full Case File (links to CMS)')">View case in CMS</a>
-      </div>
-
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">QUIBBLE, T and SNODGRASS, P</h1>
-      <div style="display: flex; align-items: center; gap: 1em;">
-        <strong class="govuk-tag govuk-tag--green" style="font-size: 1rem;">Can proceed to court</strong>
-        <!-- <a href="#proceed-court" class="govuk-link govuk-body-s">Find out why</a> -->
-      </div>
-      <div class="govuk-!-margin-bottom-6"></div>
-    </div> 
-
-
-     <!-- SECTION 2: Case details -->
-    <div class="govuk-!-margin-bottom-6">
-      <dl class="govuk-summary-list govuk-!-margin-bottom-0 govuk-summary-list--no-border" style="max-width: 400px;">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Offence date</dt>
-          <dd class="govuk-summary-list__value">15 January 2026</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Location</dt>
-          <dd class="govuk-summary-list__value">Tesco Metro, High Street</dd>
-        </div>
-      </dl>
-    </div>
-
-
-<!-- People-->
-    <h2 class="govuk-heading-l">People</h2>
         <!-- SECTION 3: People  -->
     <section id="people" aria-labelledby="people-heading">
       <!--<h2 class="govuk-heading-l govuk-!-margin-bottom-6" id="people-heading">People</h2>-->
@@ -80,8 +48,8 @@
         <div class="govuk-grid-column-one-half">
           <div class="govuk-summary-card">
             <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;" id="defendant-quibble" tabindex="-1">
-              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">QUIBBLE, Tabitha</h2>
-              <span class="govuk-tag govuk-tag--red" aria-label="Defendant">Defendant</span>
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Tabitha Quibble</h2>
+              <span class="govuk-tag govuk-tag--red" style="font-size: 1rem; vertical-align: middle;" aria-label="Defendant">Defendant</span>
             </div>
             <div class="govuk-summary-card__content">
               <dl class="govuk-summary-list">
@@ -110,8 +78,8 @@
         <div class="govuk-grid-column-one-half">
           <div class="govuk-summary-card">
             <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;" id="defendant-snodgrass" tabindex="-1">
-              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">SNODGRASS, Percival</h2>
-              <span class="govuk-tag govuk-tag--red" aria-label="Defendant">Defendant</span>
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Percival Snodgrass</h2>
+              <span class="govuk-tag govuk-tag--red" style="font-size: 1rem; vertical-align: middle;" aria-label="Defendant">Defendant</span>
             </div>
             <div class="govuk-summary-card__content">
               <dl class="govuk-summary-list">
@@ -141,14 +109,14 @@
         <div class="govuk-grid-column-one-half">
           <div class="govuk-summary-card">
             <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;" id="victim-bumble" tabindex="-1">
-              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">BUMBLE, Millicent</h2>
-              <span class="govuk-tag govuk-tag--blue" aria-label="Victim">Victim</span>
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Millicent Bumble</h2>
+              <span class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle;" aria-label="Victim">Victim</span>
             </div>
             <div class="govuk-summary-card__content">
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Role in incident</dt>
-                  <dd class="govuk-summary-list__value">Store security guard at Tesco Metro, High Street; assaulted by <a href="case-details#defendant-snodgrass" class="app-person-link">Percival Snodgrass</a></dd>
+                  <dd class="govuk-summary-list__value">Store security guard at Selfridges, High Street; assaulted by <a href="case-details#defendant-snodgrass" class="app-person-link">Percival Snodgrass</a></dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Statement</dt>

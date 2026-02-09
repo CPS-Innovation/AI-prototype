@@ -1,11 +1,11 @@
 {% if not hideNav %}
-  {{ govukServiceNavigation({
-    navigation: [
-      {
-        href: "overview",
-        text: "Overview",
-        active: navId == 'overview'
-      },
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  serviceName: "Case summary",
+  serviceUrl: "overview",
+  navigation: [
       {
         href: "people",
         text: "People",
@@ -22,15 +22,11 @@
         active: navId == 'charges'
       },
       {
-        href: "witnesses-evidence",
+        href: "statements-evidence",
         text: "Statements and evidence",
         active: navId == 'statements'
-      },
-      {
-        href: "additional-info",
-        text: "Additional info",
-        active: navId == 'additional'
       }
-    ]
-  }) }}
+  ]
+}) }}
+
 {% endif %}
