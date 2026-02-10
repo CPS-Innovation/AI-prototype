@@ -21,13 +21,8 @@
   </h2>
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-      <a class="govuk-tabs__tab" href="#primary-charge">
-        Primary charge
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#additional-charges">
-        Additional charges
+      <a class="govuk-tabs__tab" href="#charges">
+        Charges
       </a>
     </li>
     <li class="govuk-tabs__list-item">
@@ -39,12 +34,17 @@
 
       <!-- SECTION 3: Primary charge -->
 
-  <div class="govuk-tabs__panel" id="primary-charge">
+  <div class="govuk-tabs__panel" id="charges">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
-      <h2 class="govuk-heading-m" >Primary charge</h2>
-      <span class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle;">Police</span>
+      <h2 class="govuk-heading-m" >Charges</h2>
     </div>
     <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Source</dt>
+        <dd class="govuk-summary-list__value">
+      <span class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle;">Police</span>
+        </dd>
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Charge</dt>
         <dd class="govuk-summary-list__value">
@@ -65,7 +65,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Evidence assessment</dt>
-            <dd class="govuk-summary-list__value">All essential evidence for a shoplifting case is present and strong. The case meets the evidential test with clear CCTV footage, recovered items, witness testimony, and a strong case for dishonest appropriation of property belonging to another.</dd>
+            <dd class="govuk-summary-list__value">Most essential evidence for a shoplifting case is present, but there is contradictory evidence regarding dishonesty and intention to permanently deprive. CCTV footage, recovered items, and witness testimony support the charge, but witness and defendant statements introduce doubt about intent and possible mistake.</dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -154,10 +154,10 @@
 
                   <li>
                     Dishonesty
-                    <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
+                    <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; margin-left: 1em;">Weak</span>
 
                   <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    Defendant concealed items and attempted to leave without payment, indicating dishonest intent.
+                    Defendant concealed items and attempted to leave without payment, but there is evidence suggesting possible confusion or mistake.
                   </div>
 
                     <details class="govuk-details">
@@ -170,7 +170,9 @@
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
                           <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:20-14:23)</a></strong> - Defendant deliberately conceals items in personal bag (not placing on counter for purchase)</li>
                           <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:25)</a></strong> - Defendant exits store avoiding checkout areas</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong> - Guard witnessed attempted departure without payment</li>                          
+                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong> - Guard witnessed attempted departure without payment</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Witness statement (Exhibit 09)')">Witness statement (Exhibit 09)</a></strong> - Witness observed defendant pausing near checkout, appearing confused and looking for a till</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Defendant interview (Exhibit 10)')">Defendant interview (Exhibit 10)</a></strong> - Defendant claimed to have forgotten to pay and offered to return items when stopped</li>
                         </ul>                      
                       </div>
                     </details>
@@ -178,10 +180,10 @@
 
                   <li>
                     Intention to permanently deprive
-                    <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
+                    <span class="govuk-tag govuk-tag--orange" style="font-size: 1rem; margin-left: 1em;">Moderate</span>
 
                   <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    Attempt to leave store with concealed items and no payment made demonstrates intent to permanently deprive.
+                    Attempt to leave store with concealed items and no payment made suggests intent to permanently deprive, but there is evidence of possible mistake or lack of intent.
                   </div>
 
                     <details class="govuk-details">
@@ -193,31 +195,29 @@
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
                           <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:24-14:25)</a></strong> - Defendant walked directly toward exit without attempting to pay or return items</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong> - When confronted by security, defendant made no attempt to explain mistake or claim misunderstanding</li>                          
-                          <li><strong><a href="#" onclick="alert('Opens: Criminal history (Exhibit 02)')">Criminal history (Exhibit 02)</a></strong> - Snodgrass has 2 previous shoplifting convictions (March 2024, September 2024), demonstrating pattern of conduct</li>                          
-                          <li><strong><a href="#" onclick="alert('Opens: Defendant statement (Exhibit 03)')">Defendant statement (Exhibit 03)</a></strong> -  Quibble made no comment when interviewed (standard caution) - s.34 CJPA 1994 inference available</li>                          
-                          <li><strong><a href="#" onclick="alert('Opens: Defendant statement (Exhibit 05)')">Defendant statement (Exhibit 03)</a></strong> -  Snodgrass made no comment when interviewed (standard caution) - s.34 CJPA 1994 inference available</li>                          
-
+                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong> - When confronted by security, defendant made no attempt to explain mistake or claim misunderstanding</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Criminal history (Exhibit 02)')">Criminal history (Exhibit 02)</a></strong> - Snodgrass has 2 previous shoplifting convictions (March 2024, September 2024), demonstrating pattern of conduct</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Defendant statement (Exhibit 03)')">Defendant statement (Exhibit 03)</a></strong> -  Quibble made no comment when interviewed (standard caution) - s.34 CJPA 1994 inference available</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Defendant statement (Exhibit 05)')">Defendant statement (Exhibit 03)</a></strong> -  Snodgrass made no comment when interviewed (standard caution) - s.34 CJPA 1994 inference available</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Witness statement (Exhibit 09)')">Witness statement (Exhibit 09)</a></strong> - Witness observed defendant pausing near checkout, appearing confused and looking for a till</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Defendant interview (Exhibit 10)')">Defendant interview (Exhibit 10)</a></strong> - Defendant claimed to have forgotten to pay and offered to return items when stopped</li>
                         </ul>                      
                       </div>
                     </details>
                   </li>
                 </ol>
                 </dd>
-                </div>
-                </dl>
-                </div>
+</dl>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+<dl class="govuk-summary-list govuk-summary-list--no-border">
 
-                                <!-- SECTION 4: Additional charges -->
-
-
-                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="additional-charges">
-    <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
-      <h2 class="govuk-heading-m" >Additional charges</h2>
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Source</dt>
+        <dd class="govuk-summary-list__value">
       <span class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle;">Police</span>
-    </div>
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
+        </dd>
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Charge</dt>
         <dd class="govuk-summary-list__value">
@@ -242,7 +242,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Evidence assessment</dt>
-            <dd class="govuk-summary-list__value">lorem ipsum</dd>
+            <dd class="govuk-summary-list__value">CCTV, medical records, and multiple witness statements confirm the assault and resulting injuries. The evidence strongly supports the charge of ABH against Snodgrass.</dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -256,7 +256,7 @@
 
 
                   <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    CCTV and witness evidence show Snodgrass used force against Bumble as she attempted to stop the theft.
                   </div>
 
                     <details class="govuk-details">
@@ -280,10 +280,8 @@
                     Intentional or reckless
 
                     <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
-
-
                   <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-lorem ipsum
+                    The push was not accidental; Snodgrass's actions were deliberate or reckless, as shown by the timing and context.
                   </div>
 
                     <details class="govuk-details">
@@ -309,7 +307,7 @@ lorem ipsum
                     <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
 
                   <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Medical evidence confirms Bumble suffered actual bodily harm as a result of the incident, including bruising and pain.
                   </div>
 
                     <details class="govuk-details">
@@ -335,7 +333,7 @@ lorem ipsum
                     <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
 
                   <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    The injuries were directly caused by the push and resulting fall, with no evidence of any other cause.
                   </div>
 
                     <details class="govuk-details">
@@ -367,9 +365,16 @@ lorem ipsum
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="suggested-charges">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
       <h2 class="govuk-heading-m" >Suggested charges</h2>
-      <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; vertical-align: middle;">AI generated</span>
     </div>
     <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Source</dt>
+        <dd class="govuk-summary-list__value">
+      <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; vertical-align: middle;">AI generated</span>
+        </dd>
+      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Charge</dt>
         <dd class="govuk-summary-list__value">
@@ -390,7 +395,7 @@ lorem ipsum
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Evidence assessment</dt>
-            <dd class="govuk-summary-list__value"></dd>
+            <dd class="govuk-summary-list__value">There is strong evidence that the goods were stolen and that both defendants handled them. The main issue is whether they knew or believed the goods were stolen at the time of handling.</dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -404,7 +409,7 @@ lorem ipsum
 
 
                   <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    The clothing was recently stolen from Selfridges, as shown by CCTV and recovery of items with tags and security devices attached.
                   </div>
 
                     <details class="govuk-details">
@@ -432,7 +437,7 @@ lorem ipsum
 
 
                   <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Both defendants were found in possession of the goods shortly after the theft, and the items were identified as stolen by store staff.
                   </div>
 
                     <details class="govuk-details">
@@ -457,7 +462,7 @@ lorem ipsum
                     <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
 
                   <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Evidence shows both defendants assisted in moving and concealing the stolen goods, and did not provide a credible explanation for their possession.
                   </div>
 
                     <details class="govuk-details">

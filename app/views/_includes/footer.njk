@@ -1,11 +1,26 @@
-{% block footer %}
-  {% set footerHtml %}
+{% if (data['testing'] or (query and query.testing)) %}
+  {# Show custom testing header/footer #}
+  <footer class="govuk-footer" role="contentinfo">
+  <div class="govuk-width-container">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <strong>This is a prototype for research and user testing only.</strong><br>
+        Please do not share this link or any content within this section outside the research group. Content and data are fictional and for demonstration purposes only.<br>
+                <a class="govuk-footer__link" href="/manage-prototype/clear-data">
+          Clear data
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
 
+{% else %}
+  {# Show normal header/footer #}
+  {% set footerHtml %}
     <h2 class="govuk-heading-m">Get help</h2>
     <p class="govuk-!-font-size-16">Email: <a href="#">help@cps.gov.uk</a><br>
       You’ll get a response within 5 working days.
     </p>
-
     <ul class="govuk-footer__inline-list">
       <li class="govuk-footer__inline-list-item">
         <a class="govuk-footer__link" href="/manage-prototype">
@@ -17,11 +32,6 @@
           Clear data
         </a>
       </li>
-      {# <li class="govuk-footer__inline-list-item">
-        <a class="govuk-footer__link" href="/clear-data?returnUrl={{path}}">
-          Clear data
-        </a>
-      </li> #}
       <li class="govuk-footer__inline-list-item">
         <a class="govuk-footer__link" href="/accessibility">
           Accessibility
@@ -34,10 +44,9 @@
       </li>
     </ul>
   {% endset %}
-
   {{ govukFooter({
     meta: {
       html: footerHtml
     }
   }) }}
-{% endblock %}
+{% endif %}

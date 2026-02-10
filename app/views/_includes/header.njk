@@ -1,11 +1,16 @@
-{% if data.user %}
-  {% set serviceUrl = '/overview' %}
-{% else %}
-  {% set serviceUrl = '/' %}
-{% endif %}
 
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 
+
+{% if (data['testing'] or (query and query.testing)) %}
+  {# Show custom testing header/footer #}
 {{ govukHeader({
-  homepageUrl: "/"
+  homepageUrl: "/testing"
 }) }}
+
+{% else %}
+  {# Show normal header/footer #}
+{{ govukHeader({
+  homepageUrl: "/index"
+}) }}
+{% endif %}
