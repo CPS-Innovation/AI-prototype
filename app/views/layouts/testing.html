@@ -14,6 +14,9 @@
 {# Remove the service name and service header #}
 {% block serviceName %}{% endblock %}
 {% block serviceHeader %}{% endblock %}
+{# Also override serviceNameHtml and serviceHeader blocks to ensure removal #}
+{% block serviceNameHtml %}{% endblock %}
+{% block serviceHeader %}{% endblock %}
 
 {% block footer %}
 {% endblock %}
