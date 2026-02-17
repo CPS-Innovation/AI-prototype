@@ -1,0 +1,133 @@
+{% extends "layouts/case-graph/main.html" %}
+{% set navId = 'statements' %}
+{% set pageName = "Statements and evidence" %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    
+    <!-- SECTION 1: Case title (prevail across all pages)-->
+    {% include "_includes/case-graph/case-header.njk" %}
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+Please ignore this page, its not been designed yet!    </p>
+  </div>
+</div>   
+
+    <!-- Witness Statements Section -->
+    <div class="govuk-summary-card govuk-!-margin-bottom-6">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Witness Statements</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        
+        <!-- Witness 1: J. Patterson -->
+        <div class="app-witness-box">
+          <div class="app-witness-box__header">
+            <div>
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="case-details#victim-patterson" class="app-person-link">J. Patterson</a></h4>
+              <p class="govuk-body-s govuk-!-margin-bottom-0">Selfridges Security Guard</p>
+            </div>
+            <span class="govuk-tag govuk-tag--green">Present</span>
+          </div>
+          <p class="govuk-body-s govuk-!-margin-top-3">Witnessed defendant selecting items from clothing section and attempting to exit without paying. Made the initial challenge and detained suspect. Provided incident report and MG11 witness statement.</p>
+          <p class="govuk-body-s"><a href="#" onclick="alert('Opens: Full witness statement - J. Patterson (MG11)')">View full statement</a></p>
+        </div>
+
+        <!-- Witness 2: Store Assistant -->
+        <div class="app-witness-box">
+          <div class="app-witness-box__header">
+            <div>
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Store Assistant (Clothing Section)</h4>
+              <p class="govuk-body-s govuk-!-margin-bottom-0">Selfridges Staff</p>
+            </div>
+            <span class="govuk-tag govuk-tag--green">Present</span>
+          </div>
+          <p class="govuk-body-s govuk-!-margin-top-3">Observed defendant placing items on shelf then removing them and placing in personal bag. Witnessed continued shopping and departure without payment. Will provide supporting statement if required.</p>
+          <p class="govuk-body-s"><a href="#" onclick="alert('Opens: Store assistant supplementary statement')">View statement</a></p>
+        </div>
+
+        <!-- Witness 3: Store Manager -->
+        <div class="app-witness-box">
+          <div class="app-witness-box__header">
+            <div>
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Store Manager</h4>
+              <p class="govuk-body-s govuk-!-margin-bottom-0">Selfridges Management</p>
+            </div>
+            <span class="govuk-tag govuk-tag--green">Present</span>
+          </div>
+          <p class="govuk-body-s govuk-!-margin-top-3">Verified store procedures, confirmed items as stock belonging to Selfridges, and confirmed value assessment. Available to give evidence regarding business records and property ownership.</p>
+          <p class="govuk-body-s"><a href="#" onclick="alert('Opens: Store manager statement - business records')">View statement</a></p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Evidence Present Section -->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Evidence Present</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        
+        <div class="govuk-grid-row">
+          
+          <!-- CCTV -->
+          <div class="govuk-grid-column-one-half">
+            <div class="app-evidence-present-box">
+              <p class="govuk-heading-s">CCTV</p>
+              <p class="govuk-body-s">14:20-14:25 footage showing complete transaction</p>
+              <p><span class="govuk-tag govuk-tag--green">PRESENT</span></p>
+              <p class="govuk-body-s"><a href="#" onclick="alert('Opens: CCTV Footage - full incident (Exhibit JP/02)')">Access footage</a></p>
+            </div>
+          </div>
+
+          <!-- Items -->
+          <div class="govuk-grid-column-one-half">
+            <div class="app-evidence-present-box">
+              <p class="govuk-heading-s">Physical Items</p>
+              <p class="govuk-body-s">5 clothing items with tags and receipts</p>
+              <p><span class="govuk-tag govuk-tag--green">PRESENT</span></p>
+              <p class="govuk-body-s"><a href="#" onclick="alert('Opens: Property Exhibit Schedule (JP/01)')">View exhibit list</a></p>
+            </div>
+          </div>
+
+          <!-- Store Records -->
+          <div class="govuk-grid-column-one-half">
+            <div class="app-evidence-present-box">
+              <p class="govuk-heading-s">Store Records</p>
+              <p class="govuk-body-s">Inventory and business records from Selfridges</p>
+              <p><span class="govuk-tag govuk-tag--green">PRESENT</span></p>
+              <p class="govuk-body-s"><a href="#" onclick="alert('Opens: Store inventory and business records')">View records</a></p>
+            </div>
+          </div>
+
+          <!-- Interview -->
+          <div class="govuk-grid-column-one-half">
+            <div class="app-evidence-present-box">
+              <p class="govuk-heading-s">Interview</p>
+              <p class="govuk-body-s">Defendant interview (made no comment)</p>
+              <p><span class="govuk-tag govuk-tag--green">PRESENT</span></p>
+              <p class="govuk-body-s"><a href="#" onclick="alert('Opens: Interview Transcript (INT/2026/001)')">View interview</a></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

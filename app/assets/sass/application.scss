@@ -21,6 +21,13 @@
 // Page specific styles
 @import "_includes/correspondence-drafter.scss";
 
+// Filter bits
+@import "components/action-bar.scss";
+@import "components/filter-layout.scss";
+@import "components/filter-panel.scss";
+@import "components/list-filter.scss";
+
+
 
 h1 .govuk-tag {
   position: relative;
@@ -211,14 +218,6 @@ $statuses: (
 
 .govuk-summary-card__content .govuk-summary-list:last-of-type {
   margin-bottom: 15px !important;
-}
-
-.govuk-template--rebranded .govuk-header {
-  // background: govuk-colour("black") !important;
-}
-
-.govuk-template--rebranded .govuk-header__link--homepage:not(:focus) {
-  // background: govuk-colour("black") !important;
 }
 
 .app-inset-action {

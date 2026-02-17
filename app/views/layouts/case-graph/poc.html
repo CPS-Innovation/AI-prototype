@@ -9,13 +9,13 @@
 {% from "_components/activity-log-item/macro.njk" import appActivityLogItem %}
 
 {% block header %}
+  {% include "_includes/ai-disclaimer-banner.njk" %}
+  {% include "_includes/header.njk" %}
+  {% include "_includes/case-graph/advocate-navigation-poc.njk" %}
 {% endblock %}
 
-{# Remove the service name and service header #}
-{% block serviceName %}{% endblock %}
-{% block serviceHeader %}{% endblock %}
-
 {% block footer %}
+	{% include "_includes/footer.njk" %}
 {% endblock %}
 
 {% block pageScripts %}

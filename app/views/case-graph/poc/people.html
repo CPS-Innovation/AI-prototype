@@ -1,0 +1,149 @@
+{% extends "layouts/case-graph/poc.html" %}
+{% set navId = 'people' %}
+{% set pageName = "Case Summary - Advocate View" %}
+
+{% block beforeContent %}
+<!-- AI Transparency Banner - CRITICAL: Mindful friction + transparency
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--yellow govuk-phase-banner__content__tag"> 
+      AI
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This summary was created using artificial intelligence. 
+      Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
+    </span>
+  </p>
+</div>
+
+-->
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      // Handle accordion initialization if needed
+      var elements = document.querySelectorAll('[data-module="govuk-accordion"]');
+      elements.forEach(function(el) {
+        if (window.GOVUK && window.GOVUK.Modules && window.GOVUK.Modules.Accordion) {
+          new window.GOVUK.Modules.Accordion(el).init();
+        }
+      });
+    });
+  </script>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <!-- SECTION 1: Case title (prevail across all pages)-->
+    {% include "_includes/case-graph/case-header-poc.njk" %}
+
+        <!-- SECTION 3: People  -->
+    <section id="people" aria-labelledby="people-heading">
+      <!--<h2 class="govuk-heading-l govuk-!-margin-bottom-6" id="people-heading">People</h2>-->
+      <div class="govuk-grid-row govuk-!-margin-bottom-6">
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;" id="defendant-quibble" tabindex="-1">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Tabitha Quibble</h2>
+              <span class="govuk-tag govuk-tag--red" style="font-size: 1rem; vertical-align: middle;" aria-label="Defendant">Defendant</span>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Occupation</dt>
+                  <dd class="govuk-summary-list__value">Software Engineer</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Age at time of offence</dt>
+                  <dd class="govuk-summary-list__value">32 years old</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Selected and concealed items; present during assault</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Proposed charges</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="charges">Theft (s.1 TA 1968)</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Police remand status</dt>
+                  <dd class="govuk-summary-list__value">Conditional bail</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;" id="defendant-snodgrass" tabindex="-1">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Percival Snodgrass</h2>
+              <span class="govuk-tag govuk-tag--red" style="font-size: 1rem; vertical-align: middle;" aria-label="Defendant">Defendant</span>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Occupation</dt>
+                  <dd class="govuk-summary-list__value">Personal trainer</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Age at time of offence</dt>
+                  <dd class="govuk-summary-list__value">28 years old</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Assisted with theft; assaulted security guard (<a href="case-details#victim-bumble" class="app-person-link">M. Bumble</a>) when confronted</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Proposed charges</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="charges">Theft (s.1 TA 1968)</a>,
+                    <a class="govuk-link" href="charges">Assault ABH (s.47 OAPA 1861)</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Police remand status</dt>
+                  <dd class="govuk-summary-list__value">Custody</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;" id="victim-bumble" tabindex="-1">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Millicent Bumble</h2>
+              <span class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle;" aria-label="Victim">Victim</span>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Store security guard at Selfridges, High Street; assaulted by <a href="case-details#defendant-snodgrass" class="app-person-link">Percival Snodgrass</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Statement</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a href="#" onclick="alert('Opens: Security guard statement - M. Bumble')">M. Bumble statement</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">More information</dt>
+                  <dd class="govuk-summary-list__value">Arm and shoulder injury requiring medical treatment.</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  </div>
+</div>
+
+{% endblock %}

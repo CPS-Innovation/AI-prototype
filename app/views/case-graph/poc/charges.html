@@ -1,4 +1,4 @@
-{% extends "layouts/case-graph/main.html" %}
+{% extends "layouts/case-graph/poc.html" %}
 {% set navId = 'charges' %}
 {% set pageName = "Case Details" %}
 
@@ -10,7 +10,7 @@
   <div class="govuk-grid-column-full">
 
     <!-- SECTION 1: Case title (prevail across all pages)-->
-    {% include "_includes/case-graph/case-header.njk" %}
+    {% include "_includes/case-graph/case-header-poc.njk" %}
 
 
     <!-- SECTION 2: Charges tabs-->
@@ -61,10 +61,7 @@
             <dt class="govuk-summary-list__key">Statutory definition</dt>
             <dd class="govuk-summary-list__value">A person is guilty of theft if he dishonestly appropriates property belonging to another with the intention of permanently depriving the other of it <a href="#" onclick="alert('Opens: L&P guidance')">(Theft Act 1968 s.1(1))</a></dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Evidence assessment</dt>
-            <dd class="govuk-summary-list__value">Most essential evidence for a shoplifting case is present, but there is contradictory evidence regarding dishonesty and intention to permanently deprive. CCTV footage, recovered items, and witness testimony support the charge, but witness and defendant statements introduce doubt about intent and possible mistake.</dd>
-          </div>
+
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Points to prove</dt>
@@ -72,13 +69,6 @@
                 <ol class="govuk-list govuk-list--number">
                   <li>
                     Appropriates property (assumes control)
-                  
-                    <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
-
-
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    CCTV footage shows defendant taking items from shelf and concealing them.
-                  </div>
 
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
@@ -88,10 +78,10 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:20-14:25)</a></strong> - Quibble selects items and places directly in personal bag (assumes control)</li>
-                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exhibit 01, 14:22-14:26)</a></strong> - Snodgrass assists Quibble, stands lookout, handles items before placing in bag</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong> - Witnessed defendant handling and concealing items</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong> - All items found in defendants' possession</li>
+                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:20-14:25)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exhibit 01, 14:22-14:26)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong> </li>
+                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong></li>
                         </ul>                      
                       </div>
                     </details>
@@ -101,13 +91,6 @@
                   <li>
                     Property (tangible personal property)
 
-                    <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
-
-
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    Store ownership documentation and witness statement from manager confirm property belonged to Selfridges at time of theft.
-                  </div>
-
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text">
@@ -116,9 +99,9 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong> - 5 items of clothing, tangible personal property</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Store inventory (Exhibit 11)')">Store inventory (Exhibit 11)</a></strong> - Items listed with product codes and descriptions</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a></strong> - Items capable of possession and use</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Store inventory (Exhibit 11)')">Store inventory (Exhibit 11)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a></strong></li>
                         </ul>                      
                       </div>
                     </details>
@@ -127,11 +110,7 @@
                   
                   <li>
                     Belonging to another
-                    <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
-
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    Defendant concealed items and attempted to leave without payment, indicating dishonest intent.
-                  </div>
+              
 
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
@@ -141,9 +120,9 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: Physical Items (Exhibit 12)')">Store records (Exhibit 12)</a></strong> - Items owned by Selfridges at time of alleged theft</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong> - All items bearing Selfridges branding and security tags at time of removal</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a></strong> - Selfridges's property rights in inventory</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Physical Items (Exhibit 12)')">Store records (Exhibit 12)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a></strong></li>
 
                         </ul>                      
                       </div>
@@ -152,11 +131,7 @@
 
                   <li>
                     Dishonesty
-                    <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; margin-left: 1em;">Weak</span>
 
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    Defendant concealed items and attempted to leave without payment, but there is evidence suggesting possible confusion or mistake.
-                  </div>
 
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
@@ -166,9 +141,9 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:20-14:23)</a></strong> - Defendant deliberately conceals items in personal bag (not placing on counter for purchase)</li>
-                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:25)</a></strong> - Defendant exits store avoiding checkout areas</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong> - Guard witnessed attempted departure without payment</li>
+                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:20-14:23)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:25)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong></li>
                         </ul>                      
                       </div>
                     </details>
@@ -181,8 +156,8 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: Witness statement (Exhibit 09)')">Witness statement (Exhibit 09)</a></strong> - Witness observed defendant pausing near checkout, appearing confused and looking for a till</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Defendant interview (Exhibit 10)')">Defendant interview (Exhibit 10)</a></strong> - Defendant claimed to have forgotten to pay and offered to return items when stopped</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Witness statement (Exhibit 09)')">Witness statement (Exhibit 09)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Defendant interview (Exhibit 10)')">Defendant interview (Exhibit 10)</a></strong></li>
                         </ul>                      
                       </div>
                     </details>
@@ -190,11 +165,7 @@
 
                   <li>
                     Intention to permanently deprive
-                    <span class="govuk-tag govuk-tag--orange" style="font-size: 1rem; margin-left: 1em;">Moderate</span>
-
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    Attempt to leave store with concealed items and no payment made suggests intent to permanently deprive, but there is evidence of possible mistake or lack of intent.
-                  </div>
+                
 
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
@@ -204,11 +175,11 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:24-14:25)</a></strong> - Defendant walked directly toward exit without attempting to pay or return items</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong> - When confronted by security, defendant made no attempt to explain mistake or claim misunderstanding</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Criminal history (Exhibit 02)')">Criminal history (Exhibit 02)</a></strong> - Snodgrass has 2 previous shoplifting convictions (March 2024, September 2024), demonstrating pattern of conduct</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Defendant statement (Exhibit 03)')">Defendant statement (Exhibit 03)</a></strong> -  Quibble made no comment when interviewed (standard caution) - s.34 CJPA 1994 inference available</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Defendant statement (Exhibit 05)')">Defendant statement (Exhibit 03)</a></strong> -  Snodgrass made no comment when interviewed (standard caution) - s.34 CJPA 1994 inference available</li>
+                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:24-14:25)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Criminal history (Exhibit 02)')">Criminal history (Exhibit 02)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Defendant statement (Exhibit 03)')">Defendant statement (Exhibit 03)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Defendant statement (Exhibit 05)')">Defendant statement (Exhibit 03)</a></strong></li>
                         </ul>                      
                       </div>
                     </details>
@@ -221,8 +192,8 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: Witness statement (Exhibit 09)')">Witness statement (Exhibit 09)</a></strong> - Witness observed defendant pausing near checkout, appearing confused and looking for a till</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Defendant interview (Exhibit 10)')">Defendant interview (Exhibit 10)</a></strong> - Defendant claimed to have forgotten to pay and offered to return items when stopped</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Witness statement (Exhibit 09)')">Witness statement (Exhibit 09)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Defendant interview (Exhibit 10)')">Defendant interview (Exhibit 10)</a></strong></li>
                         </ul>                      
                       </div>
                     </details>
@@ -260,10 +231,6 @@
             <dt class="govuk-summary-list__key">Statutory definition</dt>
             <dd class="govuk-summary-list__value">A person is guilty of an offence if they commit an assault and thereby cause actual bodily harm to another person <a href="#" onclick="alert('Opens: L&P guidance')">(Offences Against the Person Act 1861 s.47)</a></dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Evidence assessment</dt>
-            <dd class="govuk-summary-list__value">CCTV, medical records, and multiple witness statements confirm the assault and resulting injuries. The evidence strongly supports the charge of ABH against Snodgrass.</dd>
-          </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Points to prove</dt>
@@ -272,13 +239,7 @@
                   <li>
                     Applied force (common assault)
                   
-                    <span class="govuk-tag govuk-tag--light-blue" style="font-size: 1rem; margin-left: 1em;">Strong</span>
-
-
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    CCTV and witness evidence show Snodgrass used force against Bumble as she attempted to stop the theft.
-                  </div>
-
+          
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text">
@@ -287,9 +248,9 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:28-14:30)</a></strong> - Snodgrass intentionally pushes Bumble with both hands as she approaches</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong> - Direct account of being pushed by Snodgrass</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Witness statement (Exhibit 22)')">Witness statement (Exhibit 22)</a></strong> - Saw Snodgrass make deliberate pushing motion toward guard</li>
+                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:28-14:30)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Witness statement (Exhibit 22)')">Witness statement (Exhibit 22)</a></strong></li>
                         </ul>                      
                       </div>
                     </details>
@@ -299,10 +260,6 @@
                   <li>
                     Intentional or reckless
 
-                    <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    The push was not accidental; Snodgrass's actions were deliberate or reckless, as shown by the timing and context.
-                  </div>
 
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
@@ -312,9 +269,9 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:28-14:30)</a></strong> - Snodgrass's movement is deliberate and purposeful (not accidental contact)</li>
-                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:28-14:30)</a></strong> - Timing analysis of the push shows it occurs immediately when Bumble approaches to intercede</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Defendant statement (Exhibit 05)')">Defendant statement (Exhibit 03)</a></strong> -  No suggestion this was accidental; Snodgrass describes deliberate action</li>                          
+                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:28-14:30)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:28-14:30)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Defendant statement (Exhibit 05)')">Defendant statement (Exhibit 03)</a></strong></li>                          
 
                         </ul>                      
                       </div>
@@ -324,11 +281,7 @@
                   
                   <li>
                     Actual bodily harm (ABH) occasioned
-                    <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
-
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    Medical evidence confirms Bumble suffered actual bodily harm as a result of the incident, including bruising and pain.
-                  </div>
+ 
 
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
@@ -338,10 +291,10 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: Medical records (Exhibit 17)')">Medical records (Exhibit 17)</a></strong> - Bumble suffered bruising to right shoulder and upper arm, confirmed ABH threshold</li>
-                          <li><strong><a href="#" onclick="alert('Opens: A&E Attendance record (Exhibit 19)')">A&E Attendance record (Exhibit 19)</a></strong> - Bumble attended hospital same day, documented injuries consistent with blunt force trauma</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Medical records (Exhibit 20)')">Medical records (Exhibit 20)</a></strong> - GP records show Bumble required follow-up appointments; injury caused pain and restricted arm movement</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Photos (Exhibit 25)')">Photos (Exhibit 25)</a></strong> - Bruising photographed and documented</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Medical records (Exhibit 17)')">Medical records (Exhibit 17)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: A&E Attendance record (Exhibit 19)')">A&E Attendance record (Exhibit 19)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Medical records (Exhibit 20)')">Medical records (Exhibit 20)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Photos (Exhibit 25)')">Photos (Exhibit 25)</a></strong></li>
 
                         </ul>                      
                       </div>
@@ -350,11 +303,6 @@
 
                   <li>
                     Causal link: force caused ABH
-                    <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
-
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    The injuries were directly caused by the push and resulting fall, with no evidence of any other cause.
-                  </div>
 
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
@@ -364,10 +312,10 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: Medical records (Exhibit 20)')">Medical records (Exhibit 20)</a></strong> - Injuries consistent with push/fall mechanism; no other cause apparent</li>
-                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:28)</a></strong> - Injuries sustained immediately after Morgan's push (14:28)</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Witness statement (Exhibit 22)')">Witness statement (Exhibit 22)</a></strong> - Bumble fell directly as a result of the push; injuries from contact and fall</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a></strong> - Hard floor and nearby displays; injuries consistent with fall pattern</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Medical records (Exhibit 20)')">Medical records (Exhibit 20)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:28)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Witness statement (Exhibit 22)')">Witness statement (Exhibit 22)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a></strong></li>
                         </ul>                      
                       </div>
                     </details>
@@ -424,13 +372,6 @@
                 <ol class="govuk-list govuk-list--number">
                   <li>
                     The goods must be stolen goods (i.e. obtained through theft, robbery, burglary or fraud)
-                  
-                    <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
-
-
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    The clothing was recently stolen from Selfridges, as shown by CCTV and recovery of items with tags and security devices attached.
-                  </div>
 
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
@@ -440,10 +381,10 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:20-14:25)</a></strong> - Quibble selects items and places directly in personal bag (assumes control)</li>
-                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exhibit 01, 14:22-14:26)</a></strong> - Snodgrass assists Quibble, stands lookout, handles items before placing in bag</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong> - Witnessed defendant handling and concealing items</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong> - All items found in defendants' possession</li>
+                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exihibit 01, 14:20-14:25)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: CCTV Footage (Exhibit 01)')">CCTV footage (Exhibit 01, 14:22-14:26)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Security guard statement (Exhibit 08)')">Security guard statement (Exhibit 08)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong></li>
                         </ul>                      
                       </div>
                     </details>
@@ -453,13 +394,6 @@
                   <li>
                     Knowing or believing the goods to be stolen
 
-                    <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
-
-
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    Both defendants were found in possession of the goods shortly after the theft, and the items were identified as stolen by store staff.
-                  </div>
-
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text">
@@ -468,9 +402,9 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong> - 5 items of clothing, tangible personal property</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Store inventory (Exhibit 11)')">Store inventory (Exhibit 11)</a></strong> - Items listed with product codes and descriptions</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a></strong> - Items capable of possession and use</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Store inventory (Exhibit 11)')">Store inventory (Exhibit 11)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a></strong></li>
                         </ul>                      
                       </div>
                     </details>
@@ -479,11 +413,6 @@
                   
                   <li>
                     Dishonestly receives the goods, or dishonestly undertakes or assists in their retention, removal, disposal or realisation by another person
-                    <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; margin-left: 1em;">Very strong</span>
-
-                  <div class="app-task-list__evidence-hint" style="font-size: 16px; color: #5a5a5f; margin-top: 4px;">
-                    Evidence shows both defendants assisted in moving and concealing the stolen goods, and did not provide a credible explanation for their possession.
-                  </div>
 
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
@@ -493,9 +422,9 @@
                       </summary>
                       <div class="govuk-details__text">
                         <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
-                          <li><strong><a href="#" onclick="alert('Opens: Physical Items (Exhibit 12)')">Store records (Exhibit 12)</a></strong> - Items owned by Selfridges at time of alleged theft</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong> - All items bearing Selfridges branding and security tags at time of removal</li>
-                          <li><strong><a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a></strong> - Selfridges's property rights in inventory</li>
+                          <li><strong><a href="#" onclick="alert('Opens: Physical Items (Exhibit 12)')">Store records (Exhibit 12)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a></strong></li>
+                          <li><strong><a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a></strong></li>
 
                         </ul>                      
                       </div>
