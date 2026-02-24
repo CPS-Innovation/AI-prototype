@@ -1,7 +1,11 @@
-{% extends "layouts/unbranded.html" %}
-{% set pageName = "Prototype Testing" %}
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
 
 {% block content %}
+
 <div class="govuk-width-container" style="margin-top: 60px;">
   <h1 class="govuk-heading-l">Start prototype testing</h1>
   <p class="govuk-body">This area is for research and user testing only. Please do not share this link or any content within this section outside the research group.</p>
@@ -10,7 +14,7 @@
 
 {{ govukButton({
   text: "Start now",
-  href: "case-graph/v2/advocate/overview?testing=1",
+  href: "/case-graph/v2/advocate/overview?testing=1",
   isStartButton: true
 }) }}
 </div>

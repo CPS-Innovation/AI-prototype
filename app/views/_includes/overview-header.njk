@@ -1,9 +1,11 @@
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {{ govukHeader({
-  classes: "govuk-header--full-width-border"
+  classes: "govuk-header--full-width-border",
+  serviceUrl: "/index",
+  homepageUrl: "/"
 }) }}
 {{ govukServiceNavigation({
   serviceName: serviceName,
-  serviceUrl: "#"
+  serviceUrl: "/index"
 }) }}

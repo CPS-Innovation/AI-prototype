@@ -84,9 +84,9 @@ h1 .govuk-tag {
 
 $statuses: (
   "grey": (
-    "colour":            govuk-shade(govuk-colour("dark-grey", $legacy: "grey-1"), 30),
-    "background-colour": govuk-tint(govuk-colour("dark-grey", $legacy: "grey-1"), 90),
-    "hover":             govuk-tint(govuk-colour("dark-grey", $legacy: "grey-1"), 80)
+    "colour":            govuk-shade(govuk-colour("dark-grey"), 30),
+    "background-colour": govuk-tint(govuk-colour("dark-grey"), 90),
+    "hover":             govuk-tint(govuk-colour("dark-grey"), 80)
   ),
   "turquoise": (
     "colour":            govuk-shade(govuk-colour("turquoise"), 60),
@@ -206,6 +206,14 @@ $statuses: (
 .app-activity-log__box .govuk-summary-list .govuk-summary-list__row:last-child,
 .app-activity-log__box .govuk-summary-list .govuk-summary-list__row:last-child {
   border-bottom: 0;
+
+
+// Footer body copy size override
+.govuk-footer__meta .govuk-footer__licence-description,
+.govuk-footer__meta .govuk-footer__copyright-logo,
+.govuk-footer__meta .govuk-body {
+  font-size: 16px !important;
+}
 }
 
 .app-log-card__note--link {

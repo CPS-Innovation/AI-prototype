@@ -414,7 +414,7 @@
 }
 
 .moj-timeline__date {
-  @include govuk-font(14);
+  @include govuk-font(16);
   color: govuk-colour("dark-grey");
   margin: govuk-spacing(1) 0 0 0;
 }
