@@ -1,0 +1,245 @@
+{% extends "layouts/case-graph/main.html" %}
+{% set navId = 'cases' %}
+{% set pageName = "Points to Prove" %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    
+     <!-- SECTION 1: Case title (prevail across all pages)-->
+    {% include "_includes/case-graph/case-header.njk" %}
+
+    <!-- CHARGE 1: THEFT -->
+    
+
+    <!-- CHARGE 2: ASSAULT ABH -->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Charge 2: Assault occasioning actual bodily harm s.47 Offences Against the Person Act 1861</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <p class="govuk-body-s govuk-!-margin-bottom-4"><strong>Applies to David Morgan only.</strong> Statutory Definition: A person is guilty if they commit common assault and thereby cause actual bodily harm to another - OAPA 1861 s.47</p>
+        
+        <!-- Point 1: Applied force/threat -->
+        <div class="app-evidence-box">
+          <div class="app-evidence-box__header">
+            <h4 class="govuk-heading-s">1. Applied force (common assault)</h4>
+            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
+          </div>
+          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
+          
+          <details class="govuk-details govuk-!-margin-top-3">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Evidence that supports this point</span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#" onclick="alert('Opens: CCTV Footage 14:28-14:30')">CCTV (14:28-14:30)</a> - Morgan intentionally pushes Patterson with both hands as she approaches</li>
+                <li><a href="#" onclick="alert('Opens: Security Guard Statement - J. Patterson (MG11)')">Witness Statement (Patterson)</a> - Direct account of being pushed by Morgan</li>
+                <li><a href="#" onclick="alert('Opens: Store Assistant Statement')">Witness Statement (Store Assistant)</a> - Saw Morgan make deliberate pushing motion toward guard</li>
+              </ul>
+            </div>
+          </details>
+          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> CCTV footage, witness statements (MG11)</em></p>
+        </div>
+
+        <!-- Point 2: Intentionality -->
+        <div class="app-evidence-box">
+          <div class="app-evidence-box__header">
+            <h4 class="govuk-heading-s">2. Intentional or reckless</h4>
+            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
+          </div>
+          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
+          
+          <details class="govuk-details govuk-!-margin-top-3">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Evidence that supports this point</span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#" onclick="alert('Opens: CCTV Footage')">CCTV (14:28)</a> - Morgan's movement is deliberate and purposeful (not accidental contact)</li>
+                <li><a href="#" onclick="alert('Opens: Timing of push')">Timing Analysis</a> - Push occurs immediately when Patterson approaches to intercede</li>
+                <li><a href="#" onclick="alert('Opens: Patterson Statement')">Witness Account</a> - No suggestion this was accidental; Patterson describes deliberate action</li>
+              </ul>
+            </div>
+          </details>
+          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> CCTV footage, witness testimony</em></p>
+        </div>
+
+        <!-- Point 3: Actual Bodily Harm -->
+        <div class="app-evidence-box">
+          <div class="app-evidence-box__header">
+            <h4 class="govuk-heading-s">3. Actual bodily harm (ABH) occasioned</h4>
+            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
+          </div>
+          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
+          
+          <details class="govuk-details govuk-!-margin-top-3">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Evidence that supports this point</span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#" onclick="alert('Opens: Medical Report - Dr S. Williams')">Medical Report (Dr S. Williams)</a> - Patterson suffered bruising to right shoulder and upper arm, confirmed ABH threshold</li>
+                <li><a href="#" onclick="alert('Opens: A&E Attendance Record')">A&E Attendance Record</a> - Attended hospital same day, documented injuries consistent with blunt force trauma</li>
+                <li><a href="#" onclick="alert('Opens: GP Follow-up Notes')">GP Follow-up Notes</a> - Required follow-up appointments; injury caused pain and restricted arm movement</li>
+                <li><a href="#" onclick="alert('Opens: Medical Evidence Photo')">Photographic Evidence</a> - Bruising photographed and documented</li>
+              </ul>
+            </div>
+          </details>
+          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> Medical evidence (Dr Williams), A&E records, photographic evidence</em></p>
+        </div>
+
+        <!-- Point 4: Causation -->
+        <div class="app-evidence-box">
+          <div class="app-evidence-box__header">
+            <h4 class="govuk-heading-s">4. Causal link: force caused ABH</h4>
+            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
+          </div>
+          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
+          
+          <details class="govuk-details govuk-!-margin-top-3">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Evidence that supports this point</span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#" onclick="alert('Opens: Temporal connection')">Timeline</a> - Injuries sustained immediately after Morgan's push (14:28)</li>
+                <li><a href="#" onclick="alert('Opens: Medical Report')">Medical Evidence</a> - Injuries consistent with push/fall mechanism; no other cause apparent</li>
+                <li><a href="#" onclick="alert('Opens: Patterson Statement')">Witness Account</a> - Patterson fell directly as result of push; injuries from contact and fall</li>
+                <li><a href="#" onclick="alert('Opens: Location Evidence')">Scene Examination</a> - Hard floor and nearby displays; injuries consistent with fall pattern</li>
+              </ul>
+            </div>
+          </details>
+          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> Medical evidence, witness testimony, scene documentation</em></p>
+        </div>
+
+      </div>
+    </div>
+        
+        <!-- Point 1: Appropriates -->
+        <div class="app-evidence-box">
+          <div class="app-evidence-box__header">
+            <h4 class="govuk-heading-s">1. Appropriates property</h4>
+            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
+          </div>
+          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
+          
+          <details class="govuk-details govuk-!-margin-top-3">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Evidence that supports this point</span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#" onclick="alert('Opens: CCTV Footage 14:20-14:25')">CCTV Footage (14:20-14:25)</a> - Defendant selects items from shelf and places in personal bag (assumes control)</li>
+                <li><a href="#" onclick="alert('Opens: Security Guard Statement - J. Patterson')">Security Guard Statement</a> - Witnessed defendant handling and concealing items</li>
+                <li><a href="#" onclick="alert('Opens: Physical Items Exhibit JP/01')">Recovered Items (Exhibit JP/01)</a> - All items found in defendant's possession</li>
+              </ul>
+            </div>
+          </details>
+          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> CCTV footage, witness statement (MG11), recovered property</em></p>
+        </div>
+
+        <!-- Point 2: Property -->
+        <div class="app-evidence-box">
+          <div class="app-evidence-box__header">
+            <h4 class="govuk-heading-s">2. Property (capable of being stolen)</h4>
+            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
+          </div>
+          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
+          
+          <details class="govuk-details govuk-!-margin-top-3">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Evidence that supports this point</span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#" onclick="alert('Opens: Physical Items Exhibit JP/01')">Recovered Items (Exhibit JP/01)</a> - 5 items of clothing, tangible personal property</li>
+                <li><a href="#" onclick="alert('Opens: Store Inventory')">Store Inventory</a> - Items listed with product codes and descriptions</li>
+                <li><a href="#" onclick="alert('Opens: Store Records - Selfridges ownership')">Store Records</a> - Items capable of possession and use</li>
+              </ul>
+            </div>
+          </details>
+          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> Store Incident Report, Physical evidence, Store records</em></p>
+        </div>
+
+        <!-- Point 3: Belonging to Another -->
+        <div class="app-evidence-box">
+          <div class="app-evidence-box__header">
+            <h4 class="govuk-heading-s">3. Property belonging to another</h4>
+            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
+          </div>
+          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
+          
+          <details class="govuk-details govuk-!-margin-top-3">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Evidence that supports this point</span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#" onclick="alert('Opens: Store Records - Selfridges ownership')">Store Records</a> - Items owned by Selfridges at time of alleged theft</li>
+                <li><a href="#" onclick="alert('Opens: Item Tags')">Item Tags</a> - All items bearing Selfridges branding and security tags at time of removal</li>
+                <li><a href="#" onclick="alert('Opens: Business Records')">Business Records</a> - Selfridges's property rights in inventory</li>
+              </ul>
+            </div>
+          </details>
+          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> Business ownership records, item tags, inventory documentation</em></p>
+        </div>
+
+        <!-- Point 4: Dishonestly -->
+        <div class="app-evidence-box">
+          <div class="app-evidence-box__header">
+            <h4 class="govuk-heading-s">4. Dishonestly</h4>
+            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
+          </div>
+          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
+          
+          <details class="govuk-details govuk-!-margin-top-3">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Evidence that supports this point</span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#" onclick="alert('Opens: CCTV Footage 14:21-14:23')">CCTV (14:21-14:23)</a> - Defendant deliberately conceals items in personal bag (not placing on counter for purchase)</li>
+                <li><a href="#" onclick="alert('Opens: CCTV Footage 14:25')">CCTV (14:25)</a> - Defendant exits store avoiding checkout areas</li>
+                <li><a href="#" onclick="alert('Opens: Security Guard Statement - J. Patterson')">Security Statement</a> - Guard witnessed attempted departure without payment</li>
+              </ul>
+            </div>
+          </details>
+          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> CCTV footage, witness observation of conduct</em></p>
+        </div>
+
+        <!-- Point 5: Intention to Permanently Deprive -->
+        <div class="app-evidence-box">
+          <div class="app-evidence-box__header">
+            <h4 class="govuk-heading-s">5. Intention to permanently deprive</h4>
+            <span class="govuk-tag govuk-tag--green">✓ PROVEN</span>
+          </div>
+          <p class="govuk-body-s"><strong>Evidence Strength:</strong> <span class="govuk-tag govuk-tag--green">STRONG</span></p>
+          
+          <details class="govuk-details govuk-!-margin-top-3">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Evidence that supports this point</span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#" onclick="alert('Opens: CCTV Footage - exit behavior')">CCTV Footage</a> - Defendant walked directly toward exit without attempting to pay or return items</li>
+                <li><a href="#" onclick="alert('Opens: Security Guard Statement')">Security Statement</a> - When confronted by security, defendant made no attempt to explain mistake or claim misunderstanding</li>
+                <li><a href="#" onclick="alert('Opens: PNC Records')">Criminal History</a> - 2 previous shoplifting convictions (March 2024, September 2024), demonstrating pattern of conduct</li>
+                <li><a href="#" onclick="alert('Opens: Interview Transcript')">Interview Response</a> - Made no comment when interviewed (standard caution) - s.34 CJPA 1994 inference available</li>
+              </ul>
+            </div>
+          </details>
+          <p class="govuk-body-s govuk-!-margin-top-3"><em><strong>Source:</strong> CCTV, witness observations, criminal history, interview record</em></p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

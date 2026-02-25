@@ -1,0 +1,65 @@
+{% extends "layouts/case-graph/main.html" %}
+{% set navId = 'additional' %}
+{% set pageName = "Additional Information" %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+     <!-- SECTION 1: Case title (prevail across all pages)-->
+    {% include "_includes/case-graph/case-header.njk" %}
+
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Additional Case Information</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        
+        <dl class="govuk-summary-list">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Victim Attendance
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Selfridges (corporate victim, represented by store manager)
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Previous Convictions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Theft Act 1968 s.1 (March 2024) - Shoplifting, sentenced to 8 weeks suspended</li>
+                <li>Theft Act 1968 s.1 (September 2024) - Shoplifting, sentenced to 12 weeks custody</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Ancillary Orders
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><strong>Criminal Behaviour Order (CBO)</strong> - Recommended (breach of previous suspended sentence conditions)</li>
+                <li><strong>Victim Surcharge</strong> - £200 standard</li>
+                <li><strong>Costs</strong> - Full investigative costs to be determined</li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
