@@ -1,0 +1,27 @@
+{% if not hideNav %}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  serviceName: "Case summary",
+  serviceUrl: "overview",
+  navigation: [
+      {
+        href: "details",
+        text: "Details and timeline",
+        active: navId == 'details'
+      },
+      {
+        href: "charges",
+        text: "Charges",
+        active: navId == 'charges'
+      },
+      {
+        href: "people",
+        text: "People",
+        active: navId == 'people'
+      }
+  ]
+}) }}
+
+{% endif %}

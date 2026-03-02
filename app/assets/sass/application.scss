@@ -231,3 +231,20 @@ $statuses: (
 .app-inset-action {
   margin-top: -30px;
 }
+
+
+// Innovation/AI Branding
+.cps-ai-summary-block {
+  .govuk-notification-banner {
+    border: 3px solid #6f72af; // A distinct purple
+  }
+  .govuk-notification-banner__header {
+    background-color: #6f72af;
+  }
+  .govuk-notification-banner__title {
+    // Optional: Add a 'Sparkle' or 'Robot' emoji if your users respond well to visual cues
+    &:before {
+      content: "✨ "; 
+    }
+  }
+}

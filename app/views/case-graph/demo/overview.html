@@ -1,6 +1,6 @@
-{% extends "layouts/case-graph/main.html" %}
+{% extends "layouts/case-graph/demo.html" %}
 {% set navId = 'overview' %}
-{% set pageName = "Case Summary - Advocate View" %}
+{% set pageName = "Case Summary" %}
 
 {% block beforeContent %}
 <!-- AI Transparency Banner - CRITICAL: Mindful friction + transparency
@@ -42,9 +42,11 @@
     {% include "_includes/case-graph/case-header.njk" %}
     
     <!-- SECTION 3: Details summary -->
+
+    
     <div class="govuk-summary-card govuk-!-margin-bottom-6">
         <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center;">
-            <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Summary</h2>
+            <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">AI generated summary</h2>
             <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; vertical-align: middle;">AI generated</span>
         </div>      
       <div class="govuk-summary-card__content">
@@ -104,9 +106,15 @@
           <div class="govuk-summary-card__content">
             <h3 class="govuk-heading-m">Charges</h3>
             <p class="govuk-body-m govuk-!-margin-bottom-2"><strong>2 police charges</strong></p>
-            <p class="govuk-body-s govuk-!-margin-bottom-2">Theft (s.1 TA 1968), Assault ABH (s.47 OAPA 1861)</p>
-            <p class="govuk-body-s govuk-!-margin-bottom-2"><strong>£247.50</strong> stolen goods</p>
-            <p class="govuk-body-m govuk-!-margin-bottom-2"><strong>1 suggested charge</strong></p>
+            <p class="govuk-body-s govuk-!-margin-bottom-2">
+              <ol class="govuk-list govuk-body-s govuk-list--number">
+                <li>Theft (s.1 TA 1968) <!-- STATUS COLOURS: Propposed:govuk-tag--blue Accepted:govuk-tag--green Amended:govuk-tag--yellow Replaced:govuk-tag--grey Rejected:govuk-tag--red -->
+      <span class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle;">Proposed</span></li>
+                <li>Assault ABH (s.47 OAPA 1861)<!-- STATUS COLOURS: Propposed:govuk-tag--blue Accepted:govuk-tag--green Amended:govuk-tag--yellow Replaced:govuk-tag--grey Rejected:govuk-tag--red -->
+      <span class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle;">Proposed</span></li>
+              </ol>
+            </p>
+            <p class="govuk-body-m govuk-!-margin-bottom-2"><strong>1 AI suggested charge</strong></p>
             <p class="govuk-body-s"><a href="charges" class="govuk-link">View all charges</a></p>
           </div>
         </div>

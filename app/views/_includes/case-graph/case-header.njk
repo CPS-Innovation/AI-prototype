@@ -1,16 +1,25 @@
 <div>
   <div style="display: flex; align-items: baseline; gap: 1em;">
     <span class="govuk-caption-xl">16GH1510125 (2172489)</span>
-    <a href="#" class="govuk-link govuk-body-s" onclick="alert('Opens: Full Case File (links to CMS)')">View case in CMS</a>
+    <a href="#" class="govuk-link govuk-body-s" onclick="alert('Opens: Full Case File (links to CMS)')">View case (opens in a new tab)</a>
   </div>
 
     <div style="display: flex; align-items: baseline; gap: 1em;">
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Tabitha Quibble and 1 more</h1>
-    <a href="#" class="govuk-link govuk-body-s" onclick="alert('Opens: People (links to CMS)')">View people in CMS</a>
+    <a href="#" class="govuk-link govuk-body-s" onclick="alert('Opens: People (links to CMS)')">View people (opens in a new tab)</a>
       </div>
 
+
   <div style="display: flex; align-items: center; gap: 1em;">
-    <strong class="govuk-tag govuk-tag--green" style="font-size: 1rem;">Strong</strong>
+
+                    {{ govukTag({
+                      text: "Strong (AI assessment)",
+                      classes: "govuk-tag--light-blue",
+                      attributes: {
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
+                      }
+                    }) }}
+
     <!-- <a href="#proceed-court" class="govuk-link govuk-body-s">Find out why</a> -->
   </div>
   <div class="govuk-!-margin-bottom-6"></div>

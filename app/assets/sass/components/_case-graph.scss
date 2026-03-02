@@ -1,3 +1,26 @@
+// Highlight for AI-generated data points
+.app-ai-data-point {
+  border-left: 4px solid #732282;
+  padding-left: 15px;
+  background-color: #f6f1f8; // Keep the tint very light to avoid overwhelming the text
+}
+
+// Remove excess space below lists in AI generated data points
+.app-ai-data-point ul,
+.app-ai-data-point ol {
+  margin-bottom: 0.5em; // Reduce as needed for tightness
+}
+
+// Remove excess space below lists in AI reference panel
+.cps-ai-reference-panel ul,
+.cps-ai-reference-panel ol {
+  margin-bottom: 0.5em; // Reduce as needed for tightness
+}
+// Make summary card titles larger (GOV.UK heading-l)
+.govuk-summary-card__title {
+  @include govuk-font(24, bold); // GOV.UK heading-m size
+  margin-bottom: 0.5em;
+}
 // Make numbers in points to prove list bold
 .app-task-list--evidence > li::marker {
     font-family: "GDS Transport", Arial, sans-serif;
