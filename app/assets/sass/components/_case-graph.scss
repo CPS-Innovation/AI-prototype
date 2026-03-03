@@ -11,6 +11,11 @@
   margin-bottom: 0.5em; // Reduce as needed for tightness
 }
 
+// Remove excess space below paragraphs in AI generated data points
+.app-ai-data-point p {
+  margin-bottom: 0.5em; // Reduce as needed for tightness
+}
+
 // Remove excess space below lists in AI reference panel
 .cps-ai-reference-panel ul,
 .cps-ai-reference-panel ol {
