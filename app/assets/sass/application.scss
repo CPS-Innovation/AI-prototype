@@ -16,6 +16,8 @@
 @import "components/search-form.scss";
 @import "components/brand";
 @import "components/moj-side-navigation.scss";
+
+// Move case-graph to end for override priority
 @import "components/case-graph.scss";
 
 // Page specific styles

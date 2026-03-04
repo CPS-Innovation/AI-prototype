@@ -1,3 +1,29 @@
+.app-step-nav__title .js-step-date,
+.app-step-nav__title .app-timeline-date {
+  font-size: 1em !important;
+  color: #505a5f !important;
+  display: block;
+  margin-bottom: 2px;
+  background: none !important;
+}
+
+.app-step-nav__title .moj-timeline__title {
+  font-weight: bold;
+  font-size: 1.15em;
+  display: block;
+  margin-bottom: 0.1em;
+  margin-top: 0.1em;
+}
+.app-step-title .app-timeline-date {
+  margin-top: 4px !important;
+  font-size: 1.1em !important;
+  color: #505a5f !important;
+  display: block;
+}
+// Custom step title container for timeline events, allows child elements to override styles
+.app-step-title {
+  display: block;
+}
 // Highlight for AI-generated data points
 .app-ai-data-point {
   border-left: 4px solid #732282;
