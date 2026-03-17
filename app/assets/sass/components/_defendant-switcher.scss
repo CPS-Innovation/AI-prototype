@@ -1,0 +1,14 @@
+.app-defendant-switcher__btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.app-defendant-switcher__btn--active {
+  font-weight: bold;
+  color: #0b0c0c;
+  cursor: default;
+}

@@ -1,4 +1,4 @@
-{% extends "layouts/case-graph/demo.html" %}
+{% extends "layouts/case-graph/v4/main.html" %}
 {% set navId = 'charges' %}
 {% set pageName = "Case Details" %}
 
@@ -10,7 +10,7 @@
   <div class="govuk-grid-column-full">
 
     <!-- SECTION 1: Case title (prevail across all pages)-->
-    {% include "_includes/case-graph/case-header.njk" %}
+    {% include "_includes/case-graph/v4/case-header.njk" %}
 
 
     <!-- SECTION 2: Charges tabs-->
@@ -27,7 +27,7 @@
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#suggested-charges">
-        Suggested charges <span class="govuk-body-s" style="font-weight: normal; margin-left: 10px;">(AI generated)</span>
+        AI assessed charges
       </a>
     </li>
   </ul>
@@ -69,11 +69,19 @@
                 <div class="app-ai-data-point" style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0; padding: 15px;">
 
                   <p class="govuk-heading-s" style="color: #732282;">
-                    Overview of evidence vs points to prove <span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI generated)</span>
+                    Case story <span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI constructed)</span>
                   </p>
                   <p>
-                    Most essential evidence for a shoplifting case is present, but there is contradictory evidence regarding dishonesty and intention to permanently deprive. CCTV footage, recovered items, and witness testimony support the charge, but witness and defendant statements introduce doubt about intent and possible mistake.
+                    On 15 January 2026, Tabitha Quibble and Percival Snodgrass entered Selfridges. CCTV footage shows Quibble selecting items and concealing them, while Snodgrass acted as a lookout. Both defendants fled but were apprehended within 15 minutes. All stolen property was recovered from their possession.
+
                   </p>
+
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #b1b4b6;">
+                  <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">
+                    This case story is constructed by AI. It is not an official legal record.
+                  </p>
+                </div>
+
                 </div>
 
                 <!-- point to prove -->
@@ -82,23 +90,24 @@
                 <strong>
                   Appropriates property (assumes control)
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
+                                  
                     {{ govukTag({
                       text: "Very strong (AI assessment)",
                       classes: "govuk-tag--green",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+
+                
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
                   <p class="govuk-body">
                     CCTV footage shows defendant taking items from shelf and concealing them.
                   </p>
+
                 </div>
                 
                 <p class="govuk-body-s"><strong>Evidence:</strong> 
@@ -116,20 +125,22 @@
                 <strong>
                   Property (tangible personal property)
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
+
+                                                  
                     {{ govukTag({
                       text: "Very strong (AI assessment)",
                       classes: "govuk-tag--green",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+
+                
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
+
                   <p class="govuk-body">
                     Store ownership documentation and witness statement from manager confirm property belonged to Selfridges at time of theft.
                   </p>
@@ -151,20 +162,20 @@
                 <strong>
                   Belonging to another
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
+                                                  
                     {{ govukTag({
                       text: "Very strong (AI assessment)",
                       classes: "govuk-tag--green",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+                
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
+
                   <p class="govuk-body">
                     Defendant concealed items and attempted to leave without payment, indicating dishonest intent.
                   </p>
@@ -185,19 +196,19 @@
                 <strong>
                   Dishonesty
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
+
+                                                  
                     {{ govukTag({
                       text: "Weak (AI assessment)",
                       classes: "govuk-tag--yellow",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+                
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
                   <p class="govuk-body">
                     Defendant concealed items and attempted to leave without payment, but there is evidence suggesting possible confusion or mistake.
@@ -220,19 +231,19 @@
                 <strong>
                   Intention to permanently deprive
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
+
+                                                  
                     {{ govukTag({
                       text: "Moderate (AI assessment)",
                       classes: "govuk-tag--orange",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+                
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
                   <p class="govuk-body">
                     Attempt to leave store with concealed items and no payment made suggests intent to permanently deprive, but there is evidence of possible mistake or lack of intent.
@@ -286,11 +297,18 @@
                 <div class="app-ai-data-point" style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0; padding: 15px;">
 
                   <p class="govuk-heading-s" style="color: #732282;">
-                    Overview of evidence vs points to prove <span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI generated)</span>
+                    Case story<span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI constructed)</span>
                   </p>
                   <p>
-                    CCTV, medical records, and multiple witness statements confirm the assault and resulting injuries. The evidence strongly supports the charge of ABH against Snodgrass.
+                    On 15 January 2026, when confronted by security guard Millicent Bumble, Snodgrass assaulted her, causing injury. CCTV footage and witness statements confirm the sequence of events, and medical records confirm the injuries sustained by Bumble.
                   </p>
+
+                                  <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #b1b4b6;">
+                  <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">
+                    This case story is constructed by AI. It is not an official legal record.
+                  </p>
+                </div>
+
                 </div>
 
                 <!-- point to prove -->
@@ -299,20 +317,20 @@
                 <strong>
                   Applied force (common assault)
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
+                                                  
                     {{ govukTag({
                       text: "Very strong (AI assessment)",
                       classes: "govuk-tag--green",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
+
                   <p class="govuk-body">
                     CCTV and witness evidence show Snodgrass used force against Bumble as she attempted to stop the theft.
                   </p>
@@ -331,20 +349,20 @@
                 <strong>
                   Intentional or reckless
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
+                                                  
                     {{ govukTag({
                       text: "Very strong (AI assessment)",
                       classes: "govuk-tag--green",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
+
                   <p class="govuk-body">
                     Defendant concealed items and attempted to leave without payment, but there is evidence suggesting possible confusion or mistake.
                   </p>
@@ -363,20 +381,21 @@
                 <strong>
                   Actual bodily harm (ABH) occasioned
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
+
+                                                  
                     {{ govukTag({
                       text: "Very strong (AI assessment)",
                       classes: "govuk-tag--green",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+                
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
+  
                   <p class="govuk-body">
                     Medical evidence confirms Bumble suffered actual bodily harm as a result of the incident, including bruising and pain.
                   </p>
@@ -399,20 +418,21 @@
                 <strong>
                   Causal link: force caused ABH
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
+
+                                                  
                     {{ govukTag({
                       text: "Very strong (AI assessment)",
                       classes: "govuk-tag--green",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+                
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
+
                   <p class="govuk-body">
                     The injuries were directly caused by the push and resulting fall, with no evidence of any other cause.
                   </p>
@@ -439,8 +459,7 @@
                 <!-- SECTION 5: Suggested charges -->
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="suggested-charges">
-                      <h2 class="govuk-heading-m">Suggested charges
-                      <span class="govuk-body-s" style="font-weight: normal; margin-left: 10px;">(AI generated)</span>
+                      <h2 class="govuk-heading-m">AI assessed charges
                       </h2>
                   </p>
 
@@ -453,11 +472,18 @@
                           <div class="app-ai-data-point" style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0; padding: 15px;">
 
                   <p class="govuk-heading-s" style="color: #732282;">
-                    Reason for suggested charge <span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI generated)</span>
+                    Reasoning <span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI constructed)</span>
                   </p>
                   <p>
                     If the court is not satisfied beyond reasonable doubt that defendants appropriated with dishonest intent to permanently deprive, they may still find the defendants guilty of handling if they dishonestly received goods they knew or believed to be stolen.
                   </p>
+
+                  <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #b1b4b6;">
+                  <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">
+                    This reasoning is constructed by AI. It is not an official legal record.
+                  </p>
+                </div>
+
                 </div>
         </dd>
       </div>
@@ -481,11 +507,18 @@
                 <div class="app-ai-data-point" style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0; padding: 15px;">
 
                   <p class="govuk-heading-s" style="color: #732282;">
-                    Overview of evidence vs points to prove <span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI generated)</span>
+                    Case story <span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI constructed)</span>
                   </p>
                   <p>
-                    Strong evidence supports that the goods were stolen and that defendants knew or believed this, but there is some contradictory evidence regarding dishonesty. CCTV footage, recovered items, and witness testimony support the charge, but witness and defendant statements introduce doubt about possible mistake or lack of intent.
+                    On 15 January 2026, Tabitha Quibble and Percival Snodgrass were found in possession of goods recently stolen from Selfridges. CCTV footage, witness statements, and recovery of the items with tags and security devices attached indicate they knew or believed the goods to be stolen and assisted in their retention and concealment.
                   </p>
+
+                                  <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #b1b4b6;">
+                  <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">
+                    This case story is constructed by AI. It is not an official legal record.
+                  </p>
+                </div>
+
                 </div>
 
 
@@ -498,20 +531,20 @@
                 <strong>
                   The goods must be stolen goods (i.e. obtained through theft, robbery, burglary or fraud)
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
                     {{ govukTag({
                       text: "Very strong (AI assessment)",
                       classes: "govuk-tag--green",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+
+                
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
+
                   <p class="govuk-body">
                     The clothing was recently stolen from Selfridges, as shown by CCTV and recovery of items with tags and security devices attached.
                   </p>
@@ -531,20 +564,20 @@
                 <strong>
                   Knowing or believing the goods to be stolen
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
+                                                  
                     {{ govukTag({
                       text: "Very strong (AI assessment)",
                       classes: "govuk-tag--green",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+                
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
+  
                   <p class="govuk-body">
                     Both defendants were found in possession of the goods shortly after the theft, and the items were identified as stolen by store staff.
                   </p>
@@ -566,20 +599,20 @@
                 <strong>
                   Dishonestly receives the goods, or dishonestly undertakes or assists in their retention, removal, disposal or realisation by another person
                 </strong>
-                
-                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
-                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
-                    AI analysis
-                  </p>
-                  <p class="govuk-body">
+                                                  
                     {{ govukTag({
                       text: "Very strong (AI assessment)",
                       classes: "govuk-tag--green",
                       attributes: {
-                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem;"
+                        "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;"
                       }
                     }) }}
+                
+                <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                  <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">
+                    AI assessment
                   </p>
+
                   <p class="govuk-body">
                     Evidence shows both defendants assisted in moving and concealing the stolen goods, and did not provide a credible explanation for their possession.
                   </p>

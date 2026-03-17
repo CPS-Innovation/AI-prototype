@@ -1,0 +1,99 @@
+{% extends "layouts/case-graph/v4/main.html" %}
+{% set hideNav = true %}
+{% set pageName = "21GH8820451 – Case summary" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to Tabitha Quibble",
+    href: "defendant-quibble"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="related-case-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="related-case-banner-title">Related case record</h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">This is a related case. The full case summary has not been built yet.</p>
+        <p class="govuk-body">This record shows basic information only. <a href="defendant-quibble" class="govuk-notification-banner__link">Go back to Tabitha Quibble's defendant summary.</a></p>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: baseline; gap: 1em;">
+      <span class="govuk-caption-xl">21GH8820451</span>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Tabitha Quibble</h1>
+
+    <p class="govuk-body-s govuk-!-margin-bottom-6" style="color: #505a5f;">
+      Related case — linked from <a href="defendant-quibble" class="govuk-link">16GH1510125 (2172489)</a>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-6">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Case details</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Charge</dt>
+                <dd class="govuk-summary-list__value">Handling stolen goods contrary to s.22 Theft Act 1968</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Statutory definition</dt>
+                <dd class="govuk-summary-list__value">A person is guilty of handling stolen goods if, knowing or believing them to be stolen goods, they dishonestly receive the goods or assist in their retention, removal, disposal or realisation.</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Defendant</dt>
+                <dd class="govuk-summary-list__value">Tabitha Quibble (age 27 at time of offence)</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Offence date</dt>
+                <dd class="govuk-summary-list__value">14 March 2021</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Location</dt>
+                <dd class="govuk-summary-list__value">Selfridges, High Street</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Outcome</dt>
+                <dd class="govuk-summary-list__value">
+                  <strong class="govuk-tag govuk-tag--grey">Simple caution</strong>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Caution date</dt>
+                <dd class="govuk-summary-list__value">22 March 2021</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card govuk-!-margin-top-6">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Brief summary</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <p class="govuk-body">Quibble was found in possession of items from Selfridges that had been removed from the store without payment by a third party. She was cautioned after admitting she had received the items knowing they were stolen. No prosecution was pursued on that occasion.</p>
+            <p class="govuk-body">This case is linked as prior antecedent information relevant to the current proceedings.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <p class="govuk-body">
+      <a href="defendant-quibble" class="govuk-link">Return to Tabitha Quibble's defendant summary</a>
+    </p>
+
+  </div>
+</div>
+{% endblock %}

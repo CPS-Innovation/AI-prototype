@@ -9,9 +9,8 @@
 {% from "_components/activity-log-item/macro.njk" import appActivityLogItem %}
 
 {% block header %}
-  {% include "_includes/ai-disclaimer-banner.njk" %}
   {% include "_includes/header.njk" %}
-  {% include "_includes/case-graph/advocate-navigation.njk" %}
+  {% include "_includes/case-graph/v4/navigation.njk" %}
 {% endblock %}
 
 {% block footer %}
@@ -27,4 +26,6 @@
   <script src="/public/javascripts/components/list-filter.js"></script>
   <script src="/public/javascripts/components/button-menu.js"></script>
   <script src="/public/javascripts/components/text-expander.js"></script>
+  <script src="/public/javascripts/components/defendant-switcher.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', function () { new App.DefendantSwitcher().init(); });</script>
 {% endblock %}

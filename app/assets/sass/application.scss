@@ -17,6 +17,8 @@
 @import "components/brand";
 @import "components/moj-side-navigation.scss";
 
+@import "components/defendant-switcher.scss";
+
 // Move case-graph to end for override priority
 @import "components/case-graph.scss";
 

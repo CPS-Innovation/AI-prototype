@@ -1,4 +1,4 @@
-{% extends "layouts/case-graph/main.html" %}
+{% extends "layouts/case-graph/v2/main.html" %}
 {% set navId = 'overview' %}
 {% set pageName = "Case Summary - Advocate View" %}
 
@@ -39,7 +39,7 @@
   <div class="govuk-grid-column-full">
 
     <!-- SECTION 1: Case title (prevail across all pages)-->
-    {% include "_includes/case-graph/case-header-old.njk" %}
+    {% include "_includes/case-graph/v2/case-header.njk" %}
     
     <!-- SECTION 3: Details summary -->
     <div class="govuk-summary-card govuk-!-margin-bottom-6">

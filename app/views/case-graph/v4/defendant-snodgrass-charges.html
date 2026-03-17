@@ -1,0 +1,309 @@
+{% extends "layouts/case-graph/v4/main.html" %}
+{% set navId = 'charges' %}
+{% set defendantId = 'snodgrass' %}
+{% set pageName = "Charges – Percival Snodgrass" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% include "_includes/case-graph/v4/case-header.njk" %}
+
+    {{ govukInsetText({
+      html: "Showing charges for <strong>Percival Snodgrass</strong> only. <a href=\"charges\" class=\"govuk-link\">View all charges for this case.</a>"
+    }) }}
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">Contents</h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#charges">Charges</a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#suggested-charges">AI assessed charges</a>
+        </li>
+      </ul>
+
+      <div class="govuk-tabs__panel" id="charges">
+        <h2 class="govuk-heading-m">Charges</h2>
+
+        <!-- Charge 1: Theft -->
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Charge</dt>
+            <dd class="govuk-summary-list__value">
+              <strong>Theft contrary to s.1 Theft Act 1968</strong>
+              <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; vertical-align: middle; margin-left: 1em;">Accepted</span>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Defendant</dt>
+            <dd class="govuk-summary-list__value"><a href="defendant-snodgrass" class="app-person-link">Percival Snodgrass</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Statutory definition</dt>
+            <dd class="govuk-summary-list__value">A person is guilty of theft if they dishonestly appropriate property belonging to another with the intention of permanently depriving the other of it <a href="#" onclick="alert('Opens: L&P guidance')">(Theft Act 1968 s.1(1))</a></dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Points to prove</dt>
+            <dd class="govuk-summary-list__value">
+
+              <div class="app-ai-data-point" style="border-left: 5px solid #732282; padding: 15px; margin: 15px 0;">
+                <p class="govuk-heading-s" style="color: #732282;">
+                  Case story <span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI constructed)</span>
+                </p>
+                <p class="govuk-body">On 15 January 2026, Percival Snodgrass assisted in the theft of five clothing items worth £247.50 from Selfridges by acting as lookout while co-defendant Tabitha Quibble selected and concealed the goods. Both defendants fled when confronted, and all stolen property was recovered from their possession within 15 minutes.</p>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #b1b4b6;">
+                  <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">This case story is constructed by AI. It is not an official legal record.</p>
+                </div>
+              </div>
+
+              <!-- Point to prove 1 -->
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Appropriates property (assumes control)</strong>
+              {{ govukTag({
+                text: "Very strong (AI assessment)",
+                classes: "govuk-tag--green",
+                attributes: { "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;" }
+              }) }}
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+                <p class="govuk-body">CCTV footage shows Snodgrass maintaining a lookout position and assisting in the concealment of goods, establishing him as a participant in the appropriation.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a href="#" onclick="alert('Opens: CCTV footage, 14:20-14:27')">CCTV footage (14:20–14:27)</a>,
+                <a href="#" onclick="alert('Opens: Witness statement: Pippa Tiddlepot - 888212')">Witness statement: Pippa Tiddlepot (888212)</a>,
+                <a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a>
+              </p>
+
+              <!-- Point to prove 2 -->
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Property (tangible personal property)</strong>
+              {{ govukTag({
+                text: "Very strong (AI assessment)",
+                classes: "govuk-tag--green",
+                attributes: { "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;" }
+              }) }}
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+                <p class="govuk-body">Store ownership documentation confirms the items were tangible personal property belonging to Selfridges.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a href="#" onclick="alert('Opens: Recovered Items (Exhibit 04)')">Recovered items (Exhibit 04)</a>,
+                <a href="#" onclick="alert('Opens: Store inventory (Exhibit 11)')">Store inventory (Exhibit 11)</a>,
+                <a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a>
+              </p>
+
+              <!-- Point to prove 3 -->
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Belonging to another</strong>
+              {{ govukTag({
+                text: "Very strong (AI assessment)",
+                classes: "govuk-tag--green",
+                attributes: { "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;" }
+              }) }}
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+                <p class="govuk-body">Store records confirm the items were Selfridges stock, all with tags intact.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a href="#" onclick="alert('Opens: Store inventory (Exhibit 11)')">Store inventory (Exhibit 11)</a>,
+                <a href="#" onclick="alert('Opens: Store records (Exhibit 12)')">Store records (Exhibit 12)</a>
+              </p>
+
+              <!-- Point to prove 4 -->
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Dishonesty</strong>
+              {{ govukTag({
+                text: "Moderate (AI assessment)",
+                classes: "govuk-tag--orange",
+                attributes: { "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;" }
+              }) }}
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+                <p class="govuk-body">Snodgrass's role as lookout and his conduct during flight is consistent with dishonest intent. There is some ambiguity about the degree of planning given his secondary role.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a href="#" onclick="alert('Opens: CCTV footage, 14:20-14:27')">CCTV footage (14:20–14:27)</a>,
+                <a href="#" onclick="alert('Opens: Victim statement: Millicent Bumble - 887580')">Victim statement: M. Bumble (887580)</a>,
+                <a href="#" onclick="alert('Opens: Defendant statement: Percival Snodgrass - 888104')">Defendant statement: P. Snodgrass (888104)</a>
+              </p>
+
+              <!-- Point to prove 5 -->
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Intention to permanently deprive</strong>
+              {{ govukTag({
+                text: "Moderate (AI assessment)",
+                classes: "govuk-tag--orange",
+                attributes: { "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;" }
+              }) }}
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+                <p class="govuk-body">Flight from the store with concealed goods suggests intent to permanently deprive. Snodgrass's statement does not address this point directly.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a href="#" onclick="alert('Opens: CCTV footage, 14:20-14:27')">CCTV footage (14:20–14:27)</a>,
+                <a href="#" onclick="alert('Opens: Defendant statement: Percival Snodgrass - 888104')">Defendant statement: P. Snodgrass (888104)</a>
+              </p>
+
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <!-- Charge 2: ABH -->
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Charge</dt>
+            <dd class="govuk-summary-list__value">
+              <strong>Assault occasioning actual bodily harm contrary to s.47 Offences Against the Person Act 1861</strong>
+              <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; vertical-align: middle; margin-left: 1em;">Accepted</span>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Defendant</dt>
+            <dd class="govuk-summary-list__value"><a href="defendant-snodgrass" class="app-person-link">Percival Snodgrass</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Victim</dt>
+            <dd class="govuk-summary-list__value"><a href="people#victim-bumble" class="app-person-link">Millicent Bumble</a>, age 42, store security guard at Selfridges</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Statutory definition</dt>
+            <dd class="govuk-summary-list__value">A person is guilty of an offence if they commit an assault and thereby cause actual bodily harm to another person <a href="#" onclick="alert('Opens: L&P guidance')">(Offences Against the Person Act 1861 s.47)</a></dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Points to prove</dt>
+            <dd class="govuk-summary-list__value">
+
+              <div class="app-ai-data-point" style="border-left: 5px solid #732282; padding: 15px; margin: 15px 0;">
+                <p class="govuk-heading-s" style="color: #732282;">
+                  Case story <span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI constructed)</span>
+                </p>
+                <p class="govuk-body">On 15 January 2026, when security guard Millicent Bumble moved to intercept Snodgrass and Quibble at the store exit, Snodgrass pushed Bumble forcefully, causing her to fall and sustain injuries to her arm and shoulder. CCTV footage and witness statements confirm the sequence of events. Medical records confirm the injuries sustained.</p>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #b1b4b6;">
+                  <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">This case story is constructed by AI. It is not an official legal record.</p>
+                </div>
+              </div>
+
+              <!-- ABH Point 1 -->
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Applied force (common assault)</strong>
+              {{ govukTag({
+                text: "Very strong (AI assessment)",
+                classes: "govuk-tag--green",
+                attributes: { "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;" }
+              }) }}
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+                <p class="govuk-body">CCTV and witness evidence show Snodgrass pushing Bumble with force as she attempted to stop the defendants fleeing.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a href="#" onclick="alert('Opens: CCTV footage, 14:20-14:27')">CCTV footage (14:20–14:27)</a>,
+                <a href="#" onclick="alert('Opens: Victim statement: Millicent Bumble - 887580')">Victim statement: M. Bumble (887580)</a>,
+                <a href="#" onclick="alert('Opens: Witness statement: Pippa Tiddlepot - 888212')">Witness statement: Pippa Tiddlepot (888212)</a>
+              </p>
+
+              <!-- ABH Point 2 -->
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Intentional or reckless</strong>
+              {{ govukTag({
+                text: "Very strong (AI assessment)",
+                classes: "govuk-tag--green",
+                attributes: { "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;" }
+              }) }}
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+                <p class="govuk-body">The force applied was deliberate and directed at Bumble as she moved to intercept Snodgrass. There is no evidence of accident or reflex action.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a href="#" onclick="alert('Opens: CCTV footage, 14:20-14:27')">CCTV footage (14:20–14:27)</a>,
+                <a href="#" onclick="alert('Opens: Victim statement: Millicent Bumble - 887580')">Victim statement: M. Bumble (887580)</a>,
+                <a href="#" onclick="alert('Opens: Defendant statement: Percival Snodgrass - 888104')">Defendant statement: P. Snodgrass (888104)</a>
+              </p>
+
+              <!-- ABH Point 3 -->
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Actual bodily harm (ABH) occasioned</strong>
+              {{ govukTag({
+                text: "Very strong (AI assessment)",
+                classes: "govuk-tag--green",
+                attributes: { "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;" }
+              }) }}
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+                <p class="govuk-body">Medical evidence confirms Bumble suffered actual bodily harm — arm and shoulder injuries requiring hospital treatment. The injury exceeds a merely transient or trifling nature.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a href="#" onclick="alert('Opens: Victim statement: Millicent Bumble - 887580')">Victim statement: M. Bumble (887580)</a>,
+                <a href="#" onclick="alert('Opens: Medical records (Exhibit 17)')">Medical records (Exhibit 17)</a>,
+                <a href="#" onclick="alert('Opens: A&E Attendance record (Exhibit 19)')">A&amp;E Attendance record (Exhibit 19)</a>,
+                <a href="#" onclick="alert('Opens: Photos (Exhibit 25)')">Photos (Exhibit 25)</a>
+              </p>
+
+              <!-- ABH Point 4 -->
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Causal link: force caused ABH</strong>
+              {{ govukTag({
+                text: "Very strong (AI assessment)",
+                classes: "govuk-tag--green",
+                attributes: { "style": "outline: 2px dashed #732282; outline-offset: 2px; font-size: 1rem; margin-left: 1em;" }
+              }) }}
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+                <p class="govuk-body">The injuries were directly caused by the push and the resulting fall. CCTV footage shows the causal sequence clearly, and there is no evidence of any other cause.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a href="#" onclick="alert('Opens: CCTV footage, 14:20-14:27')">CCTV footage (14:20–14:27)</a>,
+                <a href="#" onclick="alert('Opens: Victim statement: Millicent Bumble - 887580')">Victim statement: M. Bumble (887580)</a>,
+                <a href="#" onclick="alert('Opens: Medical records (Exhibit 20)')">Medical records (Exhibit 20)</a>
+              </p>
+
+            </dd>
+          </div>
+        </dl>
+
+      </div>
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="suggested-charges">
+        <h2 class="govuk-heading-m">AI assessed charges</h2>
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Charge</dt>
+            <dd class="govuk-summary-list__value">
+              <strong>Handling stolen goods contrary to s.22 Theft Act 1968</strong>
+              <div class="app-ai-data-point" style="border-left: 5px solid #732282; padding: 15px; margin: 15px 0;">
+                <p class="govuk-heading-s" style="color: #732282;">
+                  Reasoning <span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI constructed)</span>
+                </p>
+                <p class="govuk-body">If the court is not satisfied that Snodgrass appropriated goods with dishonest intent to permanently deprive, it may still find him guilty of handling if he dishonestly received or assisted with goods he knew or believed to be stolen.</p>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #b1b4b6;">
+                  <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">This reasoning is constructed by AI. It is not an official legal record.</p>
+                </div>
+              </div>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Defendant</dt>
+            <dd class="govuk-summary-list__value"><a href="defendant-snodgrass" class="app-person-link">Percival Snodgrass</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Statutory definition</dt>
+            <dd class="govuk-summary-list__value">A person is guilty of handling stolen goods if, knowing or believing them to be stolen goods, they dishonestly receive the goods or assist in their retention, removal, disposal or realisation <a href="#" onclick="alert('Opens: L&P guidance')">(Theft Act 1968 s.22(1))</a></dd>
+          </div>
+        </dl>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "layouts/case-graph/main.html" %}
+{% extends "layouts/case-graph/v4/main.html" %}
 {% set navId = 'charges' %}
 {% set pageName = "Case Details" %}
 
@@ -9,14 +9,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <!-- SECTION 1: Case title (prevail across all pages) -->
-    {% include "_includes/case-graph/case-header.njk" %}
+    {% include "_includes/case-graph/v4/case-header.njk" %}
   </div>
 </div>
 
 <!-- Left filter -->
 <div class="app-filter-layout">
   <div class="app-filter-layout__filter">
-    {% include "_includes/case-graph/charges-filter-panel.njk" %}
+    {% include "_includes/case-graph/v4/charges-filter-panel.njk" %}
   </div>
   <div class="app-filter-layout__content">
     <!-- SECTION 2: Charges tabs -->
