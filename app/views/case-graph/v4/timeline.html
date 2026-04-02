@@ -1,11 +1,14 @@
 {% extends "layouts/case-graph/v4/main.html" %}
-{% set navId = 'charges' %}
-{% set pageName = "Case Details" %}
+{% set navId = 'timeline' %}
+{% set pageName = "Incident timeline" %}
 
 {% block beforeContent %}
+
 {% endblock %}
 
+
 {% block content %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
@@ -16,32 +19,25 @@
 
         <!-- FILTERED CONTENT: ALL DEFENDANTS -->
     <div data-view="all">
-      {% include "_includes/case-graph/v4/charges-all.njk" %}
+      {% include "_includes/case-graph/v4/timeline-all.njk" %}
     </div><!-- end data-view="all" -->
 
 
         <!-- FILTERED CONTENT: TABITHA QUIBBLE -->
     <div data-view="quibble">
-          {{ govukInsetText({
-            html: "Showing charges for <strong>Tabitha Quibble</strong> only."
-          }) }}
-      {% include "_includes/case-graph/v4/charges-quibble.njk" %}
+      {% include "_includes/case-graph/v4/timeline-quibble.njk" %}
     </div><!-- end data-view="quibble" -->
 
 
         <!-- FILTERED CONTENT: PERCIVAL SNODGRASS -->
     <div data-view="snodgrass">
-          {{ govukInsetText({
-            html: "Showing charges for <strong>Percival Snodgrass</strong> only."
-          }) }}
-
-      {% include "_includes/case-graph/v4/charges-snodgrass.njk" %}
+      {% include "_includes/case-graph/v4/timeline-snodgrass.njk" %}
     </div><!-- end data-view="snodgrass" -->
 
 
 
-  </div><!-- end govuk-grid-column-full -->
-</div><!-- end govuk-grid-row -->
+  </div>
+</div>
 
 <style>
 .app-person-link:focus {
