@@ -11,18 +11,40 @@
     
     <!-- SECTION 1: Case title (prevail across all pages)-->
     {% include "_includes/case-graph/v4/case-header.njk" %}
+ 
+   {% if data['m-status'] == 'incomplete' %}
 
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Important
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-Please ignore this page, its not been designed yet!    </p>
-  </div>
-</div>   
+       <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+      <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+      <ol class="govuk-list govuk-body-s govuk-list--number">
+        <li>Handling stolen goods contrary to s.22 Theft Act 1968</li>
+      </ol>
+    </div>
+
+   <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    Missing <strong>X</strong> and <strong>Y</strong> expected materials.
+  </strong>
+</div>
+
+      <div class="govuk-notification-banner" role="region" aria-labelledby="new-materials-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="new-materials-title">Important</h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body" style="max-width: 100%;">Missing <strong>X</strong> and <strong>Y</strong> expected materials.</p>
+        </div>
+      </div>
+      {% else %}
+         {{ govukInsetText({
+            html: "All expected materials are present."
+          }) }}
+      {% endif %}
+
+
+
 
     <!-- Witness Statements Section -->
     <div class="govuk-summary-card govuk-!-margin-bottom-6">
@@ -40,7 +62,13 @@ Please ignore this page, its not been designed yet!    </p>
             </div>
             <span class="govuk-tag govuk-tag--green">Present</span>
           </div>
-          <p class="govuk-body-s govuk-!-margin-top-3">Witnessed defendant selecting items from clothing section and attempting to exit without paying. Made the initial challenge and detained suspect. Provided incident report and MG11 witness statement.</p>
+          <p class="govuk-body-s govuk-!-margin-top-3">
+                   <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+      <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+      <p>
+        Witnessed defendant selecting items from clothing section and attempting to exit without paying. Made the initial challenge and detained suspect. Provided incident report and MG11 witness statement.
+      </p>
+    </div>
           <p class="govuk-body-s"><a href="#" onclick="alert('Opens: Full witness statement - J. Patterson (MG11)')">View full statement</a></p>
         </div>
 
@@ -64,19 +92,26 @@ Please ignore this page, its not been designed yet!    </p>
               <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Store Manager</h4>
               <p class="govuk-body-s govuk-!-margin-bottom-0">Selfridges Management</p>
             </div>
-            <span class="govuk-tag govuk-tag--green">Present</span>
+            <span class="govuk-tag govuk-tag--orange">Desirable</span>
           </div>
-          <p class="govuk-body-s govuk-!-margin-top-3">Verified store procedures, confirmed items as stock belonging to Selfridges, and confirmed value assessment. Available to give evidence regarding business records and property ownership.</p>
+          <p class="govuk-body-s govuk-!-margin-top-3">
+            <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+              <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI assessment</p>
+              <p>
+                Multiple statements refer to the store manager, it might be useful to collect a statement from the store manager.
+              </p>
+            </div>       
+          </p>   
           <p class="govuk-body-s"><a href="#" onclick="alert('Opens: Store manager statement - business records')">View statement</a></p>
         </div>
 
       </div>
     </div>
 
-    <!-- Evidence Present Section -->
+    <!-- Evidence Section -->
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Evidence Present</h2>
+        <h2 class="govuk-summary-card__title">Evidence</h2>
       </div>
       <div class="govuk-summary-card__content">
         
@@ -84,42 +119,34 @@ Please ignore this page, its not been designed yet!    </p>
           
           <!-- CCTV -->
           <div class="govuk-grid-column-one-half">
-            <div class="app-evidence-present-box">
               <p class="govuk-heading-s">CCTV</p>
               <p class="govuk-body-s">14:20-14:25 footage showing complete transaction</p>
               <p><span class="govuk-tag govuk-tag--green">PRESENT</span></p>
-              <p class="govuk-body-s"><a href="#" onclick="alert('Opens: CCTV Footage - full incident (Exhibit JP/02)')">Access footage</a></p>
-            </div>
+              <p class="govuk-body-s"><a href="#" onclick="alert('Opens: CCTV Footage - full incident (Exhibit JP/02)')">View CCTV</a></p>
           </div>
 
           <!-- Items -->
           <div class="govuk-grid-column-one-half">
-            <div class="app-evidence-present-box">
               <p class="govuk-heading-s">Physical Items</p>
               <p class="govuk-body-s">5 clothing items with tags and receipts</p>
               <p><span class="govuk-tag govuk-tag--green">PRESENT</span></p>
               <p class="govuk-body-s"><a href="#" onclick="alert('Opens: Property Exhibit Schedule (JP/01)')">View exhibit list</a></p>
-            </div>
           </div>
 
           <!-- Store Records -->
           <div class="govuk-grid-column-one-half">
-            <div class="app-evidence-present-box">
               <p class="govuk-heading-s">Store Records</p>
               <p class="govuk-body-s">Inventory and business records from Selfridges</p>
               <p><span class="govuk-tag govuk-tag--green">PRESENT</span></p>
               <p class="govuk-body-s"><a href="#" onclick="alert('Opens: Store inventory and business records')">View records</a></p>
-            </div>
           </div>
 
           <!-- Interview -->
           <div class="govuk-grid-column-one-half">
-            <div class="app-evidence-present-box">
               <p class="govuk-heading-s">Interview</p>
               <p class="govuk-body-s">Defendant interview (made no comment)</p>
               <p><span class="govuk-tag govuk-tag--green">PRESENT</span></p>
               <p class="govuk-body-s"><a href="#" onclick="alert('Opens: Interview Transcript (INT/2026/001)')">View interview</a></p>
-            </div>
           </div>
 
         </div>
