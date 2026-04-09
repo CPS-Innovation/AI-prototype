@@ -31,6 +31,53 @@
   background-color: #f6f1f8; // Keep the tint very light to avoid overwhelming the text
 }
 
+// Variant for missing materials warning
+.app-ai-data-point--warning {
+  border-left-color: govuk-colour("red");
+  background-color: #fff4f4;
+}
+
+// Dashboard stat boxes for materials overview
+.app-materials-stat {
+  padding: govuk-spacing(3) 0 govuk-spacing(3);
+  border-bottom: 2px solid $govuk-border-colour;
+  margin-bottom: govuk-spacing(2);
+}
+
+// Individual material item cards (used inside GOV.UK accordion sections)
+.app-material-item {
+  padding: govuk-spacing(4) 0;
+  border-top: 1px solid $govuk-border-colour;
+
+  &:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+.app-material-item__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: govuk-spacing(3);
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.app-material-item__tag {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+// Tag group wrapper (status + classification) in material item header
+.app-material-item__tags {
+  display: flex;
+  gap: govuk-spacing(1);
+  flex-shrink: 0;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
 // Remove excess space below lists in AI generated data points
 .app-ai-data-point ul,
 .app-ai-data-point ol {
