@@ -4,7 +4,7 @@
    MACRO: renders a single material item
    params:
      name        - material name string
-     classif     - 'essential' | 'desirable' | 'optional'
+     classif     - 'essential' | 'optional' | 'optional'
      aiSummary   - AI assessment text
      dateAdded   - date string
      status      - 'used' | 'unused' | 'none' | 'missing'
@@ -24,8 +24,8 @@
           <strong class="govuk-tag govuk-tag--red">Missing</strong>
           {% if classif == 'essential' %}
             <strong class="govuk-tag govuk-tag--red">Essential</strong>
-          {% elif classif == 'desirable' %}
-            <strong class="govuk-tag govuk-tag--yellow">Desirable</strong>
+          {% elif classif == 'optional' %}
+            <strong class="govuk-tag govuk-tag--yellow">optional</strong>
           {% elif classif == 'optional' %}
             <strong class="govuk-tag govuk-tag--grey">Optional</strong>
           {% endif %}
@@ -235,7 +235,7 @@
 
     {{ materialItem(
       "MG6C — Schedule of non-sensitive unused material",
-      "desirable",
+      "optional",
       "Lists non-sensitive material not relied upon in the prosecution case. Currently contains 4 items. All items appear appropriately categorised. No material identified that ought to be used.",
       "10 March 2026",
       "used",
@@ -244,7 +244,7 @@
 
     {{ materialItem(
       "MG7 — Remand application",
-      "desirable",
+      "optional",
       "Remand application prepared in anticipation of bail being opposed. Defendant was ultimately released on conditional bail. Document retained for completeness but not actively relied upon.",
       "5 March 2026",
       "unused",
@@ -349,7 +349,7 @@
   <div class="govuk-summary-card__content">
       {{ materialItem(
         "Witness statement: Unidentified bystander (fourth witness) — not yet obtained",
-        "desirable",
+        "optional",
         "AI has identified from CCTV footage that a fourth individual was present in close proximity to the defendant at the time of the alleged offence. A witness statement from this person has not been obtained and is not currently in the case file. This may be obtainable via store records or police enquiries.",
         "Not obtained",
         "missing",
@@ -388,7 +388,7 @@
 
     {{ materialItem(
       "Witness statement: Lavinia Starch (Cashier) — MG11/888203",
-      "desirable",
+      "optional",
       "Observed Quibble pass the self-checkout area without scanning items. Testimony corroborates the concealment narrative but adds limited new evidence beyond the security guard account. Desirable for completeness.",
       "6 March 2026",
       "used",
@@ -397,7 +397,7 @@
 
     {{ materialItem(
       "Witness statement: Horatio Snipe (Defendant's companion) — MG11/888204",
-      "desirable",
+      "optional",
       "Companion to Quibble on the day of the offence. Claims no knowledge of the theft. AI notes potential inconsistencies with CCTV positioning but no direct contradiction established. Useful for disclosure purposes.",
       "8 March 2026",
       "unused",

@@ -15,6 +15,8 @@
     <!-- SECTION 1: Case title (prevail across all pages)-->
     {% include "_includes/case-graph/v4/case-header.njk" %}
 
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Related cases</h2>
+
 
 
         <!-- FILTERED CONTENT: ALL DEFENDANTS -->
@@ -25,12 +27,20 @@
 
         <!-- FILTERED CONTENT: TABITHA QUIBBLE -->
     <div data-view="quibble">
+
+      {{ govukInsetText({
+        html: "Showing related cases for <strong>Tabitha Quibble</strong> only."
+      }) }}
+
       {% include "_includes/case-graph/v4/related-cases-quibble.njk" %}
     </div><!-- end data-view="quibble" -->
 
 
         <!-- FILTERED CONTENT: PERCIVAL SNODGRASS -->
     <div data-view="snodgrass">
+      {{ govukInsetText({
+        html: "Showing related cases for <strong>Percival Snodgrass</strong> only."
+      }) }}
       {% include "_includes/case-graph/v4/related-cases-snodgrass.njk" %}
     </div><!-- end data-view="snodgrass" -->
 

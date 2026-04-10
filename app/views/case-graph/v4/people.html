@@ -31,15 +31,28 @@
     <!-- SECTION 1: Case title (prevail across all pages)-->
     {% include "_includes/case-graph/v4/case-header.njk" %}
 
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-6">People</h2>
+
+
     <div data-view="all">
     {% include "_includes/case-graph/v4/people-all.njk" %}
     </div><!-- end data-view="all" -->
 
     <div data-view="quibble" hidden>
+
+      {{ govukInsetText({
+        html: "Showing people connected to <strong>Tabitha Quibble</strong> only."
+      }) }}
+
       {% include "_includes/case-graph/v4/people-quibble.njk" %}
     </div><!-- end data-view="quibble" -->
 
     <div data-view="snodgrass" hidden>
+
+      {{ govukInsetText({
+        html: "Showing people connected to <strong>Percival Snodgrass</strong> only."
+      }) }}
+
       {% include "_includes/case-graph/v4/people-snodgrass.njk" %}
     </div><!-- end data-view="snodgrass" -->
 

@@ -26,45 +26,66 @@
 
     {% include "_includes/case-graph/v4/case-header.njk" %}
 
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Summarise a case</h2>
+
+
 
     <!-- FILTERED CONTENT: ALL DEFENDANTS -->
     <div data-view="all">
       {% include "_includes/case-graph/v4/overview-top-all.njk" %}
 
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full width">
-          {% include "_includes/case-graph/v4/overview-materials-all.njk" %}
+        <div class="govuk-grid-column-one-half">
+          {% include "_includes/case-graph/v4/overview-people-all.njk" %}
         </div>
+        <div class="govuk-grid-column-one-half">
+          {% include "_includes/case-graph/v4/overview-timeline-all.njk" %}
+        </div>
+      </div>
+      <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-half">
           {% include "_includes/case-graph/v4/overview-charges-all.njk" %}
         </div>
         <div class="govuk-grid-column-one-half">
-          {% include "_includes/case-graph/v4/overview-people-all.njk" %}
+          {% include "_includes/case-graph/v4/overview-materials-all.njk" %}
         </div>
       </div>
 
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
       {% include "_includes/case-graph/v4/overview-related-cases-all.njk" %}
+
     </div><!-- end data-view="all" -->
 
 
     <!-- FILTERED CONTENT: TABITHA QUIBBLE -->
     <div data-view="quibble" hidden>
+
+          {{ govukInsetText({
+            html: "Showing case summary for <strong>Tabitha Quibble</strong> only."
+          }) }}
+
+
       {% include "_includes/case-graph/v4/overview-top-quibble.njk" %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">      
-      {% include "_includes/case-graph/v4/overview-charges-quibble.njk" %}
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          {% include "_includes/case-graph/v4/overview-people-quibble.njk" %}
+        </div>
+        <div class="govuk-grid-column-one-half">
+          {% include "_includes/case-graph/v4/overview-timeline-quibble.njk" %}
+        </div>
       </div>
-
-      <div class="govuk-grid-column-one-half">
-      {% include "_includes/case-graph/v4/overview-people-quibble.njk" %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          {% include "_includes/case-graph/v4/overview-charges-quibble.njk" %}
+        </div>
+        <div class="govuk-grid-column-one-half">
+          {% include "_includes/case-graph/v4/overview-materials-quibble.njk" %}
+        </div>
       </div>
-    </div>
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
+    
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
       {% include "_includes/case-graph/v4/overview-related-cases-quibble.njk" %}
 
     </div><!-- end data-view="quibble" -->
@@ -72,21 +93,33 @@
 
     <!-- FILTERED CONTENT: PERCIVAL SNODGRASS -->
     <div data-view="snodgrass" hidden>
+
+          {{ govukInsetText({
+            html: "Showing case summary for <strong>Percival Snodgrass</strong> only."
+          }) }}
+
       {% include "_includes/case-graph/v4/overview-top-snodgrass.njk" %}
 
       <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-      {% include "_includes/case-graph/v4/overview-charges-snodgrass.njk" %}
+        <div class="govuk-grid-column-one-half">
+          {% include "_includes/case-graph/v4/overview-people-snodgrass.njk" %}
+        </div>
+        <div class="govuk-grid-column-one-half">
+          {% include "_includes/case-graph/v4/overview-timeline-snodgrass.njk" %}
+        </div>
       </div>
-      <div class="govuk-grid-column-one-half">
-      {% include "_includes/case-graph/v4/overview-people-snodgrass.njk" %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          {% include "_includes/case-graph/v4/overview-charges-snodgrass.njk" %}
+        </div>
+        <div class="govuk-grid-column-one-half">
+          {% include "_includes/case-graph/v4/overview-materials-snodgrass.njk" %}
+        </div>
       </div>
 
       </div>
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
       {% include "_includes/case-graph/v4/overview-related-cases-snodgrass.njk" %}
 
     </div><!-- end data-view="snodgrass" -->
