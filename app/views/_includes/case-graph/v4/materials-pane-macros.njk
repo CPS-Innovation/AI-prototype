@@ -1,0 +1,158 @@
+{# ================================================================
+   TWO-PANE MATERIALS: helper macros
+   ================================================================
+
+   ── paneListItem(id, name, status, classif) ──────────────────
+   Renders a single row in the LEFT scrollable list.
+
+   id        Unique string identifier — must match the id used in
+             the corresponding paneDetail call. E.g. "mat-s-1"
+
+   name      Display name shown as the row label.
+
+   status    Controls the tag shown on the right of the row:
+             'used'     → green "Used" tag
+             'unused'   → blue "Unused" tag
+             'missing'  → yellow "Missing" tag (use classif for detail)
+             'none'     → grey "None" tag
+
+   classif   Only affects the tag label when status is 'missing':
+             'essential' → tag reads "Missing — essential"
+             'optional'  → tag reads "Missing — optional"
+             ''          → tag reads "Missing"
+
+   ── paneDetail(id, name, classif, aiSummary, dateAdded, status) ─
+   Renders the hidden RIGHT panel shown when the row is selected.
+
+   id        Must match the id used in paneListItem.
+
+   name      Full display name — used as the panel heading.
+
+   classif   Shown in the Classification row of the summary list.
+             'essential' → "Essential"
+             'optional'  → "Optional"
+             ''          → classification row is hidden
+
+   aiSummary Free text for the AI analysis section (purple left
+             border). Purple is only used here because it is AI output.
+
+   dateAdded Date string, e.g. "5 March 2026".
+             Hidden when status is 'missing'.
+
+   status    Controls the panel appearance and tag:
+             'used'    → blue top border, green tag
+             'unused'  → blue top border, blue tag
+             'missing' → red top border, red tint background, yellow tag
+             'none'    → blue top border, grey tag
+
+   ── Where to edit the visual design ─────────────────────────
+   All two-pane CSS is in:
+   app/assets/sass/components/_case-graph.scss
+
+   Key classes:
+     .app-materials-pane          outer flex container (left + right)
+     .app-materials-pane__left    sticky left pane (width set to 38%)
+     .app-materials-pane__list    scrollable list box (max-height: 70vh)
+     .app-materials-pane__section-heading  grey section label row
+     .app-materials-pane__item             individual list row
+     .app-materials-pane__item--active     selected row (blue left border)
+     .app-materials-pane__item--missing    missing item row
+     .app-materials-pane__right            right pane wrapper
+     .app-materials-pane__detail-panel     detail card container
+     .app-materials-pane__detail-panel--missing  red-tinted detail card
+     .app-materials-pane__detail-ai        AI analysis block (purple border)
+   ================================================================ #}
+
+{% macro paneListItem(id, name, status, classif) %}
+<div
+  class="app-materials-pane__item{% if status == 'missing' %} app-materials-pane__item--missing{% endif %}"
+  role="option"
+  aria-selected="false"
+  data-detail="{{ id }}"
+>
+  <span class="app-materials-pane__item-name">{{ name }}</span>
+  <span>
+    {% if status == 'missing' %}
+      <strong class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; vertical-align: middle;">Missing{% if classif == 'essential' %} — essential{% endif %}</strong>
+    {% elif status == 'used' %}
+      <strong class="govuk-tag govuk-tag--green" style="font-size: 1rem; vertical-align: middle;">Used</strong>
+    {% elif status == 'unused' %}
+      <strong class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle;">Unused</strong>
+    {% else %}
+      <strong class="govuk-tag govuk-tag--grey" style="font-size: 1rem; vertical-align: middle;">None</strong>
+    {% endif %}
+  </span>
+</div>
+{% endmacro %}
+
+{% macro paneDetail(id, name, classif, aiSummary, dateAdded, status) %}
+
+{% if status == 'missing' %}
+
+{# ── Missing material: purple AI card style ── #}
+<div
+  id="{{ id }}"
+  class="govuk-summary-card govuk-!-margin-bottom-0"
+  style="border-color: #c5a0d4; background-color: #f6f1f8;"
+  hidden
+>
+  <div class="govuk-summary-card__title-wrapper" style="flex-wrap: wrap; display: flex; justify-content: space-between; align-items: center; gap: 1em; background-color: #f6f1f8; border-top: 4px solid #732282; border-bottom: 1px solid #c5a0d4;">
+    <h2 class="govuk-summary-card__title" style="margin-bottom: 0; color: #732282;">Missing material identified</h2>
+    <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; white-space: nowrap;">AI analysis</span>
+  </div>
+  <div class="govuk-summary-card__content">
+    <p class="govuk-heading-s govuk-!-margin-bottom-2" style="color: #732282;">{{ name }}</p>
+    <p class="govuk-!-margin-bottom-2">{{ aiSummary }}</p>
+  </div>
+  <div class="govuk-summary-card__title-wrapper" style="flex-wrap: wrap; display: flex; justify-content: space-between; align-items: center; gap: 1em; background-color: #f6f1f8; border-bottom: 1px solid #c5a0d4; border-top: 1px solid #b1b4b6;">
+    <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">This has been interpreted by AI. It is not an official legal record.</p>
+  </div>
+</div>
+
+{% else %}
+
+{# ── Standard material detail panel ── #}
+<div
+  id="{{ id }}"
+  class="app-materials-pane__detail-panel"
+  hidden
+>
+  <h3 class="govuk-heading-m govuk-!-margin-bottom-3">{{ name }}</h3>
+
+  <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-3">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Status</dt>
+      <dd class="govuk-summary-list__value">
+        {% if status == 'used' %}
+          <strong class="govuk-tag govuk-tag--green" style="font-size: 1rem; vertical-align: middle;">Used</strong>
+        {% elif status == 'unused' %}
+          <strong class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle;">Unused</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--grey" style="font-size: 1rem; vertical-align: middle;">None</strong>
+        {% endif %}
+      </dd>
+    </div>
+    {% if classif == 'essential' or classif == 'optional' %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Classification</dt>
+      <dd class="govuk-summary-list__value">{{ classif | capitalize }}</dd>
+    </div>
+    {% endif %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Date added</dt>
+      <dd class="govuk-summary-list__value">{{ dateAdded }}</dd>
+    </div>
+  </dl>
+
+  <div class="app-materials-pane__detail-ai">
+    <p class="app-materials-pane__detail-ai-label govuk-!-margin-bottom-1">AI analysis</p>
+    <p class="govuk-body-s govuk-!-margin-bottom-0">{{ aiSummary }}</p>
+  </div>
+
+  <p class="govuk-body-s govuk-!-margin-top-3 govuk-!-margin-bottom-0">
+    <a href="#" class="govuk-link" onclick="alert('Opens: {{ name }} (links to CMS)')">View on CMS (opens in a new tab)</a>
+  </p>
+</div>
+
+{% endif %}
+{% endmacro %}

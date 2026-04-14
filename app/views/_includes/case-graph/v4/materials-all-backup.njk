@@ -1,4 +1,3 @@
-<h2 class="govuk-heading-l govuk-!-margin-bottom-6">Materials</h2>
 
 {# ============================================================
    MACRO: renders a single material item
@@ -10,6 +9,7 @@
      status      - 'used' | 'unused' | 'none' | 'missing'
      cmsUrl      - href for CMS link
    ============================================================ #}
+
 {% macro materialItem(name, classif, aiSummary, dateAdded, status, cmsUrl) %}
   <div class="app-material-item">
 
@@ -21,11 +21,10 @@
         {% elif status == 'unused' %}
           <strong class="govuk-tag govuk-tag--blue">Unused</strong>
         {% elif status == 'missing' %}
-          <strong class="govuk-tag govuk-tag--red">Missing</strong>
           {% if classif == 'essential' %}
             <strong class="govuk-tag govuk-tag--red">Essential</strong>
           {% elif classif == 'optional' %}
-            <strong class="govuk-tag govuk-tag--yellow">optional</strong>
+            <strong class="govuk-tag govuk-tag--yellow">Optional</strong>
           {% elif classif == 'optional' %}
             <strong class="govuk-tag govuk-tag--grey">Optional</strong>
           {% endif %}
@@ -40,7 +39,9 @@
       <p class="govuk-body-s" style="margin-bottom: 0;">{{ aiSummary }}</p>
     </div>
 
+    {% if status != 'missing' %}
     <p class="govuk-body-s govuk-!-margin-bottom-3"><strong>Date added</strong> {{ dateAdded }}</p>
+    {% endif %}
 
     {% if status != 'missing' %}
     <p class="govuk-body-s govuk-!-margin-bottom-0">
@@ -66,7 +67,7 @@
     <div id="accordion-materials-content-1" class="govuk-accordion__section-content">
 
     {{ materialItem(
-      "Initial crime report — URN 01XX0001623",
+      "Initial crime report — URN 16GH1510125",
       "essential",
       "The initial crime report establishing the shoplifting incident at Selfridges, Stoke Newington on 3 March 2026. Confirms the offence location, time, and attending officers. Foundational document for the prosecution case.",
       "4 March 2026",
@@ -124,7 +125,7 @@
   <div class="govuk-accordion__section">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-materials-heading-3">Exhibits <strong class="govuk-tag govuk-tag--blue" style="vertical-align: middle; margin-left: 0.5em;">5</strong></span>
+        <span class="govuk-accordion__section-button" id="accordion-materials-heading-3">Exhibits <strong class="govuk-tag govuk-tag--blue" style="vertical-align: middle; margin-left: 0.5em;">7</strong></span>
       </h2>
     </div>
     <div id="accordion-materials-content-3" class="govuk-accordion__section-content">
@@ -174,6 +175,24 @@
       "#"
     ) }}
 
+    {{ materialItem(
+      "Medical report — Millicent Bumble (EXH/006)",
+      "",
+      "Medical assessment of injuries sustained by Bumble following the push by Snodgrass. Records bruising to the right shoulder and upper arm. Clinician confirmed no fracture, no surgical intervention required, and no ongoing treatment recommended. Injury assessed as below the ABH threshold — this report was a primary factor in the decision to downgrade the charge from ABH to common assault. Retained on the unused material schedule.",
+      "18 March 2026",
+      "unused",
+      "#"
+    ) }}
+
+    {{ materialItem(
+      "A&E attendance record — Millicent Bumble (EXH/007)",
+      "",
+      "Record of Bumble's attendance at A&E on 15 January 2026 at 17:00. Confirms assessment date and time consistent with the incident. Triage notes record shoulder and arm bruising. No treatment administered beyond pain relief. Corroborates the medical report findings. Retained on the unused material schedule as injury did not meet ABH threshold.",
+      "20 March 2026",
+      "unused",
+      "#"
+    ) }}
+
     </div>
   </div>
 
@@ -183,7 +202,7 @@
   <div class="govuk-accordion__section">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-materials-heading-4">MG forms <strong class="govuk-tag govuk-tag--blue" style="vertical-align: middle; margin-left: 0.5em;">8</strong></span>
+        <span class="govuk-accordion__section-button" id="accordion-materials-heading-4">MG forms <strong class="govuk-tag govuk-tag--blue" style="vertical-align: middle; margin-left: 0.5em;">9</strong></span>
       </h2>
     </div>
     <div id="accordion-materials-content-4" class="govuk-accordion__section-content">
@@ -211,6 +230,15 @@
       "essential",
       "Second supplementary MG3 covering the recovery and identification of the three exhibits. Confirms items were not paid for and remained the property of the store at point of recovery.",
       "6 March 2026",
+      "used",
+      "#"
+    ) }}
+
+    {{ materialItem(
+      "MG3A — Further information for charging decision (assault on security guard)",
+      "essential",
+      "Supplementary MG3 covering the assault on Millicent Bumble. Summarises the medical evidence and confirms the decision to charge common assault rather than ABH. Notes that examination findings (bruising, no fracture, no ongoing treatment required) placed the injury below the ABH threshold. Records that EXH/006 and EXH/007 are retained as unused material.",
+      "18 March 2026",
       "used",
       "#"
     ) }}
@@ -263,66 +291,15 @@
     </div>
   </div>
 
+
+
 {# ============================================================
-   5. OTHER MATERIALS
+   5. STATEMENTS
    ============================================================ #}
   <div class="govuk-accordion__section">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-materials-heading-5">Other materials <strong class="govuk-tag govuk-tag--blue" style="vertical-align: middle; margin-left: 0.5em;">4</strong></span>
-      </h2>
-    </div>
-
-    <div id="accordion-materials-content-5" class="govuk-accordion__section-content">
-
-    {{ materialItem(
-      "Officer's pocket notebook — PC Rupert Fentworth",
-      "",
-      "Handwritten notebook entries from the attending officer. Contents are largely duplicated in the witness statement and custody record. No material that undermines the prosecution case or assists the defence has been identified.",
-      "5 March 2026",
-      "unused",
-      "#"
-    ) }}
-
-    {{ materialItem(
-      "Store CCTV footage (full day) — Selfridges, Stoke Newington",
-      "",
-      "The full-day CCTV recording from which the 12-minute exhibit was extracted. The wider footage shows no material relevant to the offence or the defence case. Retained for disclosure schedule completeness.",
-      "4 March 2026",
-      "unused",
-      "#"
-    ) }}
-
-    {{ materialItem(
-      "Interview record: Horatio Snipe (companion) — unrecorded",
-      "",
-      "Brief unrecorded conversation with Quibble's companion at the scene. Not substantially inconsistent with his later witness statement. No material that assists the defence case identified.",
-      "4 March 2026",
-      "unused",
-      "#"
-    ) }}
-
-    {{ materialItem(
-      "Store incident log — Selfridges, Stoke Newington (January–March 2026)",
-      "",
-      "Store log of security incidents. One prior incident involving a different individual in the same aisle in February 2026 is noted. This is not relevant to the present defendant but is included for completeness.",
-      "7 March 2026",
-      "unused",
-      "#"
-    ) }}
-
-
-      <!-- <p class="govuk-body govuk-secondary-text-colour">No materials in this category.</p> -->
-    </div>
-  </div>
-
-{# ============================================================
-   6. STATEMENTS
-   ============================================================ #}
-  <div class="govuk-accordion__section">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-materials-heading-6">Statements <strong class="govuk-tag govuk-tag--blue" style="vertical-align: middle; margin-left: 0.5em;">6</strong>{% if data['m-status'] == 'incomplete' %} <strong class="govuk-tag govuk-tag--red" style="vertical-align: middle; margin-left: 0.25em;">1 missing</strong>{% endif %}</span>
+        <span class="govuk-accordion__section-button" id="accordion-materials-heading-6">Statements <strong class="govuk-tag govuk-tag--blue" style="vertical-align: middle; margin-left: 0.5em;">7</strong>{% if data['m-status'] == 'incomplete' %} <strong class="govuk-tag govuk-tag--red" style="vertical-align: middle; margin-left: 0.25em;">1 missing</strong>{% endif %}</span>
       </h2>
     </div>
     <div id="accordion-materials-content-6" class="govuk-accordion__section-content">
@@ -332,30 +309,35 @@
 <div class="govuk-summary-card govuk-!-margin-bottom-6" style="border-color: #c5a0d4;">
   <div class="govuk-summary-card__title-wrapper" style="flex-wrap: wrap; display: flex; justify-content: space-between; align-items: center; gap: 1em; background-color: #f6f1f8; border-top: 4px solid #732282; border-bottom: 1px solid #c5a0d4;">
     <h2 class="govuk-summary-card__title" style="margin-bottom: 0; color: #732282;">Missing material identified</h2>
-    <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; white-space: nowrap;">AI-linked ???</span>
-      <p class="govuk-heading-s" style="margin-bottom: 0; color: #732282;">
-        Reasoning <span class="govuk-body-s" style="color: #732282; font-weight: normal; margin-left: 10px;">(AI summary)</span>
-      </p>
-      <p>
-        6 individuals were present at the scene, but only 5 witness statements have been provided. A statement from the sixth witness (an unidentified bystander) has not been obtained and is not currently in the case file. This may strengthen the prosecution case.
-      </p>
-      <div style="width: 100%; margin-top: 0; padding-top: 15px; border-top: 1px solid #b1b4b6;">
-        <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">
-          This reasoning is constructed by AI. It is not an official legal record.
-        </p>
-      </div>
+    <!-- <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; white-space: nowrap;">AI-linked ???</span>-->
 
   </div>
-  <div class="govuk-summary-card__content">
+  <div class="govuk-summary-card__content" style="padding-bottom: 0px">
       {{ materialItem(
-        "Witness statement: Unidentified bystander (fourth witness) — not yet obtained",
+        "Witness statement from Unidentified bystander",
         "optional",
-        "AI has identified from CCTV footage that a fourth individual was present in close proximity to the defendant at the time of the alleged offence. A witness statement from this person has not been obtained and is not currently in the case file. This may be obtainable via store records or police enquiries.",
+        "6 individuals were present at the scene, but only 5 witness statements have been provided. A statement from the sixth witness (an unidentified bystander) has not been obtained and is not currently in the case file. This may strengthen the prosecution case.",
+        "Not obtained",
+        "missing",
+        "#"
+      ) }}
+
+       {{ materialItem(
+        "Witness statement from Unidentified bystander",
+        "essential",
+        "6 individuals were present at the scene, but only 5 witness statements have been provided. A statement from the sixth witness (an unidentified bystander) has not been obtained and is not currently in the case file. This may strengthen the prosecution case.",
         "Not obtained",
         "missing",
         "#"
       ) }}
   </div>
+    <div class="govuk-summary-card__title-wrapper" style="padding-top: 15px; border-top: 1px solid #b1b4b6; flex-wrap: wrap; display: flex; justify-content: space-between; align-items: center; gap: 1em; background-color: #f6f1f8;;">
+        <div style="width: 100%; margin-top: 0; ">
+        <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">
+          This assessment is constructed by AI. It is not an official legal record.
+        </p>
+      </div>
+      </div>
 </div>
       {% endif %}
 
@@ -364,6 +346,15 @@
       "essential",
       "Primary eyewitness account from the security guard who directly observed and detained Tabitha Quibble. Describes the act of concealment and the subsequent stop. Consistent with CCTV footage. High evidential value.",
       "5 March 2026",
+      "used",
+      "#"
+    ) }}
+
+    {{ materialItem(
+      "Victim statement: Millicent Bumble (assault account) — MG11/887580",
+      "essential",
+      "Separate victim statement from Bumble specifically addressing the assault by Percival Snodgrass at the store exit. Describes being pushed with both hands and falling backward. Details the immediate pain and shock. Consistent with CCTV footage at 14:28. Essential to the common assault charge.",
+      "6 March 2026",
       "used",
       "#"
     ) }}
@@ -413,6 +404,86 @@
       "#"
     ) }}
 
+    </div>
+  </div>
+
+{# ============================================================
+   5. OTHER MATERIALS
+   ============================================================ #}
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-materials-heading-5">Other materials <strong class="govuk-tag govuk-tag--blue" style="vertical-align: middle; margin-left: 0.5em;">7</strong></span>
+      </h2>
+    </div>
+
+    <div id="accordion-materials-content-5" class="govuk-accordion__section-content">
+
+    {{ materialItem(
+      "Officer's pocket notebook — PC Rupert Fentworth",
+      "",
+      "Handwritten notebook entries from the attending officer. Contents are largely duplicated in the witness statement and custody record. No material that undermines the prosecution case or assists the defence has been identified.",
+      "5 March 2026",
+      "unused",
+      "#"
+    ) }}
+
+    {{ materialItem(
+      "Store CCTV footage (full day) — Selfridges, Stoke Newington",
+      "",
+      "The full-day CCTV recording from which the 12-minute exhibit was extracted. The wider footage shows no material relevant to the offence or the defence case. Retained for disclosure schedule completeness.",
+      "4 March 2026",
+      "unused",
+      "#"
+    ) }}
+
+    {{ materialItem(
+      "Interview record: Horatio Snipe (companion) — unrecorded",
+      "",
+      "Brief unrecorded conversation with Quibble's companion at the scene. Not substantially inconsistent with his later witness statement. No material that assists the defence case identified.",
+      "4 March 2026",
+      "unused",
+      "#"
+    ) }}
+
+    {{ materialItem(
+      "Store incident log — Selfridges, Stoke Newington (January–March 2026)",
+      "",
+      "Store log of security incidents. One prior incident involving a different individual in the same aisle in February 2026 is noted. This is not relevant to the present defendant but is included for completeness.",
+      "7 March 2026",
+      "unused",
+      "#"
+    ) }}
+
+    {{ materialItem(
+      "Police dispatch records — 15 January 2026",
+      "",
+      "Radio dispatch log confirming the time police were called and units deployed following the assault and flight of both defendants. Corroborates the timeline in the MG5 and witness statements. Not relied upon directly in the prosecution case.",
+      "20 March 2026",
+      "unused",
+      "#"
+    ) }}
+
+    {{ materialItem(
+      "Police incident log and arrest record — 15 January 2026",
+      "",
+      "Operational log covering the attendance at the scene, pursuit, and arrest of both defendants at 14:35. Records recovery of all stolen items. Corroborates custody records and MG3. Retained for completeness.",
+      "20 March 2026",
+      "unused",
+      "#"
+    ) }}
+
+    {{ materialItem(
+      "Recovered Property report — 15 January 2026",
+      "",
+      "Formal record of the three clothing items recovered from the defendants at arrest. Item descriptions, values, and condition consistent with EXH/002, EXH/003, and EXH/004. No discrepancies identified.",
+      "20 March 2026",
+      "unused",
+      "#"
+    ) }}
+
+
+      <!-- <p class="govuk-body govuk-secondary-text-colour">No materials in this category.</p> -->
     </div>
   </div>
 

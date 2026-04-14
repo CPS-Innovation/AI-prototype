@@ -21,7 +21,3 @@ document.addEventListener('DOMContentLoaded', function() {
 window.GOVUKPrototypeKit.documentReady(() => {
   // Add JavaScript here
 })
-
-
-
-

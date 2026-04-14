@@ -1,86 +1,21 @@
 
-    
-
-
-
-        <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
-              <h2 class="govuk-summary-card__title">
-                Materials
-              </h2>
-            </div>
+        <div class="govuk-summary-card{% if data['m-status'] == 'incomplete' %} app-card--status-red{% else %} app-card--status-green{% endif %}">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Materials</h2>
+          </div>
           <div class="govuk-summary-card__content">
 
-            <!-- AI missing materials -->
             {% if data['m-status'] == 'incomplete' %}
-            <div class="app-ai-data-point app-ai-data-point--warning govuk-!-margin-bottom-4">
-              <p class="govuk-body-s govuk-!-margin-bottom-1"><strong>AI assessment — missing materials</strong></p>
-              <p class="govuk-heading-l govuk-!-margin-bottom-0">1 <span class="govuk-body-s">item flagged as missing</span></p>
+            <div class="app-ai-data-point app-ai-data-point--warning govuk-!-margin-bottom-4" style="padding: 12px 15px;">
+              <p class="govuk-body-s govuk-!-margin-bottom-1" style="font-weight: bold;">AI analysis — missing materials</p>
+              <p class="govuk-body govuk-!-margin-bottom-0">2 items identified as missing, including 1 essential item (CCTV continuity certificate).</p>
             </div>
             {% else %}
-            <!-- <div class="app-ai-data-point govuk-!-margin-bottom-4">
-              <p class="govuk-body-s govuk-!-margin-bottom-1"><strong>AI assessment — missing materials</strong></p>
-              <p class="govuk-heading-l govuk-!-margin-bottom-0">0 <span class="govuk-body-s">items flagged as missing</span></p>
-            </div> -->
+            <div style="border-left: 4px solid #00703c; padding: 12px 15px; background-color: #f3fff5; margin-bottom: 20px;">
+              <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #00703c; font-weight: bold;">AI analysis — all expected materials present</p>
+            </div>
             {% endif %}
 
-            <!-- Total count -->
-            <!-- <p class="govuk-caption-m govuk-!-margin-bottom-0">Total materials</p>
-            <p class="govuk-heading-xl govuk-!-margin-bottom-4">21</p>
-            <p class="govuk-heading-l govuk-!-margin-bottom-0">21</p>
-            <p class="govuk-body-s govuk-secondary-text-colour govuk-!-margin-bottom-4">Total materials</p>-->
-
-            <!-- Category breakdown -->
-            <div class="govuk-grid-row govuk-!-margin-bottom-0">
-              <div class="govuk-grid-column-one-quarter">
-                <div class="app-materials-stat">
-                  <p class="govuk-heading-l govuk-!-margin-bottom-0">2</p>
-                  <p class="govuk-body-s govuk-secondary-text-colour govuk-!-margin-bottom-0">Case overview</p>
-                </div>
-              </div>
-              <div class="govuk-grid-column-one-quarter">
-                <div class="app-materials-stat">
-                  <p class="govuk-heading-l govuk-!-margin-bottom-0">6</p>
-                  <p class="govuk-body-s govuk-secondary-text-colour govuk-!-margin-bottom-0">Statements</p>
-                </div>
-              </div>
-              <div class="govuk-grid-column-one-quarter">
-                <div class="app-materials-stat">
-                  <p class="govuk-heading-l govuk-!-margin-bottom-0">5</p>
-                  <p class="govuk-body-s govuk-secondary-text-colour govuk-!-margin-bottom-0">Exhibits</p>
-                </div>
-              </div>
-              <div class="govuk-grid-column-one-quarter">
-                <div class="app-materials-stat">
-                  <p class="govuk-heading-l govuk-!-margin-bottom-0">8</p>
-                  <p class="govuk-body-s govuk-secondary-text-colour govuk-!-margin-bottom-0">MG forms</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="govuk-grid-row govuk-!-margin-bottom-0">
-              <div class="govuk-grid-column-one-quarter">
-                <div class="app-materials-stat">
-                  <p class="govuk-heading-l govuk-!-margin-bottom-0">2</p>
-                  <p class="govuk-body-s govuk-secondary-text-colour govuk-!-margin-bottom-0">Defendant pre cons</p>
-                </div>
-              </div>
-              <div class="govuk-grid-column-one-quarter">
-                <div class="app-materials-stat">
-                  <p class="govuk-heading-l govuk-!-margin-bottom-0">4</p>
-                  <p class="govuk-body-s govuk-secondary-text-colour govuk-!-margin-bottom-0">Unused material</p>
-                </div>
-              </div>
-              <div class="govuk-grid-column-one-quarter">
-                <div class="app-materials-stat">
-                  <p class="govuk-heading-l govuk-!-margin-bottom-0">0</p>
-                  <p class="govuk-body-s govuk-secondary-text-colour govuk-!-margin-bottom-0">Other materials</p>
-                </div>
-              </div>
-            </div>
-
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-            <p class="govuk-body-s govuk-!-margin-bottom-2"><a href="materials" class="govuk-link">View materials in more detail</a></p>
+            <p class="govuk-body-s govuk-!-margin-bottom-0"><a href="materials" class="govuk-link">View materials in more detail</a></p>
           </div>
         </div>

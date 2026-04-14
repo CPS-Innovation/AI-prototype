@@ -11,23 +11,24 @@
 
     {% include "_includes/case-graph/v4/case-header.njk" %}
 
-    <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Materials</h2>
-    <!-- <p class="govuk-body govuk-!-margin-bottom-6">
-      <a href="materials" class="govuk-link">Switch to card view</a>
-    </p>-->
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-1">Materials</h2>
+    <p class="govuk-body govuk-!-margin-bottom-6">
+      <a href="materials-v2" class="govuk-link">Switch to list view</a>
+    </p>
+
 
     <div data-view="all">
-      {% include "_includes/case-graph/v4/materials-pane-all.njk" %}
+      {% include "_includes/case-graph/v4/materials-all.njk" %}
     </div>
 
     <div data-view="quibble">
       {{ govukInsetText({ html: "Showing materials for <strong>Tabitha Quibble</strong> only." }) }}
-      {% include "_includes/case-graph/v4/materials-pane-all.njk" %}
+      {% include "_includes/case-graph/v4/materials-quibble.njk" %}
     </div>
 
     <div data-view="snodgrass">
       {{ govukInsetText({ html: "Showing materials for <strong>Percival Snodgrass</strong> only." }) }}
-      {% include "_includes/case-graph/v4/materials-pane-all.njk" %}
+      {% include "_includes/case-graph/v4/materials-snodgrass.njk" %}
     </div>
 
   </div>
