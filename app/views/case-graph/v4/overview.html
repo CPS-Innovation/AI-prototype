@@ -12,16 +12,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-      {% if data['m-new'] == 'true' %}
-      <div class="govuk-notification-banner" role="region" aria-labelledby="new-materials-title" data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__header">
-          <h2 class="govuk-notification-banner__title" id="new-materials-title">Important</h2>
-        </div>
-        <div class="govuk-notification-banner__content">
-          <p class="govuk-body" style="max-width: 100%;">Something has been added or updated since your last review. <a href="materials" class="govuk-link">View materials</a>.</p>
-        </div>
-      </div>
-      {% endif %}
 
 
     {% include "_includes/case-graph/v4/case-header.njk" %}
@@ -29,6 +19,16 @@
     <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Summarise a case</h2>
 
 
+      {% if data['m-new'] == 'true' %}
+      <div class="govuk-notification-banner" role="region" aria-labelledby="new-materials-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="new-materials-title">Important</h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body" style="max-width: 100%;">Something has been added or updated since your last review.</p>
+        </div>
+      </div>
+      {% endif %}
 
     <!-- FILTERED CONTENT: ALL DEFENDANTS -->
     <div data-view="all">

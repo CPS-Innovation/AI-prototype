@@ -21,8 +21,10 @@
           <strong class="govuk-tag govuk-tag--green">Used</strong>
         {% elif status == 'unused' %}
           <strong class="govuk-tag govuk-tag--blue">Unused</strong>
-        {% else %}
+        {% elif status == 'none' %}
           <strong class="govuk-tag govuk-tag--grey">None</strong>
+        {% else %}
+        <!-- no tag -->
         {% endif %}
       </span>
     </summary>
@@ -233,7 +235,7 @@
        ============================================================ #}
     <div class="govuk-summary-card govuk-!-margin-bottom-6 app-card--status-green">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Other (20)</h2>
+        <h2 class="govuk-summary-card__title">Other (17)</h2>
       </div>
       <div class="govuk-summary-card__content">
 
@@ -257,6 +259,7 @@
           "#"
         ) }}
 
+<!--
         <h3 class="govuk-heading-s">Defendant pre-convictions</h3>
 
         {{ materialItem(
@@ -275,7 +278,7 @@
           "5 March 2026",
           "used",
           "#"
-        ) }}
+        ) }} -->
 
         <h3 class="govuk-heading-s">MG forms</h3>
 
@@ -348,15 +351,6 @@
           "Remand application prepared in anticipation of bail being opposed. Defendant was ultimately released on conditional bail. Document retained for completeness but not actively relied upon.",
           "5 March 2026",
           "unused",
-          "#"
-        ) }}
-
-        {{ materialItem(
-          "MG11 — Witness statement pro forma (blank template)",
-          "",
-          "Standard blank MG11 template included in the file. Not an evidentiary document. Administrative material with no direct bearing on the prosecution case.",
-          "4 March 2026",
-          "none",
           "#"
         ) }}
 

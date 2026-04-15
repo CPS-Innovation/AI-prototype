@@ -214,8 +214,20 @@ details.app-material-item {
     font-weight: bold;
   }
 
-  &--missing {
-    // tag colour communicates missing status
+  &--missing,
+  &--ai {
+    background-color: #f6f1f8;
+    border-left: 4px solid #c5a0d4;
+    padding-left: calc(#{govuk-spacing(3)} - 4px);
+
+    &:hover {
+      background-color: darken(#f6f1f8, 3%);
+    }
+
+    &.app-materials-pane__item--active {
+      background-color: #ede0f3;
+      border-left-color: #732282;
+    }
   }
 }
 

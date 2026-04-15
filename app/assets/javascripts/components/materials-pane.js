@@ -21,6 +21,18 @@ App.MaterialsPane = function (params) {
 
   // Select first item by default
   this.select(this.items[0]);
+
+  // Override selection with URL hash if present (e.g. materials#mat-e-1)
+  var hash = window.location.hash.slice(1);
+  if (hash) {
+    var self = this;
+    var hashItem = this.items.find(function (item) {
+      return item.getAttribute('data-detail') === hash;
+    });
+    if (hashItem) {
+      self.select(hashItem);
+    }
+  }
 };
 
 App.MaterialsPane.prototype.onItemClick = function (e) {

@@ -8,40 +8,55 @@
   <div class="app-materials-pane__left">
     <div class="app-materials-pane__list" role="listbox" aria-label="Materials list">
 
+      {% if data['m-status'] == 'incomplete' %}
+      <details class="app-materials-pane__section" open>
+        <summary class="app-materials-pane__section-heading" style="background-color: #f6f1f8; color: #732282; border-bottom-color: #c5a0d4;">
+          Missing material (2)
+          <strong class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; vertical-align: middle; margin-left: auto;">AI analysis</strong>
+        </summary>
+        {{ paneListItem("mat-s-missing", "Witness statement from unidentified bystander", "missing", "optional") }}
+        {{ paneListItem("mat-e-missing", "CCTV continuity certificate — Selfridges, Stoke Newington", "missing", "essential") }}
+      </details>
+      {% endif %}
+
       <details class="app-materials-pane__section" open>
         <summary class="app-materials-pane__section-heading">
-          Statements ({% if data['m-status'] == 'incomplete' %}8{% else %}7{% endif %})
-          {% if data['m-status'] == 'incomplete' %}<strong class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; vertical-align: middle; margin-left: auto;">Missing items</strong>{% endif %}
+          Statements (7){% if data['m-new'] == 'true' %}<strong class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle; margin-left: auto;">1 new</strong>{% endif %}
         </summary>
-        {% if data['m-status'] == 'incomplete' %}
-          {{ paneListItem("mat-s-missing", "Witness statement from unidentified bystander", "missing", "optional") }}
+        {% if data['m-new'] == 'true' %}
+          {{ paneListItem("mat-s-7", "Defence statement — Tabitha Quibble", "", "", true) }}
         {% endif %}
-        {{ paneListItem("mat-s-1", "Witness statement: Millicent Bumble (Security Guard) — MG11/888200", "used", "essential") }}
-        {{ paneListItem("mat-s-2", "Victim statement: Millicent Bumble (assault account) — MG11/887580", "used", "essential") }}
-        {{ paneListItem("mat-s-3", "Witness statement: Pippa Tiddlepot (Store Manager) — MG11/888201", "used", "essential") }}
-        {{ paneListItem("mat-s-4", "Witness statement: Reginald Crumhorn (Off-duty Police Officer) — MG11/888202", "used", "essential") }}
-        {{ paneListItem("mat-s-5", "Witness statement: Lavinia Starch (Cashier) — MG11/888203", "used", "optional") }}
-        {{ paneListItem("mat-s-6", "Witness statement: Horatio Snipe (Defendant's companion) — MG11/888204", "unused", "optional") }}
-        {{ paneListItem("mat-s-7", "Defence statement — Tabitha Quibble", "used", "") }}
+        {{ paneListItem("mat-s-1", "Witness statement: Millicent Bumble (Security Guard) — MG11/888200", "", "essential") }}
+        {{ paneListItem("mat-s-2", "Victim statement: Millicent Bumble (assault account) — MG11/887580", "", "essential") }}
+        {{ paneListItem("mat-s-3", "Witness statement: Pippa Tiddlepot (Store Manager) — MG11/888201", "", "essential") }}
+        {{ paneListItem("mat-s-4", "Witness statement: Reginald Crumhorn (Off-duty Police Officer) — MG11/888202", "", "essential") }}
+        {{ paneListItem("mat-s-5", "Witness statement: Lavinia Starch (Cashier) — MG11/888203", "", "optional") }}
+        {{ paneListItem("mat-s-6", "Witness statement: Horatio Snipe (Defendant's companion) — MG11/888204", "", "optional") }}
+        {% if data['m-new'] != 'true' %}
+          {{ paneListItem("mat-s-7", "Defence statement — Tabitha Quibble", "", "") }}
+        {% endif %}
       </details>
 
       <details class="app-materials-pane__section" open>
         <summary class="app-materials-pane__section-heading">
-          Exhibits ({% if data['m-status'] == 'incomplete' %}8{% else %}7{% endif %})
-          {% if data['m-status'] == 'incomplete' %}<strong class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; vertical-align: middle; margin-left: auto;">Missing items</strong>{% endif %}
+          Exhibits (8){% if data['m-new'] == 'true' %}<strong class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle; margin-left: auto;">2 new</strong>{% endif %}
         </summary>
-        {% if data['m-status'] == 'incomplete' %}
-          {{ paneListItem("mat-e-missing", "CCTV continuity certificate — Selfridges, Stoke Newington", "missing", "essential") }}
+        {% if data['m-new'] == 'true' %}
+          {{ paneListItem("mat-e-7", "A&E attendance record — Millicent Bumble (EXH/007)", "", "", true) }}
+          {{ paneListItem("mat-e-8", "Forensic examination report — recovered clothing items (EXH/008)", "", "", true) }}
         {% endif %}
-        {{ paneListItem("mat-e-1", "CCTV footage — Selfridges, Stoke Newington (12 mins) — EXH/001", "used", "essential") }}
-        {{ paneListItem("mat-e-2", "Exhibit: recovered black dress (AllSaints) — EXH/002", "used", "essential") }}
-        {{ paneListItem("mat-e-3", "Exhibit: handbag (AllSaints) — EXH/003", "used", "essential") }}
-        {{ paneListItem("mat-e-4", "Exhibit: Yoga mat (Lululemon) — EXH/004", "used", "essential") }}
-        {{ paneListItem("mat-e-5", "Custody photograph — Tabitha Quibble — EXH/005", "none", "") }}
-        {{ paneListItem("mat-e-6", "Medical report — Millicent Bumble (EXH/006)", "unused", "") }}
-        {{ paneListItem("mat-e-7", "A&E attendance record — Millicent Bumble (EXH/007)", "unused", "") }}
+        {{ paneListItem("mat-e-1", "CCTV footage — Selfridges, Stoke Newington (12 mins) — EXH/001", "", "essential") }}
+        {{ paneListItem("mat-e-2", "Exhibit: recovered black dress (AllSaints) — EXH/002", "", "essential") }}
+        {{ paneListItem("mat-e-3", "Exhibit: handbag (AllSaints) — EXH/003", "", "essential") }}
+        {{ paneListItem("mat-e-4", "Exhibit: Yoga mat (Lululemon) — EXH/004", "", "essential") }}
+        {{ paneListItem("mat-e-5", "Custody photograph — Tabitha Quibble — EXH/005", "", "") }}
+        {{ paneListItem("mat-e-6", "Medical report — Millicent Bumble (EXH/006)", "", "") }}
+        {% if data['m-new'] != 'true' %}
+          {{ paneListItem("mat-e-7", "A&E attendance record — Millicent Bumble (EXH/007)", "", "") }}
+          {{ paneListItem("mat-e-8", "Forensic examination report — recovered clothing items (EXH/008)", "", "") }}
+        {% endif %}
       </details>
-
+<!--
       <details class="app-materials-pane__section" open>
         <summary class="app-materials-pane__section-heading">Case overview (2)</summary>
         {{ paneListItem("mat-o-1", "Initial crime report — URN 16GH1510125", "used", "essential") }}
@@ -49,13 +64,7 @@
       </details>
 
       <details class="app-materials-pane__section" open>
-        <summary class="app-materials-pane__section-heading">Defendant pre-convictions (2)</summary>
-        {{ paneListItem("mat-o-3", "Previous convictions record — Tabitha Quibble (D1)", "used", "") }}
-        {{ paneListItem("mat-o-4", "Previous convictions record — Percival Snodgrass (D2)", "used", "") }}
-      </details>
-
-      <details class="app-materials-pane__section" open>
-        <summary class="app-materials-pane__section-heading">MG forms (9)</summary>
+        <summary class="app-materials-pane__section-heading">MG forms (8)</summary>
         {{ paneListItem("mat-o-5", "MG3 — Report to CPS requesting a charging decision", "used", "essential") }}
         {{ paneListItem("mat-o-6", "MG3A — Further information for charging decision (CCTV)", "used", "essential") }}
         {{ paneListItem("mat-o-7", "MG3A — Further information for charging decision (recovery of items)", "used", "essential") }}
@@ -64,18 +73,24 @@
         {{ paneListItem("mat-o-10", "MG6 — Case file evidence and information", "used", "essential") }}
         {{ paneListItem("mat-o-11", "MG6C — Schedule of non-sensitive unused material", "used", "optional") }}
         {{ paneListItem("mat-o-12", "MG7 — Remand application", "unused", "optional") }}
-        {{ paneListItem("mat-o-13", "MG11 — Witness statement pro forma (blank template)", "none", "") }}
       </details>
-
+-->
       <details class="app-materials-pane__section" open>
-        <summary class="app-materials-pane__section-heading">Other materials (7)</summary>
-        {{ paneListItem("mat-o-14", "Officer's pocket notebook — PC Rupert Fentworth", "unused", "") }}
-        {{ paneListItem("mat-o-15", "Store CCTV footage (full day) — Selfridges, Stoke Newington", "unused", "") }}
-        {{ paneListItem("mat-o-16", "Interview record: Horatio Snipe (companion) — unrecorded", "unused", "") }}
-        {{ paneListItem("mat-o-17", "Store incident log — Selfridges, Stoke Newington (January to March 2026)", "unused", "") }}
-        {{ paneListItem("mat-o-18", "Police dispatch records — 15 January 2026", "unused", "") }}
-        {{ paneListItem("mat-o-19", "Police incident log and arrest record — 15 January 2026", "unused", "") }}
-        {{ paneListItem("mat-o-20", "Recovered Property report — 15 January 2026", "unused", "") }}
+        <summary class="app-materials-pane__section-heading">
+          Other materials (7){% if data['m-new'] == 'true' %}<strong class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle; margin-left: auto;">1 new</strong>{% endif %}
+        </summary>
+        {% if data['m-new'] == 'true' %}
+          {{ paneListItem("mat-o-19", "Police incident log and arrest record — 15 January 2026", "", "", true) }}
+        {% endif %}
+        {{ paneListItem("mat-o-14", "Officer's pocket notebook — PC Rupert Fentworth", "", "") }}
+        {{ paneListItem("mat-o-15", "Store CCTV footage (full day) — Selfridges, Stoke Newington", "", "") }}
+        {{ paneListItem("mat-o-16", "Interview record: Horatio Snipe (companion) — unrecorded", "", "") }}
+        {{ paneListItem("mat-o-17", "Store incident log — Selfridges, Stoke Newington (January to March 2026)", "", "") }}
+        {{ paneListItem("mat-o-18", "Police dispatch records — 15 January 2026", "", "") }}
+        {% if data['m-new'] != 'true' %}
+          {{ paneListItem("mat-o-19", "Police incident log and arrest record — 15 January 2026", "", "") }}
+        {% endif %}
+        {{ paneListItem("mat-o-20", "Recovered Property report — 15 January 2026", "", "") }}
       </details>
 
     </div>
@@ -166,7 +181,8 @@
         "",
         "Defence claims the items were placed in the bag accidentally and there was no dishonest intent. This narrative is difficult to reconcile with the 12-minute CCTV footage showing deliberate concealment at multiple points in the store.",
         "14 March 2026",
-        "used"
+        "used",
+        data['m-new'] == 'true'
       ) }}
 
       {{ paneDetail(
@@ -229,7 +245,18 @@
         "",
         "Record of Bumble's attendance at A&E on 16 January 2026, 12:45pm. Confirms assessment date and time consistent with the incident. Triage notes record shoulder and arm bruising. No treatment administered beyond pain relief. Corroborates the medical report findings. Retained on the unused material schedule as injury did not meet ABH threshold.",
         "20 March 2026",
-        "unused"
+        "unused",
+        data['m-new'] == 'true'
+      ) }}
+
+      {{ paneDetail(
+        "mat-e-8",
+        "Forensic examination report — recovered clothing items (EXH/008)",
+        "",
+        "Forensic examination of the three recovered items (EXH/002, EXH/003, EXH/004) confirming no security tag removal, no damage to packaging, and store barcodes intact at the point of recovery. Supports the inference that the items were concealed and removed without any attempt to defeat the store's security systems. Consistent with the CCTV evidence.",
+        "9 April 2026",
+        "unused",
+        data['m-new'] == 'true'
       ) }}
 
       {{ paneDetail(
@@ -341,15 +368,6 @@
       ) }}
 
       {{ paneDetail(
-        "mat-o-13",
-        "MG11 — Witness statement pro forma (blank template)",
-        "",
-        "Standard blank MG11 template included in the file. Not an evidentiary document. Administrative material with no direct bearing on the prosecution case.",
-        "4 March 2026",
-        "none"
-      ) }}
-
-      {{ paneDetail(
         "mat-o-14",
         "Officer's pocket notebook — PC Rupert Fentworth",
         "",
@@ -400,7 +418,8 @@
         "",
         "Operational log covering the attendance at the scene, pursuit, and arrest of both defendants at 2:35pm. Records recovery of all stolen items. Corroborates custody records and MG3. Retained for completeness.",
         "20 March 2026",
-        "unused"
+        "unused",
+        data['m-new'] == 'true'
       ) }}
 
       {{ paneDetail(

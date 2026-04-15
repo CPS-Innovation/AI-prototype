@@ -1,0 +1,107 @@
+{# ================================================================
+   TWO-PANE PEOPLE: helper macros
+   ================================================================
+
+   ── paneListItem(id, name) ───────────────────────────────────
+   Renders a single row in the LEFT scrollable list.
+
+   id        Unique string identifier — must match the id used in
+             the corresponding panePersonDetail call.
+             E.g. "defendant-quibble"
+
+   name      Display name shown as the row label.
+
+   ── panePersonDetail(id, firstName, fullName, role, roleDescription) ─
+   Renders a RIGHT panel showing a person's details.
+
+   Call this macro using a {% call %} block. The content of the
+   {% call %} block is rendered below the h3 heading — use it
+   for the <dl> rows and any trailing links.
+
+   id               Must match the id used in paneListItem.
+
+   firstName        Person's first name — used in the AI card
+                    heading. E.g. "Tabitha" →
+                    "Tabitha's role in the incident"
+
+   fullName         Full display name — used in the h3 heading.
+                    E.g. "Tabitha Quibble"
+
+   role             Role label, prepended to fullName in the h3.
+                    E.g. "Defendant", "Witness",
+                    "Police — Attending Officer"
+
+   roleDescription  Free text for the AI role card body.
+                    May contain HTML (links etc.) — passed through
+                    the | safe filter. If empty (''), the AI card
+                    is not rendered.
+
+   ── Usage example ─────────────────────────────────────────────
+
+   {% call panePersonDetail(
+     "defendant-quibble",
+     "Tabitha",
+     "Tabitha Quibble",
+     "Defendant",
+     "Selected and concealed items at Selfridges; present during assault on security guard"
+   ) %}
+     <dl class="govuk-summary-list govuk-summary-list--no-border">
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">Date of birth</dt>
+         <dd class="govuk-summary-list__value">12 March 1993</dd>
+       </div>
+     </dl>
+   {% endcall %}
+
+   ── Where to edit the visual design ─────────────────────────
+   All two-pane CSS is in:
+   app/assets/sass/components/_case-graph.scss
+
+   Key classes:
+     .app-materials-pane          outer flex container (left + right)
+     .app-materials-pane__left    sticky left pane
+     .app-materials-pane__list    scrollable list box
+     .app-materials-pane__item    individual list row
+     .app-materials-pane__right   right pane wrapper
+     .app-materials-pane__detail-panel   detail panel container
+   ================================================================ #}
+
+{% macro paneListItem(id, name) %}
+<div
+  class="app-materials-pane__item"
+  role="option"
+  aria-selected="false"
+  data-detail="{{ id }}"
+>
+  <span class="app-materials-pane__item-name">{{ name }}</span>
+  <span></span>
+</div>
+{% endmacro %}
+
+{% macro panePersonDetail(id, firstName, fullName, role, roleDescription) %}
+<div id="{{ id }}" hidden>
+
+  {% if roleDescription %}
+  <div class="govuk-summary-card govuk-!-margin-bottom-4" style="border-color: #c5a0d4; background-color: #f6f1f8;">
+    <div class="govuk-summary-card__title-wrapper" style="flex-wrap: wrap; display: flex; justify-content: space-between; align-items: center; gap: 1em; background-color: #f6f1f8; border-top: 4px solid #732282; border-bottom: 1px solid #c5a0d4;">
+      <h2 class="govuk-summary-card__title" style="margin-bottom: 0; color: #732282;">{{ firstName }}'s role in the incident</h2>
+      <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; white-space: nowrap;">AI analysis</span>
+    </div>
+    <div class="govuk-summary-card__content">
+      <p class="govuk-!-margin-bottom-2">{{ roleDescription | safe }}</p>
+    </div>
+    <div class="govuk-summary-card__title-wrapper" style="flex-wrap: wrap; display: flex; justify-content: space-between; align-items: center; gap: 1em; background-color: #f6f1f8; border-bottom: 1px solid #c5a0d4; border-top: 1px solid #b1b4b6;">
+      <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">This has been interpreted by AI. It is not an official legal record.</p>
+    </div>
+  </div>
+  {% endif %}
+
+<div class="app-materials-pane__detail-panel">
+  <h3 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-4">{{ role }}: {{ fullName }}</h3>
+  {{ caller() }}
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <p class="govuk-body-s govuk-!-margin-bottom-2"><a href="#" class="govuk-link" onclick="alert('Opens: {{ fullName }} in CMS')">View {{ fullName }} in CMS (opens in a new tab)</a></p>
+  </div>
+
+</div>
+{% endmacro %}

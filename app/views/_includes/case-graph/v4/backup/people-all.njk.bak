@@ -1,0 +1,432 @@
+      <div class="govuk-grid-row govuk-!-margin-bottom-6">
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" id="defendant-quibble" tabindex="-1">
+              <h2 class="govuk-summary-card__title">Tabitha Quibble</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">Defendant</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Date of birth</dt>
+                  <dd class="govuk-summary-list__value">12 March 1993 (32 years old at time of offence)</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Occupation</dt>
+                  <dd class="govuk-summary-list__value">Software Engineer</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Selected and concealed items; present during assault</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Proposed charges</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="charges#charge-theft">Theft (s.1 TA 1968)</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Defence statement</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="materials#mat-s-7">Defence statement — Tabitha Quibble</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Previous record</dt>
+                  <dd class="govuk-summary-list__value">1 previous caution. <a class="govuk-link" href="related-cases">View previous record</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Police remand status</dt>
+                  <dd class="govuk-summary-list__value">Conditional bail</dd>
+                </div>
+              </dl>
+
+            <p class="govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-0">
+                <a href="related-cases" class="govuk-link">View cases related to Tabitha Quibble</a>
+            </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" id="defendant-snodgrass" tabindex="-1">
+              <h2 class="govuk-summary-card__title">Percival Snodgrass</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">Defendant</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Date of birth</dt>
+                  <dd class="govuk-summary-list__value">7 August 1997 (28 years old at time of offence)</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Occupation</dt>
+                  <dd class="govuk-summary-list__value">Unknown</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Assisted with theft; assaulted security guard (<a href="people#victim-bumble" class="govuk-link">M. Bumble</a>) when confronted</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Proposed charges</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="charges#charge-theft">Theft (s.1 TA 1968)</a>,
+                    <a class="govuk-link" href="charges#charge-common-assault">Common assault (s.39 CJA 1988)</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Previous record</dt>
+                  <dd class="govuk-summary-list__value">1 previous conviction. <a class="govuk-link" href="related-cases">View previous record</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Police remand status</dt>
+                  <dd class="govuk-summary-list__value">Remand in custody</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Grounds for remand</dt>
+                  <dd class="govuk-summary-list__value">Risk of failure to appear; risk of committing further offences on bail</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Custody time limit</dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body-s govuk-!-margin-bottom-0">Arrested: 15 January 2026</p>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0">CTL expires: 18 July 2026</p>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0">Days remaining: <strong>94</strong></p>
+                    <a class="govuk-link govuk-body-s" href="#" onclick="alert('Opens: CTL log — Percival Snodgrass')">View CTL log</a>
+                  </dd>
+                </div>
+              </dl>
+
+            <p class="govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-0">
+                <a href="related-cases" class="govuk-link">View cases related to Percival Snodgrass</a>
+            </p>
+
+            </div>
+          </div>
+        </div>
+</div>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <div class="govuk-grid-row govuk-!-margin-bottom-6">
+
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" id="victim-bumble" tabindex="-1" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Millicent Bumble</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">Victim</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Occupation</dt>
+                  <dd class="govuk-summary-list__value">Security Guard, Selfridges, High Street</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Assaulted by <a href="people#defendant-snodgrass" class="govuk-link">Percival Snodgrass</a> while attempting to stop theft</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Injuries</dt>
+                  <dd class="govuk-summary-list__value">Arm and shoulder injury requiring medical treatment</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Victim statement</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="materials#mat-s-2">MG11/887580 — assault account</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Contact details</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="#" onclick="alert('Opens contact details in CMS')">View in CMS</a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Millicent Bumble</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">Witness</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Security guard who observed theft and intervened. Also recorded as victim — <a class="govuk-link" href="people#victim-bumble">see victim card</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Witness statement</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="materials#mat-s-1">MG11/888200 — theft account</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Contact details</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="#" onclick="alert('Opens contact details in CMS')">View in CMS</a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <div class="govuk-grid-row govuk-!-margin-bottom-6">
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Pippa Tiddlepot</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">Witness</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Occupation</dt>
+                  <dd class="govuk-summary-list__value">Store Manager, Selfridges, High Street</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Confirmed value of stolen goods and store procedure</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Statement</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="materials#mat-s-3">MG11/888201</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Contact details</dt>
+                  <dd class="govuk-summary-list__value"><a class="govuk-link" href="#" onclick="alert('Opens contact details in CMS')">View in CMS</a></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Reginald Crumhorn</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">Witness</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Occupation</dt>
+                  <dd class="govuk-summary-list__value">Off-duty police officer</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Independently observed Quibble conceal items before the exit</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Statement</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="materials#mat-s-4">MG11/888202</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Contact details</dt>
+                  <dd class="govuk-summary-list__value"><a class="govuk-link" href="#" onclick="alert('Opens contact details in CMS')">View in CMS</a></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row govuk-!-margin-bottom-6">
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Lavinia Starch</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">Witness</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Occupation</dt>
+                  <dd class="govuk-summary-list__value">Cashier, Selfridges, High Street</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Observed Quibble pass the self-checkout without scanning items</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Statement</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="materials#mat-s-5">MG11/888203</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Contact details</dt>
+                  <dd class="govuk-summary-list__value"><a class="govuk-link" href="#" onclick="alert('Opens contact details in CMS')">View in CMS</a></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">Horatio Snipe</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">Witness</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Occupation</dt>
+                  <dd class="govuk-summary-list__value">Defendant's companion</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Companion to Tabitha Quibble on the day of the offence; claims no knowledge of the theft</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Statement</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="materials#mat-s-6">MG11/888204</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Contact details</dt>
+                  <dd class="govuk-summary-list__value"><a class="govuk-link" href="#" onclick="alert('Opens contact details in CMS')">View in CMS</a></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row govuk-!-margin-bottom-6">
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">PC Rupert Fentworth</h2>
+              <span class="govuk-tag govuk-tag--light-blue" style="font-size: 1rem; vertical-align: middle;" aria-label="Police">Police</span>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Unit</dt>
+                  <dd class="govuk-summary-list__value">Metropolitan Police, Hackney Borough Command</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Attending officer, 15 January 2026; arrested both defendants</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Statement</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="materials#mat-o-14">Pocket notebook entry (mat-o-14)</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Contact details</dt>
+                  <dd class="govuk-summary-list__value"><a class="govuk-link" href="#" onclick="alert('Opens contact details in CMS')">View in CMS</a></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em;">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">DC Edna Glover</h2>
+              <span class="govuk-tag govuk-tag--light-blue" style="font-size: 1rem; vertical-align: middle;" aria-label="Police">Police</span>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Unit</dt>
+                  <dd class="govuk-summary-list__value">Digital Forensics Unit, Metropolitan Police</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Seized and produced CCTV footage from Selfridges security system</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Evidence produced</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="materials#mat-e-1">CCTV footage — Selfridges (EXH/001)</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">CCTV continuity certificate</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="materials#mat-e-missing">Not yet obtained</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Contact details</dt>
+                  <dd class="govuk-summary-list__value"><a class="govuk-link" href="#" onclick="alert('Opens contact details in CMS')">View in CMS</a></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% if data['m-status'] == 'incomplete' %}
+      <div class="govuk-grid-row govuk-!-margin-bottom-6">
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-summary-card" style="border-color: #c5a0d4; background-color: #f6f1f8;">
+            <div class="govuk-summary-card__title-wrapper" style="display: flex; justify-content: space-between; align-items: center; gap: 1em; background-color: #f6f1f8; border-bottom: 1px solid #c5a0d4;">
+              <h2 class="govuk-summary-card__title" style="margin-bottom: 0; color: #732282;">Unidentified bystander</h2>
+              <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; white-space: nowrap;">AI analysis</span>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">Potential witness — identity not confirmed</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role in incident</dt>
+                  <dd class="govuk-summary-list__value">Believed to have been present during the theft and confrontation at the store exit</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Statement</dt>
+                  <dd class="govuk-summary-list__value">Not yet obtained — <a class="govuk-link" href="materials#mat-s-missing">see missing materials</a></dd>
+                </div>
+              </dl>
+              <p class="govuk-body-s govuk-!-margin-top-3 govuk-!-margin-bottom-0" style="color: #505a5f;">Identified by AI analysis. This is not an official legal record.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </section>

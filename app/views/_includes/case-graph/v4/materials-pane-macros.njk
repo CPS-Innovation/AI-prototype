@@ -63,7 +63,7 @@
      .app-materials-pane__detail-ai        AI analysis block (purple border)
    ================================================================ #}
 
-{% macro paneListItem(id, name, status, classif) %}
+{% macro paneListItem(id, name, status, classif, isNew) %}
 <div
   class="app-materials-pane__item{% if status == 'missing' %} app-materials-pane__item--missing{% endif %}"
   role="option"
@@ -72,20 +72,25 @@
 >
   <span class="app-materials-pane__item-name">{{ name }}</span>
   <span>
+    {% if isNew %}
+      <strong class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle;">New</strong>
+    {% endif %}
     {% if status == 'missing' %}
-      <strong class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; vertical-align: middle;">Missing{% if classif == 'essential' %} — essential{% endif %}</strong>
+      {# no tag — purple row styling communicates missing status #}
     {% elif status == 'used' %}
       <strong class="govuk-tag govuk-tag--green" style="font-size: 1rem; vertical-align: middle;">Used</strong>
     {% elif status == 'unused' %}
       <strong class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle;">Unused</strong>
-    {% else %}
+    {% elif status == 'none' %}
       <strong class="govuk-tag govuk-tag--grey" style="font-size: 1rem; vertical-align: middle;">None</strong>
+    {% else %}
+    <!-- no tag -->
     {% endif %}
   </span>
 </div>
 {% endmacro %}
 
-{% macro paneDetail(id, name, classif, aiSummary, dateAdded, status) %}
+{% macro paneDetail(id, name, classif, aiSummary, dateAdded, status, isNew) %}
 
 {% if status == 'missing' %}
 
