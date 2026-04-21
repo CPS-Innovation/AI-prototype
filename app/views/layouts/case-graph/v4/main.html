@@ -29,4 +29,42 @@
   <script src="/public/javascripts/components/defendant-switcher.js"></script>
   <script src="/public/javascripts/components/materials-pane.js"></script>
   <script>document.addEventListener('DOMContentLoaded', function () { new App.DefendantSwitcher().init(); });</script>
+  <script>
+    // Persist prototype scenario params (m-status, m-new) across page navigations.
+    // Saves to sessionStorage when present in URL, then appends to all relative links.
+    (function () {
+      var KEYS = ['m-status', 'm-new'];
+      var params = new URLSearchParams(window.location.search);
+
+      // Save any params present in the current URL to sessionStorage
+      KEYS.forEach(function (k) {
+        if (params.has(k)) sessionStorage.setItem('proto-' + k, params.get(k));
+      });
+
+      // Build a map of stored values
+      var stored = {};
+      KEYS.forEach(function (k) {
+        var val = sessionStorage.getItem('proto-' + k);
+        if (val !== null) stored[k] = val;
+      });
+      if (!Object.keys(stored).length) return;
+
+      // Append stored params to all relative links that don't already have them
+      document.querySelectorAll('a[href]').forEach(function (link) {
+        var href = link.getAttribute('href');
+        if (!href || href.charAt(0) === '#' || /^https?:\/\//.test(href) || href.indexOf('manage-prototype') !== -1) return;
+        try {
+          var url = new URL(href, window.location.href);
+          var changed = false;
+          KEYS.forEach(function (k) {
+            if (stored[k] !== undefined && !url.searchParams.has(k)) {
+              url.searchParams.set(k, stored[k]);
+              changed = true;
+            }
+          });
+          if (changed) link.setAttribute('href', url.pathname + url.search + url.hash);
+        } catch (e) {}
+      });
+    })();
+  </script>
 {% endblock %}
