@@ -1,0 +1,446 @@
+{% from "_includes/case-graph/unmoderated/materials-pane-macros.njk" import paneListItem, paneDetail %}
+
+<div class="app-materials-pane js-materials-pane">
+
+  {# ============================================================
+     LEFT PANE: scrollable list of all materials
+     ============================================================ #}
+  <div class="app-materials-pane__left">
+    <div class="app-materials-pane__list" role="listbox" aria-label="Materials list">
+
+      {% if data['m-status'] == 'incomplete' %}
+      <details class="app-materials-pane__section" open>
+        <summary class="app-materials-pane__section-heading" style="background-color: #f6f1f8; color: #732282; border-bottom-color: #c5a0d4;">
+          Missing material (2)
+          <strong class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; vertical-align: middle; margin-left: auto;">AI analysis</strong>
+        </summary>
+        {{ paneListItem("mat-s-missing", "Witness statement from unidentified bystander", "missing", "optional") }}
+        {{ paneListItem("mat-e-missing", "CCTV continuity certificate — Selfridges, Stoke Newington", "missing", "essential") }}
+      </details>
+      {% endif %}
+
+      <details class="app-materials-pane__section" open>
+        <summary class="app-materials-pane__section-heading">
+          Statements (7){% if data['m-new'] == 'true' %}<strong class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle; margin-left: auto;">1 new</strong>{% endif %}
+        </summary>
+        {% if data['m-new'] == 'true' %}
+          {{ paneListItem("mat-s-7", "Defence statement — Tabitha Quibble", "", "", true) }}
+        {% endif %}
+        {{ paneListItem("mat-s-1", "Witness statement: Millicent Bumble (Security Guard) — MG11/888200", "", "essential") }}
+        {{ paneListItem("mat-s-2", "Victim statement: Millicent Bumble (assault account) — MG11/887580", "", "essential") }}
+        {{ paneListItem("mat-s-3", "Witness statement: Pippa Tiddlepot (Store Manager) — MG11/888201", "", "essential") }}
+        {{ paneListItem("mat-s-4", "Witness statement: Reginald Crumhorn (Off-duty Police Officer) — MG11/888202", "", "essential") }}
+        {{ paneListItem("mat-s-5", "Witness statement: Lavinia Starch (Cashier) — MG11/888203", "", "optional") }}
+        {{ paneListItem("mat-s-6", "Witness statement: Horatio Snipe (Defendant's companion) — MG11/888204", "", "optional") }}
+        {% if data['m-new'] != 'true' %}
+          {{ paneListItem("mat-s-7", "Defence statement — Tabitha Quibble", "", "") }}
+        {% endif %}
+      </details>
+
+      <details class="app-materials-pane__section" open>
+        <summary class="app-materials-pane__section-heading">
+          Exhibits (8){% if data['m-new'] == 'true' %}<strong class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle; margin-left: auto;">2 new</strong>{% endif %}
+        </summary>
+        {% if data['m-new'] == 'true' %}
+          {{ paneListItem("mat-e-7", "A&E attendance record — Millicent Bumble (EXH/007)", "", "", true) }}
+          {{ paneListItem("mat-e-8", "Forensic examination report — recovered clothing items (EXH/008)", "", "", true) }}
+        {% endif %}
+        {{ paneListItem("mat-e-1", "CCTV footage — Selfridges, Stoke Newington (12 mins) — EXH/001", "", "essential") }}
+        {{ paneListItem("mat-e-2", "Exhibit: recovered black dress (AllSaints) — EXH/002", "", "essential") }}
+        {{ paneListItem("mat-e-3", "Exhibit: handbag (AllSaints) — EXH/003", "", "essential") }}
+        {{ paneListItem("mat-e-4", "Exhibit: Yoga mat (Lululemon) — EXH/004", "", "essential") }}
+        {{ paneListItem("mat-e-5", "Custody photograph — Tabitha Quibble — EXH/005", "", "") }}
+        {{ paneListItem("mat-e-6", "Medical report — Millicent Bumble (EXH/006)", "", "") }}
+        {% if data['m-new'] != 'true' %}
+          {{ paneListItem("mat-e-7", "A&E attendance record — Millicent Bumble (EXH/007)", "", "") }}
+          {{ paneListItem("mat-e-8", "Forensic examination report — recovered clothing items (EXH/008)", "", "") }}
+        {% endif %}
+      </details>
+<!--
+      <details class="app-materials-pane__section" open>
+        <summary class="app-materials-pane__section-heading">Case overview (2)</summary>
+        {{ paneListItem("mat-o-1", "Initial crime report — URN 16GH1510125", "used", "essential") }}
+        {{ paneListItem("mat-o-2", "Custody record — Tabitha Quibble (D1)", "used", "essential") }}
+      </details>
+
+      <details class="app-materials-pane__section" open>
+        <summary class="app-materials-pane__section-heading">MG forms (8)</summary>
+        {{ paneListItem("mat-o-5", "MG3 — Report to CPS requesting a charging decision", "used", "essential") }}
+        {{ paneListItem("mat-o-6", "MG3A — Further information for charging decision (CCTV)", "used", "essential") }}
+        {{ paneListItem("mat-o-7", "MG3A — Further information for charging decision (recovery of items)", "used", "essential") }}
+        {{ paneListItem("mat-o-8", "MG3A — Further information for charging decision (assault on security guard)", "used", "essential") }}
+        {{ paneListItem("mat-o-9", "MG5 — Case summary", "used", "essential") }}
+        {{ paneListItem("mat-o-10", "MG6 — Case file evidence and information", "used", "essential") }}
+        {{ paneListItem("mat-o-11", "MG6C — Schedule of non-sensitive unused material", "used", "optional") }}
+        {{ paneListItem("mat-o-12", "MG7 — Remand application", "unused", "optional") }}
+      </details>
+-->
+      <details class="app-materials-pane__section" open>
+        <summary class="app-materials-pane__section-heading">
+          Other materials (7){% if data['m-new'] == 'true' %}<strong class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle; margin-left: auto;">1 new</strong>{% endif %}
+        </summary>
+        {% if data['m-new'] == 'true' %}
+          {{ paneListItem("mat-o-19", "Police incident log and arrest record — 15 January 2026", "", "", true) }}
+        {% endif %}
+        {{ paneListItem("mat-o-14", "Officer's pocket notebook — PC Rupert Fentworth", "", "") }}
+        {{ paneListItem("mat-o-15", "Store CCTV footage (full day) — Selfridges, Stoke Newington", "", "") }}
+        {{ paneListItem("mat-o-16", "Interview record: Horatio Snipe (companion) — unrecorded", "", "") }}
+        {{ paneListItem("mat-o-17", "Store incident log — Selfridges, Stoke Newington (January to March 2026)", "", "") }}
+        {{ paneListItem("mat-o-18", "Police dispatch records — 15 January 2026", "", "") }}
+        {% if data['m-new'] != 'true' %}
+          {{ paneListItem("mat-o-19", "Police incident log and arrest record — 15 January 2026", "", "") }}
+        {% endif %}
+        {{ paneListItem("mat-o-20", "Recovered Property report — 15 January 2026", "", "") }}
+      </details>
+
+    </div>
+  </div>
+
+  {# ============================================================
+     RIGHT PANE: detail panels (hidden by default, JS shows selected)
+     ============================================================ #}
+  <div class="app-materials-pane__right">
+    <div class="app-materials-pane__detail">
+
+      {% if data['m-status'] == 'incomplete' %}
+        {{ paneDetail(
+          "mat-s-missing",
+          "Witness statement from unidentified bystander",
+          "optional",
+          "6 individuals were present at the scene, but only 5 witness statements have been provided. A statement from the sixth witness (an unidentified bystander) has not been obtained and is not currently in the case file. This may strengthen the prosecution case.",
+          "Not obtained",
+          "missing"
+        ) }}
+        {{ paneDetail(
+          "mat-e-missing",
+          "CCTV continuity certificate — Selfridges, Stoke Newington",
+          "essential",
+          "A signed continuity record confirming the integrity of the CCTV evidence between seizure and disclosure has not been located in the case file. Without this, the defence may successfully challenge the admissibility of EXH/001 under s.78 PACE 1984. The prosecution case relies heavily on the CCTV footage. This must be resolved before the hearing.",
+          "Not located",
+          "missing"
+        ) }}
+      {% endif %}
+
+      {{ paneDetail(
+        "mat-s-1",
+        "Witness statement: Millicent Bumble (Security Guard) — MG11/888200",
+        "essential",
+        "Primary eyewitness account from the security guard who directly observed and detained Tabitha Quibble. Describes the act of concealment and the subsequent stop. Consistent with CCTV footage. High evidential value.",
+        "5 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-s-2",
+        "Victim statement: Millicent Bumble (assault account) — MG11/887580",
+        "essential",
+        "Separate victim statement from Bumble specifically addressing the assault by Percival Snodgrass at the store exit. Describes being pushed with both hands and falling backward. Details the immediate pain and shock. Consistent with CCTV footage at 2:28pm. Essential to the common assault charge.",
+        "6 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-s-3",
+        "Witness statement: Pippa Tiddlepot (Store Manager) — MG11/888201",
+        "essential",
+        "Confirms the value of the stolen goods and that they belonged to the store. Provides context on store procedure and stock identification. Required to establish appropriation of property belonging to another.",
+        "5 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-s-4",
+        "Witness statement: Reginald Crumhorn (Off-duty Police Officer) — MG11/888202",
+        "essential",
+        "Independent eyewitness who observed Quibble conceal items in a bag before approaching the exit. No prior relationship to either party. Corroborates store CCTV and security guard testimony.",
+        "6 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-s-5",
+        "Witness statement: Lavinia Starch (Cashier) — MG11/888203",
+        "optional",
+        "Observed Quibble pass the self-checkout area without scanning items. Testimony corroborates the concealment narrative but adds limited new evidence beyond the security guard account. Desirable for completeness.",
+        "6 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-s-6",
+        "Witness statement: Horatio Snipe (Defendant's companion) — MG11/888204",
+        "optional",
+        "Companion to Quibble on the day of the offence. Claims no knowledge of the theft. AI notes potential inconsistencies with CCTV positioning but no direct contradiction established. Useful for disclosure purposes.",
+        "8 March 2026",
+        "unused"
+      ) }}
+
+      {{ paneDetail(
+        "mat-s-7",
+        "Defence statement — Tabitha Quibble",
+        "",
+        "Defence claims the items were placed in the bag accidentally and there was no dishonest intent. This narrative is difficult to reconcile with the 12-minute CCTV footage showing deliberate concealment at multiple points in the store.",
+        "14 March 2026",
+        "used",
+        data['m-new'] == 'true'
+      ) }}
+
+      {{ paneDetail(
+        "mat-e-1",
+        "CCTV footage — Selfridges, Stoke Newington (12 mins) — EXH/001",
+        "essential",
+        "Twelve minutes of continuous footage showing Quibble entering the store, selecting items, and deliberately concealing them inside a bag before exiting without payment. Clear and unambiguous. Central exhibit in the prosecution case.",
+        "4 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-e-2",
+        "Exhibit: recovered black dress (AllSaints) — EXH/002",
+        "essential",
+        "One of three items recovered from Quibble's bag at the point of stop. Value confirmed as £99.49. Store label intact. Directly supports the appropriation limb of the theft charge.",
+        "4 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-e-3",
+        "Exhibit: handbag (AllSaints) — EXH/003",
+        "essential",
+        "Second item recovered. Value £124.99. Packaging intact with store barcode.",
+        "4 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-e-4",
+        "Exhibit: Yoga mat (Lululemon) — EXH/004",
+        "essential",
+        "Third item recovered. Value £23.02. All three recovered items are consistent with the CCTV footage showing concealment. Together they establish the full extent of the alleged theft.",
+        "4 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-e-5",
+        "Custody photograph — Tabitha Quibble — EXH/005",
+        "",
+        "Standard arrest photograph. Provides identity confirmation but is not relied upon given the defendant was known to store staff. Included for completeness.",
+        "4 March 2026",
+        "none"
+      ) }}
+
+      {{ paneDetail(
+        "mat-e-6",
+        "Medical report — Millicent Bumble (EXH/006)",
+        "",
+        "Medical assessment of injuries sustained by Bumble following the push by Snodgrass. Records bruising to the right shoulder and upper arm. Clinician confirmed no fracture, no surgical intervention required, and no ongoing treatment recommended. Injury assessed as below the ABH threshold — this report was a primary factor in the decision to downgrade the charge from ABH to common assault. Retained on the unused material schedule.",
+        "18 March 2026",
+        "unused"
+      ) }}
+
+      {{ paneDetail(
+        "mat-e-7",
+        "A&E attendance record — Millicent Bumble (EXH/007)",
+        "",
+        "Record of Bumble's attendance at A&E on 16 January 2026, 12:45pm. Confirms assessment date and time consistent with the incident. Triage notes record shoulder and arm bruising. No treatment administered beyond pain relief. Corroborates the medical report findings. Retained on the unused material schedule as injury did not meet ABH threshold.",
+        "20 March 2026",
+        "unused",
+        data['m-new'] == 'true'
+      ) }}
+
+      {{ paneDetail(
+        "mat-e-8",
+        "Forensic examination report — recovered clothing items (EXH/008)",
+        "",
+        "Forensic examination of the three recovered items (EXH/002, EXH/003, EXH/004) confirming no security tag removal, no damage to packaging, and store barcodes intact at the point of recovery. Supports the inference that the items were concealed and removed without any attempt to defeat the store's security systems. Consistent with the CCTV evidence.",
+        "9 April 2026",
+        "unused",
+        data['m-new'] == 'true'
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-1",
+        "Initial crime report — URN 16GH1510125",
+        "essential",
+        "The initial crime report establishing the shoplifting incident at Selfridges, Stoke Newington on 3 March 2026. Confirms the offence location, time, and attending officers. Foundational document for the prosecution case.",
+        "4 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-2",
+        "Custody record — Tabitha Quibble (D1)",
+        "essential",
+        "Full custody record for Tabitha Quibble covering arrest, detention, interview, and charge. Confirms proper procedure was followed throughout. No significant gaps or procedural irregularities identified.",
+        "4 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-3",
+        "Previous convictions record — Tabitha Quibble (D1)",
+        "",
+        "Quibble has one previous record: a simple caution for handling stolen goods contrary to s.22 Theft Act 1968 (case 21GH8820451, Selfridges, 14 March 2021). Relevant to the question of dishonest intent and pattern of offending in retail environments. Disclosure to defence required under CPIA.",
+        "5 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-4",
+        "Previous convictions record — Percival Snodgrass (D2)",
+        "",
+        "Snodgrass has one previous conviction: common assault contrary to s.39 Criminal Justice Act 1988 (case 19GH6611930, Highfield Town Centre, 7 September 2019), resulting in a 6-month community order. Relevant to sentencing and to the assault on the security guard alleged in the present case. Disclosure to defence required under CPIA.",
+        "5 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-5",
+        "MG3 — Report to CPS requesting a charging decision",
+        "essential",
+        "Charging request submitted by the investigating officer. Sets out the summary of evidence and recommends a charge of theft contrary to s.1 Theft Act 1968. Properly completed and consistent with the evidence presented.",
+        "6 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-6",
+        "MG3A — Further information for charging decision (CCTV)",
+        "essential",
+        "Supplementary MG3 providing detail on CCTV exhibit and confirming continuity of evidence. Required given the central reliance on footage in this case.",
+        "6 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-7",
+        "MG3A — Further information for charging decision (recovery of items)",
+        "essential",
+        "Second supplementary MG3 covering the recovery and identification of the three exhibits. Confirms items were not paid for and remained the property of the store at point of recovery.",
+        "6 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-8",
+        "MG3A — Further information for charging decision (assault on security guard)",
+        "essential",
+        "Supplementary MG3 covering the assault on Millicent Bumble. Summarises the medical evidence and confirms the decision to charge common assault rather than ABH. Notes that examination findings placed the injury below the ABH threshold. Records that EXH/006 and EXH/007 are retained as unused material.",
+        "18 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-9",
+        "MG5 — Case summary",
+        "essential",
+        "Full case summary prepared by the officer in the case. Summary is accurate and consistent with the underlying evidence. Correctly identifies the key witnesses and exhibits. Suitable for disclosure.",
+        "8 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-10",
+        "MG6 — Case file evidence and information",
+        "essential",
+        "Disclosure schedule listing all material gathered during the investigation. One item has not yet been reviewed for potential unused material status. Review recommended before service.",
+        "8 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-11",
+        "MG6C — Schedule of non-sensitive unused material",
+        "optional",
+        "Lists non-sensitive material not relied upon in the prosecution case. Currently contains 4 items. All items appear appropriately categorised. No material identified that ought to be used.",
+        "10 March 2026",
+        "used"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-12",
+        "MG7 — Remand application",
+        "optional",
+        "Remand application prepared in anticipation of bail being opposed. Defendant was ultimately released on conditional bail. Document retained for completeness but not actively relied upon.",
+        "5 March 2026",
+        "unused"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-14",
+        "Officer's pocket notebook — PC Rupert Fentworth",
+        "",
+        "Handwritten notebook entries from the attending officer. Contents are largely duplicated in the witness statement and custody record. No material that undermines the prosecution case or assists the defence has been identified.",
+        "5 March 2026",
+        "unused"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-15",
+        "Store CCTV footage (full day) — Selfridges, Stoke Newington",
+        "",
+        "The full-day CCTV recording from which the 12-minute exhibit was extracted. The wider footage shows no material relevant to the offence or the defence case. Retained for disclosure schedule completeness.",
+        "4 March 2026",
+        "unused"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-16",
+        "Interview record: Horatio Snipe (companion) — unrecorded",
+        "",
+        "Brief unrecorded conversation with Quibble's companion at the scene. Not substantially inconsistent with his later witness statement. No material that assists the defence case identified.",
+        "4 March 2026",
+        "unused"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-17",
+        "Store incident log — Selfridges, Stoke Newington (January to March 2026)",
+        "",
+        "Store log of security incidents. One prior incident involving a different individual in the same aisle in February 2026 is noted. Not relevant to the present defendant but included for completeness.",
+        "7 March 2026",
+        "unused"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-18",
+        "Police dispatch records — 15 January 2026",
+        "",
+        "Radio dispatch log confirming the time police were called and units deployed following the assault and flight of both defendants. Corroborates the timeline in the MG5 and witness statements. Not relied upon directly in the prosecution case.",
+        "20 March 2026",
+        "unused"
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-19",
+        "Police incident log and arrest record — 15 January 2026",
+        "",
+        "Operational log covering the attendance at the scene, pursuit, and arrest of both defendants at 2:35pm. Records recovery of all stolen items. Corroborates custody records and MG3. Retained for completeness.",
+        "20 March 2026",
+        "unused",
+        data['m-new'] == 'true'
+      ) }}
+
+      {{ paneDetail(
+        "mat-o-20",
+        "Recovered Property report — 15 January 2026",
+        "",
+        "Formal record of the three clothing items recovered from the defendants at arrest. Item descriptions, values, and condition consistent with EXH/002, EXH/003, and EXH/004. No discrepancies identified.",
+        "20 March 2026",
+        "unused"
+      ) }}
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var containers = document.querySelectorAll('.js-materials-pane');
+    containers.forEach(function (container) {
+      new App.MaterialsPane({ container: container });
+    });
+  });
+</script>

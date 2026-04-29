@@ -1,0 +1,182 @@
+{% from "_includes/case-graph/unmoderated/charges-pane-macros.njk" import paneListItem, paneChargeDetail, paneAiChargeDetail %}
+<section aria-label="Charges relating to Tabitha Quibble">
+
+  <div class="app-materials-pane js-materials-pane">
+
+    {# ============================================================
+       LEFT PANE
+       ============================================================ #}
+    <div class="app-materials-pane__left">
+      <div class="app-materials-pane__list" role="listbox" aria-label="Charges relating to Tabitha Quibble">
+
+        <details class="app-materials-pane__section" open>
+          <summary class="app-materials-pane__section-heading">
+            Accepted by CPS (1)
+          </summary>
+          <div class="app-materials-pane__item" role="option" aria-selected="false" data-detail="charge-theft-quibble">
+            <span class="app-materials-pane__item-name">Theft contrary to s.1 Theft Act 1968</span>
+            <span></span>
+          </div>
+        </details>
+
+        <details class="app-materials-pane__section">
+          <summary class="app-materials-pane__section-heading">
+            Proposed (0)
+          </summary>
+        </details>
+
+        <details class="app-materials-pane__section">
+          <summary class="app-materials-pane__section-heading">
+            Amended (0)
+          </summary>
+        </details>
+
+        <details class="app-materials-pane__section">
+          <summary class="app-materials-pane__section-heading">
+            Replaced (0)
+          </summary>
+        </details>
+
+        <details class="app-materials-pane__section">
+          <summary class="app-materials-pane__section-heading">
+            Rejected (0)
+          </summary>
+        </details>
+
+        <details class="app-materials-pane__section" open>
+          <summary class="app-materials-pane__section-heading" style="background-color: #f6f1f8; color: #732282; border-bottom-color: #c5a0d4;">
+            Linked offences (1)
+            <strong class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; vertical-align: middle; margin-left: auto;">AI analysis</strong>
+          </summary>
+          <div class="app-materials-pane__item app-materials-pane__item--ai" role="option" aria-selected="false" data-detail="charge-handling-quibble">
+            <span class="app-materials-pane__item-name">Handling stolen goods contrary to s.22 Theft Act 1968</span>
+            <span></span>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+
+  {# ============================================================
+     RIGHT PANE
+     ============================================================ #}
+  <div class="app-materials-pane__right">
+    <div class="app-materials-pane__detail">
+
+      {# ── Theft contrary to s.1 Theft Act 1968 ── #}
+      {% call paneChargeDetail(
+        "charge-theft-quibble",
+        "Theft contrary to s.1 Theft Act 1968",
+        "accepted",
+        "On 15 January 2026, Tabitha Quibble and Percival Snodgrass entered Selfridges. CCTV footage shows Quibble selecting items and concealing them, while Snodgrass acted as a lookout. Both defendants fled but were apprehended within 15 minutes. All stolen property was recovered from their possession."
+      ) %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Defendant</dt>
+            <dd class="govuk-summary-list__value">Tabitha Quibble</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Co-defendant</dt>
+            <dd class="govuk-summary-list__value">Percival Snodgrass</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Statutory definition</dt>
+            <dd class="govuk-summary-list__value">A person is guilty of theft if he dishonestly appropriates property belonging to another with the intention of permanently depriving the other of it <a href="#" onclick="alert('Opens: L&P guidance')">(Theft Act 1968 s.1(1))</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Points to prove</dt>
+            <dd class="govuk-summary-list__value">
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Appropriates property (assumes control)</strong>
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI analysis</p>
+                <p class="govuk-body">CCTV footage shows defendant taking items from shelf and concealing them.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a class="govuk-link" href="materials#mat-e-1">CCTV footage (14:20&#8211;14:27)</a>,
+                <a class="govuk-link" href="materials#mat-s-2">Victim statement: Millicent Bumble (887580)</a>,
+                <a class="govuk-link" href="materials#mat-s-3">Witness statement: Pippa Tiddlepot (888201)</a>,
+                <a class="govuk-link" href="materials#mat-o-20">Recovered items (JP/01)</a>
+              </p>
+
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Property (tangible personal property)</strong>
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI analysis</p>
+                <p class="govuk-body">Store ownership documentation and witness statement from manager confirm property belonged to Selfridges at time of theft.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a class="govuk-link" href="materials#mat-o-20">Recovered items (JP/01)</a>,
+                <a href="#" onclick="alert('Opens: Store inventory (Exhibit 11)')">Store inventory (Exhibit 11)</a>,
+                <a href="#" onclick="alert('Opens: Store records (Exhibit 12')">Store records (Exhibit 12)</a>
+              </p>
+
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Belonging to another</strong>
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI analysis</p>
+                <p class="govuk-body">Defendant concealed items and attempted to leave without payment, indicating dishonest intent.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a class="govuk-link" href="materials#mat-o-20">Recovered items (JP/01)</a>,
+                <a href="#" onclick="alert('Opens: Store inventory (Exhibit 11)')">Store inventory (Exhibit 11)</a>,
+                <a href="#" onclick="alert('Opens: Store records (Exhibit 12')">Store records (Exhibit 12)</a>
+              </p>
+
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Dishonesty</strong>
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI analysis</p>
+                <p class="govuk-body">Defendant concealed items and attempted to leave without payment, but there is evidence suggesting possible confusion or mistake.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a class="govuk-link" href="materials#mat-e-1">CCTV footage (14:20&#8211;14:27)</a>,
+                <a class="govuk-link" href="materials#mat-s-3">Witness statement: Pippa Tiddlepot (888201)</a>,
+                <a class="govuk-link" href="materials#mat-s-2">Victim statement: Millicent Bumble (887580)</a>,
+                <a class="govuk-link" href="materials#mat-s-7">Defendant statement: Tabitha Quibble</a>
+              </p>
+
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <strong>Intention to permanently deprive</strong>
+              <div style="border-left: 5px solid #732282; padding-left: 15px; margin: 15px 0;">
+                <p class="govuk-body-s" style="color: #732282; margin-bottom: 5px; font-weight: bold;">AI analysis</p>
+                <p class="govuk-body">Attempt to leave store with concealed items and no payment made suggests intent to permanently deprive, but there is evidence of possible mistake or lack of intent.</p>
+              </div>
+              <p class="govuk-body-s"><strong>Evidence:</strong>
+                <a class="govuk-link" href="materials#mat-e-1">CCTV footage (14:20&#8211;14:27)</a>,
+                <a class="govuk-link" href="materials#mat-s-2">Victim statement: Millicent Bumble (887580)</a>,
+                <a class="govuk-link" href="materials#mat-s-3">Witness statement: Pippa Tiddlepot (888201)</a>,
+                <a class="govuk-link" href="materials#mat-s-7">Defendant statement: Tabitha Quibble</a>,
+                <a href="#" onclick="alert('Opens: Defendant statement: Percival Snodgrass - 888104')">Defendant statement: Percival Snodgrass (888104)</a>,
+                <a href="#" onclick="alert('Opens: Defendant statement: Tabitha Quibble - 888111')">Defendant statement: Tabitha Quibble (888111)</a>
+              </p>
+            </dd>
+          </div>
+        </dl>
+      {% endcall %}
+
+      {# ── Handling stolen goods contrary to s.22 Theft Act 1968 (AI-identified) ── #}
+      {% call paneAiChargeDetail(
+        "charge-handling-quibble",
+        "Handling stolen goods contrary to s.22 Theft Act 1968"
+      ) %}
+        <p class="govuk-!-margin-bottom-2">If the court is not satisfied beyond reasonable doubt that defendants appropriated with dishonest intent to permanently deprive, they may still find the defendants guilty of handling if they dishonestly received goods they knew or believed to be stolen.</p>
+      {% endcall %}
+
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var containers = document.querySelectorAll('.js-materials-pane');
+    containers.forEach(function (container) {
+      new App.MaterialsPane({ container: container });
+    });
+  });
+</script>
+
+</section>

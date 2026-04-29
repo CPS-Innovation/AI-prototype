@@ -1,0 +1,83 @@
+{% extends "layouts/case-graph/unmoderated/main.html" %}
+{% set navId = 'charges' %}
+{% set pageName = "Case Details" %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <!-- SECTION 1: Case title (prevail across all pages)-->
+    {% include "_includes/case-graph/unmoderated/case-header.njk" %}
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Charges</h2> 
+
+
+        <!-- FILTERED CONTENT: ALL DEFENDANTS -->
+    <div data-view="all">
+      {% include "_includes/case-graph/unmoderated/charges-all.njk" %}
+    </div><!-- end data-view="all" -->
+
+
+        <!-- FILTERED CONTENT: TABITHA QUIBBLE -->
+    <div data-view="quibble" hidden>
+          {{ govukInsetText({
+            html: "Showing charges for <strong>Tabitha Quibble</strong> only."
+          }) }}
+      {% include "_includes/case-graph/unmoderated/charges-quibble.njk" %}
+    </div><!-- end data-view="quibble" -->
+
+
+        <!-- FILTERED CONTENT: PERCIVAL SNODGRASS -->
+    <div data-view="snodgrass" hidden>
+          {{ govukInsetText({
+            html: "Showing charges for <strong>Percival Snodgrass</strong> only."
+          }) }}
+
+      {% include "_includes/case-graph/unmoderated/charges-snodgrass.njk" %}
+    </div><!-- end data-view="snodgrass" -->
+
+
+
+  </div><!-- end govuk-grid-column-full -->
+</div><!-- end govuk-grid-row -->
+
+<style>
+.app-person-link:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+  background: #fffbe2;
+  border-radius: 2px;
+  transition: outline 0.1s;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.app-person-link').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        var target = document.querySelector(href);
+        if (target) {
+          // Remove active from all cards
+          document.querySelectorAll('.govuk-summary-card--active').forEach(function(card) {
+            card.classList.remove('govuk-summary-card--active');
+          });
+          // Add active to the parent card
+          var card = target.closest('.govuk-summary-card');
+          if (card) {
+            card.classList.add('govuk-summary-card--active');
+          }
+          setTimeout(function() {
+            target.focus();
+          }, 100);
+        }
+      }
+    });
+  });
+});
+</script>
+
+{% endblock %}

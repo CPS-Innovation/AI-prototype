@@ -1,0 +1,83 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Before you start – Research session
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container" style="margin-top: 60px; max-width: 640px;">
+
+  <h1 class="govuk-heading-l">Before you start</h1>
+
+  {% if errors %}
+  <div class="govuk-error-summary" data-module="govuk-error-summary">
+    <div role="alert">
+      <h2 class="govuk-error-summary__title">There is a problem</h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          {% for error in errors %}
+          <li><a href="#{{ error.field }}">{{ error.message }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      This prototype uses dummy case data. No real personal or legal information is shown.
+    </strong>
+  </div>
+
+  <p class="govuk-body">This is a research session to help us improve a prototype tool for Crown Prosecution Service staff.</p>
+
+  <h2 class="govuk-heading-m">What we will record</h2>
+
+  <p class="govuk-body">With your consent, we will use Microsoft Clarity to record:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>where you click on screen</li>
+    <li>how far you scroll on each page</li>
+    <li>a video replay of your screen activity within this prototype</li>
+    <li>which pages you visit and in what order</li>
+  </ul>
+
+  <p class="govuk-body">We will not record any information you type, and no real case data is used in this prototype.
+  <a href="https://privacy.microsoft.com/en-gb/privacystatement" class="govuk-link" rel="noopener noreferrer" target="_blank">Read Microsoft Clarity's privacy statement (opens in new tab)</a>.</p>
+
+  <p class="govuk-body">After completing the task you will be asked three short questions. Your answers will be stored securely and used only for this research.</p>
+
+  <form action="/testing/consent" method="post" novalidate>
+    <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+
+    <div class="govuk-form-group {% if errors %}govuk-form-group--error{% endif %}">
+      <fieldset class="govuk-fieldset" aria-describedby="{% if errors %}consent-error{% endif %}">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          Do you agree to take part?
+        </legend>
+        {% if errors %}
+        <p id="consent-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> You must tick the box to continue
+        </p>
+        {% endif %}
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="consent" name="consent" type="checkbox" value="yes">
+            <label class="govuk-label govuk-checkboxes__label" for="consent">
+              I understand what will be recorded and agree to take part
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+  </form>
+
+</div>
+{% endblock %}

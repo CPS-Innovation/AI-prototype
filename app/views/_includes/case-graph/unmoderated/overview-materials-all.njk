@@ -1,0 +1,33 @@
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Materials</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+
+    {% if data['m-new'] == 'true' %}
+    <div style="border-left: 4px solid #1d70b8; padding: 12px 15px; background-color: #e8f4fb; margin-bottom: 16px;">
+      <p class="govuk-body-s govuk-!-margin-bottom-0"><strong class="govuk-tag govuk-tag--blue" style="font-size: 1rem; vertical-align: middle; margin-right: 8px;">4 new</strong> 4 new items added since last review</p>
+    </div>
+    {% endif %}
+
+    {% if data['m-status'] == 'incomplete' %}
+    <div style="border-left: 4px solid #732282; padding: 12px 15px; background-color: #f6f1f8; margin-bottom: 16px;">
+      <p class="govuk-body-s govuk-!-margin-bottom-1" style="color: #732282; font-weight: bold;">AI analysis — missing material</p>
+      <ol class="govuk-list govuk-list--number govuk-body-s govuk-!-margin-bottom-2">
+        <li>Witness statement from unidentified bystander</li>
+        <li>CCTV continuity certificate — Selfridges, Stoke Newington <strong class="govuk-tag govuk-tag--red" style="font-size: 1rem; vertical-align: middle; margin-left: 4px;">Essential</strong></li>
+      </ol>
+      <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">This has been interpreted by AI. It is not an official legal record.</p>
+    </div>
+    {% else %}
+    <div style="border-left: 4px solid #00703c; padding: 12px 15px; background-color: #f3fff5; margin-bottom: 16px;">
+      <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #00703c; font-weight: bold;">AI analysis — all expected materials present</p>
+    </div>
+    {% endif %}
+
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <p class="govuk-body-s govuk-!-margin-bottom-2"><a href="materials" class="govuk-link">View materials in more detail</a></p>
+  </div>
+</div>

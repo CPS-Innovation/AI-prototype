@@ -1,0 +1,317 @@
+{% from "_includes/case-graph/unmoderated/materials-all.njk" import materialItem %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    {# ============================================================
+       STATEMENTS CARD
+       ============================================================ #}
+    <div class="govuk-summary-card govuk-!-margin-bottom-6{% if data['m-status'] == 'incomplete' %} app-card--status-red{% else %} app-card--status-green{% endif %}">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Statements ({% if data['m-status'] == 'incomplete' %}7{% else %}6{% endif %})</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+
+        {% if data['m-status'] == 'incomplete' %}
+        {{ materialItem(
+          "Witness statement from unidentified bystander",
+          "optional",
+          "6 individuals were present at the scene, but only 5 witness statements have been provided. A statement from the sixth witness (an unidentified bystander) has not been obtained and is not currently in the case file. This may strengthen the prosecution case.",
+          "Not obtained",
+          "missing",
+          "#"
+        ) }}
+        {% endif %}
+
+        {{ materialItem(
+          "Witness statement: Millicent Bumble (Security Guard) — MG11/888200",
+          "essential",
+          "Primary eyewitness account from the security guard who directly observed and detained Tabitha Quibble. Describes the act of concealment and the subsequent stop. Consistent with CCTV footage. High evidential value.",
+          "5 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Witness statement: Pippa Tiddlepot (Store Manager) — MG11/888201",
+          "essential",
+          "Confirms the value of the stolen goods and that they belonged to the store. Provides context on store procedure and stock identification. Required to establish appropriation of property belonging to another.",
+          "5 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Witness statement: Reginald Crumhorn (Off-duty Police Officer) — MG11/888202",
+          "essential",
+          "Independent eyewitness who observed Quibble conceal items in a bag before approaching the exit. No prior relationship to either party. Corroborates store CCTV and security guard testimony.",
+          "6 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Witness statement: Lavinia Starch (Cashier) — MG11/888203",
+          "optional",
+          "Observed Quibble pass the self-checkout area without scanning items. Testimony corroborates the concealment narrative but adds limited new evidence beyond the security guard account. Desirable for completeness.",
+          "6 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Witness statement: Horatio Snipe (Defendant's companion) — MG11/888204",
+          "optional",
+          "Companion to Quibble on the day of the offence. Claims no knowledge of the theft. AI notes potential inconsistencies with CCTV positioning but no direct contradiction established. Useful for disclosure purposes.",
+          "8 March 2026",
+          "unused",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Defence statement — Tabitha Quibble",
+          "",
+          "Defence claims the items were placed in the bag accidentally and there was no dishonest intent. This narrative is difficult to reconcile with the 12-minute CCTV footage showing deliberate concealment at multiple points in the store.",
+          "14 March 2026",
+          "used",
+          "#"
+        ) }}
+
+      </div>
+    </div>
+
+  </div>
+  <div class="govuk-grid-column-one-half">
+
+    {# ============================================================
+       EXHIBITS CARD
+       ============================================================ #}
+    <div class="govuk-summary-card govuk-!-margin-bottom-6{% if data['m-status'] == 'incomplete' %} app-card--status-red{% else %} app-card--status-green{% endif %}">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Exhibits ({% if data['m-status'] == 'incomplete' %}6{% else %}5{% endif %})</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+
+        {% if data['m-status'] == 'incomplete' %}
+        {{ materialItem(
+          "CCTV continuity certificate — Selfridges, Stoke Newington",
+          "essential",
+          "A signed continuity record confirming the integrity of the CCTV evidence between seizure and disclosure has not been located in the case file. Without this, the defence may successfully challenge the admissibility of EXH/001 under s.78 PACE 1984. The prosecution case relies heavily on the CCTV footage. This must be resolved before the hearing.",
+          "Not located",
+          "missing",
+          "#"
+        ) }}
+        {% endif %}
+
+        {{ materialItem(
+          "CCTV footage — Selfridges, Stoke Newington (12 mins) — EXH/001",
+          "essential",
+          "Twelve minutes of continuous footage showing Quibble entering the store, selecting items, and deliberately concealing them inside a bag before exiting without payment. Clear and unambiguous. Central exhibit in the prosecution case.",
+          "4 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Exhibit: recovered black dress (AllSaints) — EXH/002",
+          "essential",
+          "One of three items recovered from Quibble's bag at the point of stop. Value confirmed as £99.49. Store label intact. Directly supports the appropriation limb of the theft charge.",
+          "4 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Exhibit: handbag (AllSaints) — EXH/003",
+          "essential",
+          "Second item recovered. Value £124.99. Packaging intact with store barcode.",
+          "4 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Exhibit: Yoga mat (Lululemon) — EXH/004",
+          "essential",
+          "Third item recovered. Value £23.02. All three recovered items are consistent with the CCTV footage showing concealment. Together they establish the full extent of the alleged theft.",
+          "4 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Custody photograph — Tabitha Quibble — EXH/005",
+          "",
+          "Standard arrest photograph. Provides identity confirmation but is not relied upon given the defendant was known to store staff. Included for completeness.",
+          "4 March 2026",
+          "none",
+          "#"
+        ) }}
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    {# ============================================================
+       OTHER CARD (Case overview, Pre cons, MG forms, Other materials)
+       Excludes assault-specific MG3A from MG forms
+       ============================================================ #}
+    <div class="govuk-summary-card govuk-!-margin-bottom-6 app-card--status-green">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Other (17)</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+
+        <h3 class="govuk-heading-s">Case overview</h3>
+
+        {{ materialItem(
+          "Initial crime report — URN 16GH1510125",
+          "essential",
+          "The initial crime report establishing the shoplifting incident at Selfridges, Stoke Newington on 3 March 2026. Confirms the offence location, time, and attending officers. Foundational document for the prosecution case.",
+          "4 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Custody record — Tabitha Quibble (D1)",
+          "essential",
+          "Full custody record for Tabitha Quibble covering arrest, detention, interview, and charge. Confirms proper procedure was followed throughout. No significant gaps or procedural irregularities identified.",
+          "4 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        <h3 class="govuk-heading-s">Defendant pre-convictions</h3>
+
+        {{ materialItem(
+          "Previous convictions record — Tabitha Quibble (D1)",
+          "",
+          "Quibble has one previous record: a simple caution for handling stolen goods contrary to s.22 Theft Act 1968 (case 21GH8820451, Selfridges, 14 March 2021). Relevant to the question of dishonest intent and pattern of offending in retail environments. Disclosure to defence required under CPIA.",
+          "5 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        <h3 class="govuk-heading-s">MG forms</h3>
+
+        {{ materialItem(
+          "MG3 — Report to CPS requesting a charging decision",
+          "essential",
+          "Charging request submitted by the investigating officer. Sets out the summary of evidence and recommends a charge of theft contrary to s.1 Theft Act 1968. Properly completed and consistent with the evidence presented.",
+          "6 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "MG3A — Further information for charging decision (CCTV)",
+          "essential",
+          "Supplementary MG3 providing detail on CCTV exhibit and confirming continuity of evidence. Required given the central reliance on footage in this case.",
+          "6 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "MG3A — Further information for charging decision (recovery of items)",
+          "essential",
+          "Second supplementary MG3 covering the recovery and identification of the three exhibits. Confirms items were not paid for and remained the property of the store at point of recovery.",
+          "6 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "MG5 — Case summary",
+          "essential",
+          "Full case summary prepared by the officer in the case. Summary is accurate and consistent with the underlying evidence. Correctly identifies the key witnesses and exhibits. Suitable for disclosure.",
+          "8 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "MG6 — Case file evidence and information",
+          "essential",
+          "Disclosure schedule listing all material gathered during the investigation. One item has not yet been reviewed for potential unused material status. Review recommended before service.",
+          "8 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "MG6C — Schedule of non-sensitive unused material",
+          "optional",
+          "Lists non-sensitive material not relied upon in the prosecution case. Currently contains 4 items. All items appear appropriately categorised. No material identified that ought to be used.",
+          "10 March 2026",
+          "used",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "MG7 — Remand application",
+          "optional",
+          "Remand application prepared in anticipation of bail being opposed. Defendant was ultimately released on conditional bail. Document retained for completeness but not actively relied upon.",
+          "5 March 2026",
+          "unused",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "MG11 — Witness statement pro forma (blank template)",
+          "",
+          "Standard blank MG11 template included in the file. Not an evidentiary document. Administrative material with no direct bearing on the prosecution case.",
+          "4 March 2026",
+          "none",
+          "#"
+        ) }}
+
+        <h3 class="govuk-heading-s">Other materials</h3>
+
+        {{ materialItem(
+          "Officer's pocket notebook — PC Rupert Fentworth",
+          "",
+          "Handwritten notebook entries from the attending officer. Contents are largely duplicated in the witness statement and custody record. No material that undermines the prosecution case or assists the defence has been identified.",
+          "5 March 2026",
+          "unused",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Store CCTV footage (full day) — Selfridges, Stoke Newington",
+          "",
+          "The full-day CCTV recording from which the 12-minute exhibit was extracted. The wider footage shows no material relevant to the offence or the defence case. Retained for disclosure schedule completeness.",
+          "4 March 2026",
+          "unused",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Interview record: Horatio Snipe (companion) — unrecorded",
+          "",
+          "Brief unrecorded conversation with Quibble's companion at the scene. Not substantially inconsistent with his later witness statement. No material that assists the defence case identified.",
+          "4 March 2026",
+          "unused",
+          "#"
+        ) }}
+
+        {{ materialItem(
+          "Store incident log — Selfridges, Stoke Newington (January to March 2026)",
+          "",
+          "Store log of security incidents. One prior incident involving a different individual in the same aisle in February 2026 is noted. This is not relevant to the present defendant but is included for completeness.",
+          "7 March 2026",
+          "unused",
+          "#"
+        ) }}
+
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,96 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "_components/header/macro.njk" import appHeader %}
+{% from "_components/address/macro.njk" import appAddress %}
+{% from "_components/checkbox-filter/macro.njk" import appCheckboxFilter %}
+{% from "_components/value/macro.njk" import appValue %}
+{% from "_components/button-menu/macro.njk" import appButtonMenu %}
+{% from "_components/identity-bar/macro.njk" import appIdentityBar %}
+{% from "_components/activity-log-item/macro.njk" import appActivityLogItem %}
+
+{% block head %}
+  {{ super() }}
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wjaeumnr5c");
+  </script>
+  {% if data['participant-id'] %}
+  <script>
+    window.addEventListener('load', function () {
+      if (typeof clarity === 'function') {
+        clarity('set', 'participantId', '{{ data["participant-id"] }}');
+      }
+    });
+  </script>
+  {% endif %}
+{% endblock %}
+
+{% block header %}
+  <div class="app-testing-bar" style="background: #f3f2f1; border-bottom: 4px solid #1d70b8; padding: 8px 0;">
+    <div class="govuk-width-container" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+      <p class="govuk-body-s govuk-!-margin-bottom-0">
+        <strong>Research prototype:</strong> This uses dummy case data. No real personal or legal information is shown.
+      </p>
+      <a href="/testing/questions" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" style="font-size: 1rem;" data-module="govuk-button">
+        Finish task
+      </a>
+    </div>
+  </div>
+  {% include "_includes/header.njk" %}
+  {% include "_includes/case-graph/unmoderated/navigation.njk" %}
+{% endblock %}
+
+{% block footer %}
+	{% include "_includes/footer.njk" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {{ super() }}
+  <script>
+    var App = {}
+  </script>
+  <script src="/public/javascripts/components/filter-toggle-button.js"></script>
+  <script src="/public/javascripts/components/list-filter.js"></script>
+  <script src="/public/javascripts/components/button-menu.js"></script>
+  <script src="/public/javascripts/components/text-expander.js"></script>
+  <script src="/public/javascripts/components/defendant-switcher.js"></script>
+  <script src="/public/javascripts/components/materials-pane.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', function () { new App.DefendantSwitcher().init(); });</script>
+  <script>
+    // Persist prototype scenario params (m-status, m-new) across page navigations.
+    (function () {
+      var KEYS = ['m-status', 'm-new'];
+      var params = new URLSearchParams(window.location.search);
+
+      KEYS.forEach(function (k) {
+        if (params.has(k)) sessionStorage.setItem('proto-' + k, params.get(k));
+      });
+
+      var stored = {};
+      KEYS.forEach(function (k) {
+        var val = sessionStorage.getItem('proto-' + k);
+        if (val !== null) stored[k] = val;
+      });
+      if (!Object.keys(stored).length) return;
+
+      document.querySelectorAll('a[href]').forEach(function (link) {
+        var href = link.getAttribute('href');
+        if (!href || href.charAt(0) === '#' || /^https?:\/\//.test(href) || href.indexOf('manage-prototype') !== -1) return;
+        try {
+          var url = new URL(href, window.location.href);
+          var changed = false;
+          KEYS.forEach(function (k) {
+            if (stored[k] !== undefined && !url.searchParams.has(k)) {
+              url.searchParams.set(k, stored[k]);
+              changed = true;
+            }
+          });
+          if (changed) link.setAttribute('href', url.pathname + url.search + url.hash);
+        } catch (e) {}
+      });
+    })();
+  </script>
+{% endblock %}

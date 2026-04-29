@@ -1,0 +1,143 @@
+{# ================================================================
+   TWO-PANE CHARGES: helper macros
+   ================================================================
+
+   ── paneListItem(id, name) ───────────────────────────────────
+   Renders a single row in the LEFT scrollable list.
+
+   id        Unique string identifier — must match the id used in
+             the corresponding paneChargeDetail call.
+             E.g. "charge-theft"
+
+   name      Display name shown as the row label.
+
+   ── paneChargeDetail(id, title, status, aiNarrative) ───────────
+   Renders a standard charge RIGHT panel.
+
+   Call this macro using a {% call %} block. The content of the
+   {% call %} block is rendered inside the blue summary card as
+   the card body (typically a <dl> with charge rows).
+
+   The aiNarrative is rendered as a SEPARATE purple AI card
+   ABOVE the blue charge card — it is outside the blue card.
+
+   id           Must match the id used in paneListItem.
+
+   title        Full charge title string.
+                E.g. "Theft contrary to s.1 Theft Act 1968"
+
+   status       Controls the title tag colour:
+                'accepted'  → green  "Accepted by CPS"
+                'replaced'  → grey   "Replaced"
+                'proposed'  → blue   "Proposed"
+                'rejected'  → red    "Rejected"
+
+   aiNarrative  Free-text offence narrative for the AI card above.
+                If empty (''), the AI card is not rendered.
+
+   ── paneAiChargeDetail(id, title) ─────────────────────────────
+   Renders an AI-identified potential charge panel — entirely
+   presented as a purple card (no separate blue card).
+
+   Call with a {% call %} block. The block content is rendered
+   as the card body (description paragraph etc.).
+
+   id           Must match the id used in paneListItem.
+
+   title        The charge title shown inside the card.
+
+   ── Usage: standard charge ────────────────────────────────────
+
+   {% call paneChargeDetail(
+     "charge-theft",
+     "Theft contrary to s.1 Theft Act 1968",
+     "accepted",
+     "On 15 January 2026, Quibble and Snodgrass entered Selfridges..."
+   ) %}
+     <dl class="govuk-summary-list govuk-summary-list--no-border">
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">Defendants</dt>
+         <dd class="govuk-summary-list__value">Tabitha Quibble, Percival Snodgrass</dd>
+       </div>
+     </dl>
+   {% endcall %}
+
+   ── Usage: AI-identified charge ───────────────────────────────
+
+   {% call paneAiChargeDetail(
+     "charge-handling",
+     "Handling stolen goods contrary to s.22 Theft Act 1968"
+   ) %}
+     <p class="govuk-!-margin-bottom-2">If the court is not satisfied...</p>
+   {% endcall %}
+
+   ── Where to edit the visual design ─────────────────────────
+   All two-pane CSS is in:
+   app/assets/sass/components/_case-graph.scss
+   ================================================================ #}
+
+{% macro paneListItem(id, name) %}
+<div
+  class="app-materials-pane__item"
+  role="option"
+  aria-selected="false"
+  data-detail="{{ id }}"
+>
+  <span class="app-materials-pane__item-name">{{ name }}</span>
+  <span></span>
+</div>
+{% endmacro %}
+
+{% macro paneChargeDetail(id, title, status, aiNarrative) %}
+<div id="{{ id }}" hidden>
+
+  {% if aiNarrative %}
+  <div class="govuk-summary-card govuk-!-margin-bottom-4" style="border-color: #c5a0d4; background-color: #f6f1f8;">
+    <div class="govuk-summary-card__title-wrapper" style="flex-wrap: wrap; display: flex; justify-content: space-between; align-items: center; gap: 1em; background-color: #f6f1f8; border-top: 4px solid #732282; border-bottom: 1px solid #c5a0d4;">
+      <h2 class="govuk-summary-card__title" style="margin-bottom: 0; color: #732282;">Offence narrative</h2>
+      <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; white-space: nowrap;">AI analysis</span>
+    </div>
+    <div class="govuk-summary-card__content">
+      <p class="govuk-!-margin-bottom-2">{{ aiNarrative }}</p>
+    </div>
+    <div class="govuk-summary-card__title-wrapper" style="flex-wrap: wrap; display: flex; justify-content: space-between; align-items: center; gap: 1em; background-color: #f6f1f8; border-bottom: 1px solid #c5a0d4; border-top: 1px solid #b1b4b6;">
+      <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">This has been summarised by AI from case information. It is not an official legal record.</p>
+    </div>
+  </div>
+  {% endif %}
+
+
+  <div class="app-materials-pane__detail-panel">
+      <h2 class="govuk-summary-card__title" style="margin-bottom: 0;">{{ title }}</h2>
+      {% if status == 'accepted' %}
+        <span class="govuk-tag govuk-tag--green" style="font-size: 1rem;">Accepted by CPS</span>
+      {% elif status == 'replaced' %}
+        <span class="govuk-tag govuk-tag--grey" style="font-size: 1rem;">Replaced</span>
+      {% elif status == 'proposed' %}
+        <span class="govuk-tag govuk-tag--blue" style="font-size: 1rem;">Proposed</span>
+      {% elif status == 'rejected' %}
+        <span class="govuk-tag govuk-tag--red" style="font-size: 1rem;">Rejected</span>
+      {% endif %}
+      {{ caller() }}
+  </div>
+
+</div>
+{% endmacro %}
+
+{% macro paneAiChargeDetail(id, title) %}
+<div id="{{ id }}" hidden>
+  <div class="govuk-summary-card govuk-!-margin-bottom-0" style="border-color: #c5a0d4; background-color: #f6f1f8;">
+    <div class="govuk-summary-card__title-wrapper" style="flex-wrap: wrap; display: flex; justify-content: space-between; align-items: center; gap: 1em; background-color: #f6f1f8; border-top: 4px solid #732282; border-bottom: 1px solid #c5a0d4;">
+      <h2 class="govuk-summary-card__title" style="margin-bottom: 0; color: #732282;">AI identified offence</h2>
+      <span class="govuk-tag govuk-tag--yellow" style="font-size: 1rem; white-space: nowrap;">AI analysis</span>
+    </div>
+    <div class="govuk-summary-card__content">
+      <p class="govuk-heading-s govuk-!-margin-bottom-2" style="color: #732282;">{{ title }}</p>
+      {{ caller() }}
+    </div>
+    <div class="govuk-summary-card__title-wrapper" style="flex-wrap: wrap; display: flex; justify-content: space-between; align-items: center; gap: 1em; background-color: #f6f1f8; border-bottom: 1px solid #c5a0d4; border-top: 1px solid #b1b4b6;">
+      <p class="govuk-body-s govuk-!-margin-bottom-0" style="color: #505a5f;">This has been interpreted by AI. It is not an official legal record.</p>
+    </div>
+  </div>
+</div>
+{% endmacro %}

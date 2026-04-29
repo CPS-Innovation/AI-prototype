@@ -1,0 +1,35 @@
+{% extends "layouts/case-graph/unmoderated/main.html" %}
+{% set navId = 'materials' %}
+{% set pageName = "Materials" %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% include "_includes/case-graph/unmoderated/case-header.njk" %}
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Materials</h2>
+    <!-- <p class="govuk-body govuk-!-margin-bottom-6">
+      <a href="materials" class="govuk-link">Switch to card view</a>
+    </p>-->
+
+    <div data-view="all">
+      {% include "_includes/case-graph/unmoderated/materials-pane-all.njk" %}
+    </div>
+
+    <div data-view="quibble" hidden>
+      {{ govukInsetText({ html: "Showing materials for <strong>Tabitha Quibble</strong> only." }) }}
+      {% include "_includes/case-graph/unmoderated/materials-pane-all.njk" %}
+    </div>
+
+    <div data-view="snodgrass" hidden>
+      {{ govukInsetText({ html: "Showing materials for <strong>Percival Snodgrass</strong> only." }) }}
+      {% include "_includes/case-graph/unmoderated/materials-pane-all.njk" %}
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,348 @@
+{% from "_includes/case-graph/unmoderated/people-pane-macros.njk" import paneListItem, panePersonDetail %}
+
+<div class="app-materials-pane js-materials-pane">
+
+  {# ============================================================
+     LEFT PANE
+     ============================================================ #}
+  <div class="app-materials-pane__left">
+    <div class="app-materials-pane__list" role="listbox" aria-label="People list">
+
+      <details class="app-materials-pane__section" open>
+        <summary class="app-materials-pane__section-heading">
+          Defendants (2)
+        </summary>
+        <div class="app-materials-pane__item" role="option" aria-selected="false" data-detail="defendant-quibble">
+          <span class="app-materials-pane__item-name">Tabitha Quibble</span>
+          <span></span>
+        </div>
+        <div class="app-materials-pane__item" role="option" aria-selected="false" data-detail="defendant-snodgrass">
+          <span class="app-materials-pane__item-name">Percival Snodgrass</span>
+          <span></span>
+        </div>
+      </details>
+
+      <details class="app-materials-pane__section" open>
+        <summary class="app-materials-pane__section-heading">
+          Witnesses (5)
+        </summary>
+        <div class="app-materials-pane__item" role="option" aria-selected="false" data-detail="witness-bumble">
+          <span class="app-materials-pane__item-name">Millicent Bumble</span>
+          <span></span>
+        </div>
+        <div class="app-materials-pane__item" role="option" aria-selected="false" data-detail="witness-tiddlepot">
+          <span class="app-materials-pane__item-name">Pippa Tiddlepot</span>
+          <span></span>
+        </div>
+        <div class="app-materials-pane__item" role="option" aria-selected="false" data-detail="witness-crumhorn">
+          <span class="app-materials-pane__item-name">Reginald Crumhorn</span>
+          <span></span>
+        </div>
+        <div class="app-materials-pane__item" role="option" aria-selected="false" data-detail="witness-starch">
+          <span class="app-materials-pane__item-name">Lavinia Starch</span>
+          <span></span>
+        </div>
+        <div class="app-materials-pane__item" role="option" aria-selected="false" data-detail="witness-snipe">
+          <span class="app-materials-pane__item-name">Horatio Snipe</span>
+          <span></span>
+        </div>
+      </details>
+
+      <details class="app-materials-pane__section" open>
+        <summary class="app-materials-pane__section-heading">
+          Police (2)
+        </summary>
+        <div class="app-materials-pane__item" role="option" aria-selected="false" data-detail="police-fentworth">
+          <span class="app-materials-pane__item-name">PC Rupert Fentworth</span>
+          <span></span>
+        </div>
+        <div class="app-materials-pane__item" role="option" aria-selected="false" data-detail="police-glover">
+          <span class="app-materials-pane__item-name">DC Edna Glover</span>
+          <span></span>
+        </div>
+      </details>
+
+
+    </div>
+  </div>
+
+  {# ============================================================
+     RIGHT PANE
+     ============================================================ #}
+  <div class="app-materials-pane__right">
+    <div class="app-materials-pane__detail">
+
+      {# ── Tabitha Quibble ── #}
+      {% call panePersonDetail(
+        "defendant-quibble",
+        "Tabitha",
+        "Tabitha Quibble",
+        "Defendant",
+        "Selected and concealed items at Selfridges; present during assault on security guard"
+      ) %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Date of birth</dt>
+            <dd class="govuk-summary-list__value">12 March 1993 (32 years old at time of offence)</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Occupation</dt>
+            <dd class="govuk-summary-list__value">Software Engineer</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">Charges</dt>
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="charges#charge-theft">Theft (s.1 TA 1968)</a> <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; vertical-align: middle; margin-left: 1em;">Accepted by CPS</span>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Statement</dt>
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="materials#mat-s-7">Defence statement — Tabitha Quibble</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Related cases</dt>
+            <dd class="govuk-summary-list__value"><a class="govuk-link" href="related-cases#case-21GH8820451">21GH8820451</a> <span class="govuk-tag govuk-tag--grey" style="font-size: 1rem; vertical-align: middle; margin-left: 1em;">Caution</span></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Police remand status</dt>
+            <dd class="govuk-summary-list__value">Conditional bail</dd>
+          </div>
+        </dl>
+      {% endcall %}
+
+      {# ── Percival Snodgrass ── #}
+      {% call panePersonDetail(
+        "defendant-snodgrass",
+        "Percival",
+        "Percival Snodgrass",
+        "Defendant",
+        'Acted as lookout during theft; assaulted security guard <a href="people#witness-bumble" class="govuk-link">Millicent Bumble</a> when confronted at the exit'
+      ) %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Date of birth</dt>
+            <dd class="govuk-summary-list__value">7 August 1997 (28 years old at time of offence)</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Occupation</dt>
+            <dd class="govuk-summary-list__value">Unknown</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Charges</dt>
+            <dd class="govuk-summary-list__value">
+              <ol class="govuk-list govuk-body-s govuk-list--number">
+                <li><a class="govuk-link" href="charges#charge-theft">Theft (s.1 TA 1968)</a> <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; vertical-align: middle; margin-left: 1em;">Accepted by CPS</span></li>
+                <li><a class="govuk-link" href="charges#charge-common-assault">Common assault (s.39 CJA 1988)</a> <span class="govuk-tag govuk-tag--green" style="font-size: 1rem; vertical-align: middle; margin-left: 1em;">Accepted by CPS</span></li>
+                <li><a class="govuk-link" href="charges#charge-abh">Assault ABH (s.47 OAPA 1861)</a> <span class="govuk-tag govuk-tag--grey" style="font-size: 1rem; vertical-align: middle; margin-left: 1em;">Replaced</span></li>
+              </ol>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Related cases</dt>
+            <dd class="govuk-summary-list__value"><a class="govuk-link" href="related-cases#case-19GH6611930">19GH6611930</a> <span class="govuk-tag govuk-tag--red" style="font-size: 1rem; vertical-align: middle; margin-left: 1em;">Convicted</span></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Police remand status</dt>
+            <dd class="govuk-summary-list__value">Remand in custody</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Grounds for remand</dt>
+            <dd class="govuk-summary-list__value">Risk of failure to appear; risk of committing further offences on bail</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Custody time limit</dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body-s govuk-!-margin-bottom-0">Arrested: 15 January 2026</p>
+              <p class="govuk-body-s govuk-!-margin-bottom-0">CTL expires: 18 July 2026</p>
+              <p class="govuk-body-s govuk-!-margin-bottom-0">Days remaining: <strong>94</strong></p>
+              <a class="govuk-link govuk-body-s" href="#" onclick="alert('Opens: CTL log — Percival Snodgrass')">View CTL log</a>
+            </dd>
+          </div>
+        </dl>
+      {% endcall %}
+
+      {# ── Millicent Bumble ── #}
+      {% call panePersonDetail(
+        "witness-bumble",
+        "Millicent",
+        "Millicent Bumble",
+        "Witness and victim",
+        'Eyewitness to theft; later assaulted by <a href="people#defendant-snodgrass" class="govuk-link">Percival Snodgrass</a> while attempting to stop the defendants at the exit'
+      ) %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Occupation</dt>
+            <dd class="govuk-summary-list__value">Security Guard, Selfridges, High Street</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Injuries</dt>
+            <dd class="govuk-summary-list__value">Arm and shoulder injury requiring medical treatment</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Witness statement</dt>
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="materials#mat-s-1">MG11/888200 — theft account</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Victim statement</dt>
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="materials#mat-s-2">MG11/887580 — assault account</a>
+            </dd>
+          </div>
+        </dl>
+      {% endcall %}
+
+      {# ── Pippa Tiddlepot ── #}
+      {% call panePersonDetail(
+        "witness-tiddlepot",
+        "Pippa",
+        "Pippa Tiddlepot",
+        "Witness",
+        "Confirmed value of stolen goods and store procedure"
+      ) %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Occupation</dt>
+            <dd class="govuk-summary-list__value">Store Manager, Selfridges, High Street</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Statement</dt>
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="materials#mat-s-3">MG11/888201</a>
+            </dd>
+          </div>
+        </dl>
+      {% endcall %}
+
+      {# ── Reginald Crumhorn ── #}
+      {% call panePersonDetail(
+        "witness-crumhorn",
+        "Reginald",
+        "Reginald Crumhorn",
+        "Witness",
+        "Independently observed Quibble conceal items before the exit"
+      ) %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Occupation</dt>
+            <dd class="govuk-summary-list__value">Off-duty police officer</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Statement</dt>
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="materials#mat-s-4">MG11/888202</a>
+            </dd>
+          </div>
+        </dl>
+      {% endcall %}
+
+      {# ── Lavinia Starch ── #}
+      {% call panePersonDetail(
+        "witness-starch",
+        "Lavinia",
+        "Lavinia Starch",
+        "Witness",
+        "Observed Quibble pass the self-checkout without scanning items"
+      ) %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Occupation</dt>
+            <dd class="govuk-summary-list__value">Cashier, Selfridges, High Street</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Statement</dt>
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="materials#mat-s-5">MG11/888203</a>
+            </dd>
+          </div>
+        </dl>
+      {% endcall %}
+
+      {# ── Horatio Snipe ── #}
+      {% call panePersonDetail(
+        "witness-snipe",
+        "Horatio",
+        "Horatio Snipe",
+        "Witness",
+        "Companion to Tabitha Quibble on the day of the offence; claims no knowledge of the theft"
+      ) %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Occupation</dt>
+            <dd class="govuk-summary-list__value">Defendant's companion</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Statement</dt>
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="materials#mat-s-6">MG11/888204</a>
+            </dd>
+          </div>
+        </dl>
+      {% endcall %}
+
+      {# ── PC Rupert Fentworth ── #}
+      {% call panePersonDetail(
+        "police-fentworth",
+        "Rupert",
+        "PC Rupert Fentworth",
+        "Police — Attending Officer",
+        "Attending officer, 15 January 2026; arrested both defendants"
+      ) %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Unit</dt>
+            <dd class="govuk-summary-list__value">Metropolitan Police, Hackney Borough Command</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Statement</dt>
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="materials#mat-o-14">Pocket notebook entry (mat-o-14)</a>
+            </dd>
+          </div>
+        </dl>
+      {% endcall %}
+
+      {# ── DC Edna Glover ── #}
+      {% call panePersonDetail(
+        "police-glover",
+        "Edna",
+        "DC Edna Glover",
+        "Police — Digital Forensics Officer",
+        "Seized and produced CCTV footage from Selfridges security system"
+      ) %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Unit</dt>
+            <dd class="govuk-summary-list__value">Digital Forensics Unit, Metropolitan Police</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Evidence produced</dt>
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="materials#mat-e-1">CCTV footage — Selfridges (EXH/001)</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">CCTV continuity certificate</dt>
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="materials#mat-e-missing">Not yet obtained</a>
+            </dd>
+          </div>
+        </dl>
+      {% endcall %}
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var containers = document.querySelectorAll('.js-materials-pane');
+    containers.forEach(function (container) {
+      new App.MaterialsPane({ container: container });
+    });
+  });
+</script>

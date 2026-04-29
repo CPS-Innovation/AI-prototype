@@ -10,3 +10,6 @@ usage-data-config.json
 # General ignores
 .DS_Store
 .idea
+
+# Participant research responses — do not commit
+app/data/responses.json
