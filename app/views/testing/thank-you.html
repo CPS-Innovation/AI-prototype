@@ -19,18 +19,16 @@
 </div>
 
 <script>
-  // Load Clarity on this page (it only runs on the unmoderated prototype layout otherwise)
   (function(c,l,a,r,i,t,y){
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "wjaeumnr5c");
-
-  // Set custom tags — Clarity queues these until the script initialises
+  clarity('consent', true);
   clarity('set', 'taskCompleted', 'true');
-  clarity('set', 'participantId', {{ data['participant-id'] | dump | safe }});
-  clarity('set', 'q1', {{ data.q1 | dump | safe }});
-  clarity('set', 'q2', {{ data.q2 | dump | safe }});
-  clarity('set', 'q3', {{ data.q3 | dump | safe }});
+  {% if data['participant-id'] %}clarity('set', 'participantId', {{ data['participant-id'] | dump | safe }});{% endif %}
+  {% if data.q1 %}clarity('set', 'q1', {{ data.q1 | dump | safe }});{% endif %}
+  {% if data.q2 %}clarity('set', 'q2', {{ data.q2 | dump | safe }});{% endif %}
+  {% if data.q3 %}clarity('set', 'q3', {{ data.q3 | dump | safe }});{% endif %}
 </script>
 {% endblock %}
