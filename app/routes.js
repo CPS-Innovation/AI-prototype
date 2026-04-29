@@ -5,25 +5,9 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
-const fs = require('fs')
-const path = require('path')
 const crypto = require('crypto')
 
 // ── Testing flow ──────────────────────────────────────────────────────────────
-
-const RESPONSES_FILE = path.join(__dirname, 'data', 'responses.json')
-
-function loadResponses () {
-  try {
-    return JSON.parse(fs.readFileSync(RESPONSES_FILE, 'utf8'))
-  } catch (e) {
-    return []
-  }
-}
-
-function saveResponses (responses) {
-  fs.writeFileSync(RESPONSES_FILE, JSON.stringify(responses, null, 2), 'utf8')
-}
 
 // GET /testing/consent
 router.get('/testing/consent', function (req, res) {
@@ -67,17 +51,8 @@ router.get('/testing/questions', function (req, res) {
   res.render('testing/questions')
 })
 
-// POST /testing/submit — save responses and redirect to thank-you
+// POST /testing/submit — answers stored in session by autoStoreData; Clarity tags set on thank-you page
 router.post('/testing/submit', function (req, res) {
-  const responses = loadResponses()
-  responses.push({
-    participantId: req.session.data['participant-id'] || 'unknown',
-    timestamp: new Date().toISOString(),
-    q1: req.body.q1 || '',
-    q2: req.body.q2 || '',
-    q3: req.body.q3 || ''
-  })
-  saveResponses(responses)
   res.redirect('/testing/thank-you')
 })
 

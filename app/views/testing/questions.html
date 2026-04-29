@@ -33,42 +33,45 @@
       <label class="govuk-label govuk-label--m" for="q1">
         {{ data['testing-q1'] }}
       </label>
+      <div id="q1-hint" class="govuk-hint">Maximum 100 characters</div>
       {% if fieldErrors.q1 %}
       <p id="q1-error" class="govuk-error-message">
         <span class="govuk-visually-hidden">Error:</span> {{ fieldErrors.q1 }}
       </p>
       {% endif %}
       <textarea class="govuk-textarea {% if fieldErrors.q1 %}govuk-textarea--error{% endif %}"
-        id="q1" name="q1" rows="4"
-        {% if fieldErrors.q1 %}aria-describedby="q1-error"{% endif %}>{{ data.q1 }}</textarea>
+        id="q1" name="q1" rows="4" maxlength="100"
+        aria-describedby="q1-hint{% if fieldErrors.q1 %} q1-error{% endif %}">{{ data.q1 }}</textarea>
     </div>
 
     <div class="govuk-form-group {% if fieldErrors.q2 %}govuk-form-group--error{% endif %}">
       <label class="govuk-label govuk-label--m" for="q2">
         {{ data['testing-q2'] }}
       </label>
+      <div id="q2-hint" class="govuk-hint">Maximum 100 characters</div>
       {% if fieldErrors.q2 %}
       <p id="q2-error" class="govuk-error-message">
         <span class="govuk-visually-hidden">Error:</span> {{ fieldErrors.q2 }}
       </p>
       {% endif %}
       <textarea class="govuk-textarea {% if fieldErrors.q2 %}govuk-textarea--error{% endif %}"
-        id="q2" name="q2" rows="4"
-        {% if fieldErrors.q2 %}aria-describedby="q2-error"{% endif %}>{{ data.q2 }}</textarea>
+        id="q2" name="q2" rows="4" maxlength="100"
+        aria-describedby="q2-hint{% if fieldErrors.q2 %} q2-error{% endif %}">{{ data.q2 }}</textarea>
     </div>
 
     <div class="govuk-form-group {% if fieldErrors.q3 %}govuk-form-group--error{% endif %}">
       <label class="govuk-label govuk-label--m" for="q3">
         {{ data['testing-q3'] }}
       </label>
+      <div id="q3-hint" class="govuk-hint">Maximum 100 characters</div>
       {% if fieldErrors.q3 %}
       <p id="q3-error" class="govuk-error-message">
         <span class="govuk-visually-hidden">Error:</span> {{ fieldErrors.q3 }}
       </p>
       {% endif %}
       <textarea class="govuk-textarea {% if fieldErrors.q3 %}govuk-textarea--error{% endif %}"
-        id="q3" name="q3" rows="4"
-        {% if fieldErrors.q3 %}aria-describedby="q3-error"{% endif %}>{{ data.q3 }}</textarea>
+        id="q3" name="q3" rows="4" maxlength="100"
+        aria-describedby="q3-hint{% if fieldErrors.q3 %} q3-error{% endif %}">{{ data.q3 }}</textarea>
     </div>
 
     <button type="submit" class="govuk-button" data-module="govuk-button">
