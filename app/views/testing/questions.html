@@ -89,5 +89,23 @@
   })(window, document, "clarity", "script", "wjaeumnr5c");
   clarity('consent', true);
   {% if data['participant-id'] %}clarity('set', 'participantId', {{ data['participant-id'] | dump | safe }});{% endif %}
+
+  // Mark task as complete as soon as the questions page loads
+  clarity('set', 'taskCompleted', 'true');
+
+  // Capture answer text into Clarity tags when the user submits
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.querySelector('form[action="/testing/submit"]');
+    if (form) {
+      form.addEventListener('submit', function () {
+        var q1 = document.getElementById('q1') ? document.getElementById('q1').value : '';
+        var q2 = document.getElementById('q2') ? document.getElementById('q2').value : '';
+        var q3 = document.getElementById('q3') ? document.getElementById('q3').value : '';
+        if (q1) clarity('set', 'q1', q1);
+        if (q2) clarity('set', 'q2', q2);
+        if (q3) clarity('set', 'q3', q3);
+      });
+    }
+  });
 </script>
 {% endblock %}
