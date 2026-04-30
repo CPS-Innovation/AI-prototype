@@ -69,6 +69,10 @@ router.get('/testing/questions', function (req, res) {
   if (req.session.data['clarity-consented'] !== 'true') {
     return res.redirect('/testing/consent')
   }
+  // Clear any previously stored answers so the form is always blank
+  req.session.data['q1'] = ''
+  req.session.data['q2'] = ''
+  req.session.data['q3'] = ''
   res.render('testing/questions')
 })
 
