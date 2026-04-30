@@ -9,8 +9,20 @@
 
   <h1 class="govuk-heading-l">Research responses</h1>
 
+  <div class="govuk-inset-text">
+    {% if airtableEnabled %}
+      <p class="govuk-body govuk-!-margin-bottom-0">Responses are stored persistently in Airtable and will survive deploys. You can also view and export them directly at <a href="https://airtable.com" class="govuk-link" rel="noopener noreferrer" target="_blank">airtable.com</a>.</p>
+    {% else %}
+      <p class="govuk-body">Responses are held in memory on the server. <strong>They will be lost if the server restarts</strong>, which happens when a new version of the prototype is deployed or after a period of inactivity.</p>
+      <p class="govuk-body govuk-!-margin-bottom-0">Download a CSV after each research session to keep a permanent record. To persist responses across deploys, set the <code>AIRTABLE_API_KEY</code> and <code>AIRTABLE_BASE_ID</code> environment variables.</p>
+    {% endif %}
+  </div>
+
   {% if responses and responses.length %}
     <p class="govuk-body">{{ responses.length }} participant{{ 's' if responses.length != 1 }} completed the task.</p>
+    <p class="govuk-body">
+      <a href="/testing/dashboard/download?key={{ data['key'] or 'research' }}" class="govuk-button govuk-button--secondary" data-module="govuk-button">Download CSV</a>
+    </p>
 
     {% for r in responses %}
     <div class="govuk-summary-card" style="margin-bottom: 2rem;">

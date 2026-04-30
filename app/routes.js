@@ -30,6 +30,66 @@ function saveResponseToFile (entry) {
   }
 }
 
+// ── Airtable integration ──────────────────────────────────────────────────────
+const airtableEnabled = !!(process.env.AIRTABLE_API_KEY && process.env.AIRTABLE_BASE_ID)
+const AIRTABLE_BASE_URL = airtableEnabled
+  ? 'https://api.airtable.com/v0/' + process.env.AIRTABLE_BASE_ID + '/Responses'
+  : null
+
+async function saveToAirtable (entry) {
+  if (!airtableEnabled) return
+  try {
+    await fetch(AIRTABLE_BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + process.env.AIRTABLE_API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        records: [{
+          fields: {
+            'Participant ID': entry.participantId,
+            'Timestamp': entry.timestamp,
+            'Q1': entry.q1,
+            'Q2': entry.q2,
+            'Q3': entry.q3
+          }
+        }]
+      })
+    })
+  } catch (e) {
+    console.error('Airtable save failed:', e.message)
+  }
+}
+
+async function getFromAirtable () {
+  const records = []
+  let offset = null
+  do {
+    const url = AIRTABLE_BASE_URL +
+      '?sort[0][field]=Timestamp&sort[0][direction]=asc' +
+      (offset ? '&offset=' + offset : '')
+    const response = await fetch(url, {
+      headers: { 'Authorization': 'Bearer ' + process.env.AIRTABLE_API_KEY }
+    })
+    const data = await response.json()
+    if (data.records) {
+      for (const record of data.records) {
+        const f = record.fields
+        records.push({
+          participantId: f['Participant ID'] || '',
+          timestamp: f['Timestamp'] || '',
+          q1: f['Q1'] || '',
+          q2: f['Q2'] || '',
+          q3: f['Q3'] || ''
+        })
+      }
+    }
+    offset = data.offset || null
+  } while (offset)
+  return records
+}
+
 // GET /testing/consent
 router.get('/testing/consent', function (req, res) {
   res.render('testing/consent')
@@ -87,32 +147,92 @@ router.post('/testing/submit', function (req, res) {
   }
   testingResponses.push(entry)
   saveResponseToFile(entry)
+  saveToAirtable(entry) // fire-and-forget; does nothing if AIRTABLE_API_KEY not set
   res.redirect('/testing/thank-you')
 })
 
 // GET /testing/dashboard — password protected summary of all responses
-router.get('/testing/dashboard', function (req, res) {
+router.get('/testing/dashboard', async function (req, res) {
   if (req.query.key !== process.env.DASHBOARD_KEY && req.query.key !== 'research') {
     return res.status(401).send('<h1>Unauthorised</h1><p>Add ?key=research to the URL.</p>')
   }
 
-  // Merge in-memory responses with any saved in the file
-  let fileResponses = []
-  try {
-    if (fs.existsSync(RESPONSES_FILE)) {
-      fileResponses = JSON.parse(fs.readFileSync(RESPONSES_FILE, 'utf8'))
+  let allResponses
+  if (airtableEnabled) {
+    try {
+      allResponses = await getFromAirtable()
+    } catch (e) {
+      console.error('Airtable fetch failed:', e.message)
+      allResponses = []
     }
-  } catch (e) {}
+  } else {
+    // Merge in-memory responses with any saved in the file
+    let fileResponses = []
+    try {
+      if (fs.existsSync(RESPONSES_FILE)) {
+        fileResponses = JSON.parse(fs.readFileSync(RESPONSES_FILE, 'utf8'))
+      }
+    } catch (e) {}
 
-  // Deduplicate by participantId, preferring in-memory entries
-  const seen = new Set()
-  const allResponses = [...testingResponses, ...fileResponses].filter(function (r) {
-    if (seen.has(r.participantId)) return false
-    seen.add(r.participantId)
-    return true
+    const seen = new Set()
+    allResponses = [...testingResponses, ...fileResponses].filter(function (r) {
+      if (seen.has(r.participantId)) return false
+      seen.add(r.participantId)
+      return true
+    })
+  }
+
+  res.render('testing/dashboard', { responses: allResponses, airtableEnabled: airtableEnabled })
+})
+
+// GET /testing/dashboard/download — CSV export of all responses
+router.get('/testing/dashboard/download', async function (req, res) {
+  if (req.query.key !== process.env.DASHBOARD_KEY && req.query.key !== 'research') {
+    return res.status(401).send('<h1>Unauthorised</h1><p>Add ?key=research to the URL.</p>')
+  }
+
+  let allResponses
+  if (airtableEnabled) {
+    try {
+      allResponses = await getFromAirtable()
+    } catch (e) {
+      console.error('Airtable fetch failed:', e.message)
+      allResponses = []
+    }
+  } else {
+    let fileResponses = []
+    try {
+      if (fs.existsSync(RESPONSES_FILE)) {
+        fileResponses = JSON.parse(fs.readFileSync(RESPONSES_FILE, 'utf8'))
+      }
+    } catch (e) {}
+
+    const seen = new Set()
+    allResponses = [...testingResponses, ...fileResponses].filter(function (r) {
+      if (seen.has(r.participantId)) return false
+      seen.add(r.participantId)
+      return true
+    })
+  }
+
+  function escapeCsv (value) {
+    const str = String(value == null ? '' : value)
+    if (str.includes(',') || str.includes('"') || str.includes('\n')) {
+      return '"' + str.replace(/"/g, '""') + '"'
+    }
+    return str
+  }
+
+  const header = ['Timestamp', 'Participant ID', 'Q1', 'Q2', 'Q3']
+  const rows = allResponses.map(function (r) {
+    return [r.timestamp, r.participantId, r.q1, r.q2, r.q3].map(escapeCsv).join(',')
   })
+  const csv = [header.join(','), ...rows].join('\n')
 
-  res.render('testing/dashboard', { responses: allResponses })
+  const filename = 'research-responses-' + new Date().toISOString().slice(0, 10) + '.csv'
+  res.setHeader('Content-Type', 'text/csv')
+  res.setHeader('Content-Disposition', 'attachment; filename="' + filename + '"')
+  res.send(csv)
 })
 
 // GET /testing/thank-you
