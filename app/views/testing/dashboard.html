@@ -1,0 +1,52 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Research responses – Dashboard
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container" style="margin-top: 40px;">
+
+  <h1 class="govuk-heading-l">Research responses</h1>
+
+  {% if responses and responses.length %}
+    <p class="govuk-body">{{ responses.length }} participant{{ 's' if responses.length != 1 }} completed the task.</p>
+
+    {% for r in responses %}
+    <div class="govuk-summary-card" style="margin-bottom: 2rem;">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title govuk-body-s" style="font-family: monospace; font-weight: normal;">
+          {{ r.participantId }}
+        </h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <span class="govuk-body-s govuk-!-colour-secondary">{{ r.timestamp | replace("T", " ") | replace(".000Z", "") }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">{{ data['testing-q1'] }}</dt>
+            <dd class="govuk-summary-list__value">{{ r.q1 if r.q1 else '—' }}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">{{ data['testing-q2'] }}</dt>
+            <dd class="govuk-summary-list__value">{{ r.q2 if r.q2 else '—' }}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">{{ data['testing-q3'] }}</dt>
+            <dd class="govuk-summary-list__value">{{ r.q3 if r.q3 else '—' }}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    {% endfor %}
+
+  {% else %}
+    <p class="govuk-body">No responses recorded yet.</p>
+    <p class="govuk-body govuk-hint">Responses appear here after participants complete the task and submit the questions. On Heroku, responses are held in memory and will be lost if the dyno restarts. <a href="/testing" class="govuk-link">Send participants to the testing start page</a>.</p>
+  {% endif %}
+
+</div>
+{% endblock %}
