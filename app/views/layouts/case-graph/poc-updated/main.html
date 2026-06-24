@@ -1,0 +1,68 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "_components/header/macro.njk" import appHeader %}
+{% from "_components/address/macro.njk" import appAddress %}
+{% from "_components/checkbox-filter/macro.njk" import appCheckboxFilter %}
+{% from "_components/value/macro.njk" import appValue %}
+{% from "_components/button-menu/macro.njk" import appButtonMenu %}
+{% from "_components/identity-bar/macro.njk" import appIdentityBar %}
+{% from "_components/activity-log-item/macro.njk" import appActivityLogItem %}
+
+{% block header %}
+  {% include "_includes/header.njk" %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block pageScripts %}
+  {{ super() }}
+  <script>
+    var App = {}
+  </script>
+  <script src="/public/javascripts/components/filter-toggle-button.js"></script>
+  <script src="/public/javascripts/components/list-filter.js"></script>
+  <script src="/public/javascripts/components/button-menu.js"></script>
+  <script src="/public/javascripts/components/text-expander.js"></script>
+  <script src="/public/javascripts/components/defendant-switcher.js"></script>
+  <script src="/public/javascripts/components/materials-pane.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', function () { new App.DefendantSwitcher().init(); });</script>
+  <script>
+    // Persist prototype scenario params (m-status, m-new) across page navigations.
+    // Saves to sessionStorage when present in URL, then appends to all relative links.
+    (function () {
+      var KEYS = ['m-status', 'm-new'];
+      var params = new URLSearchParams(window.location.search);
+
+      // Save any params present in the current URL to sessionStorage
+      KEYS.forEach(function (k) {
+        if (params.has(k)) sessionStorage.setItem('proto-' + k, params.get(k));
+      });
+
+      // Build a map of stored values
+      var stored = {};
+      KEYS.forEach(function (k) {
+        var val = sessionStorage.getItem('proto-' + k);
+        if (val !== null) stored[k] = val;
+      });
+      if (!Object.keys(stored).length) return;
+
+      // Append stored params to all relative links that don't already have them
+      document.querySelectorAll('a[href]').forEach(function (link) {
+        var href = link.getAttribute('href');
+        if (!href || href.charAt(0) === '#' || /^https?:\/\//.test(href) || href.indexOf('manage-prototype') !== -1) return;
+        try {
+          var url = new URL(href, window.location.href);
+          var changed = false;
+          KEYS.forEach(function (k) {
+            if (stored[k] !== undefined && !url.searchParams.has(k)) {
+              url.searchParams.set(k, stored[k]);
+              changed = true;
+            }
+          });
+          if (changed) link.setAttribute('href', url.pathname + url.search + url.hash);
+        } catch (e) {}
+      });
+    })();
+  </script>
+{% endblock %}

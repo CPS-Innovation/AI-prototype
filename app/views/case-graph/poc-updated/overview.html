@@ -1,0 +1,49 @@
+{% extends "layouts/case-graph/poc-updated/main.html" %}
+{% set pageName = "Explore the case" %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block pageScripts %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Feature 1: Offence narrative</h2>
+
+
+      {% include "_includes/case-graph/poc-updated/overview-top-all.njk" %}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Feature 2: Incident timeline - "snapshot"</h2>
+
+
+        <div class="govuk-grid-column-one-half">
+          {% include "_includes/case-graph/poc-updated/overview-timeline-all.njk" %}
+        </div>
+</div>
+</div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Feature 2: Incident timeline - full</h2>
+
+
+            {% include "_includes/case-graph/poc-updated/timeline-all.njk" %}
+      </div>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

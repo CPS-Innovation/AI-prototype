@@ -1,7 +1,7 @@
 {% extends "layouts/overview.html" %}
 
 {% set navId = 'overview' %}
-{% set pageName = "Case Summary prototypes" %}
+{% set pageName = "Explore the case prototypes" %}
 
 {% block pageTitle %}
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -17,7 +17,7 @@
       href: "/index"
     },
     {
-      text: "Case Summary prototypes"
+      text: "Explore the case prototypes"
     }
     ]
 }) }}
@@ -37,6 +37,26 @@
 
       <ul class="govuk-task-list">
 
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="case-graph/poc-updated/overview" aria-describedby="">
+        Updated proof of concept
+      </a>
+      <span class="govuk-tag govuk-tag--teal" style="font-size: 1rem; vertical-align: middle; margin-left: 1em;">
+        In development
+      </span>
+      <div id="company-details-3-hint" class="govuk-task-list__hint" style="margin-top: 20px;">
+        <p>A narrowed down version of V4, defined by the features we believe are most critical for the proof of concept, in that they will add value to the users but also will allow us to test our AI capabilities: </p>
+          <ol>
+            <li>Offence narrative</li>
+            <li>Incident timeline</li>
+          </ol>
+          <br>
+          <p>The design of this version is limited to the features we want to build as POC, and is not intended to be a complete solution. We would suggest that these features are integrated as they would not add value on their own in a tool outside of the users usual workflow.</p>
+      </div>
+      <p class="govuk-body-s govuk-task-list__hint">Last updated 23 June 2026</p>
+    </div>
+  </li>
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
